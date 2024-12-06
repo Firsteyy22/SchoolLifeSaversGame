@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Life Savers</title>
+
+    <!-- <link rel="icon" href=""> for web icon-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="gameplay-page">
+
+    <div id="question-container" class="content">
+        <!-- คำถาม แรก -->
+        <div id="question1">
+            <div class="image-container">
+                <img src="picture/ex01.png" alt="Main Image">
+            </div>
+            <h1>แผลถลอกควรทำอย่างไร</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(true)">ล้างน้ำเปล่า</a> <!-- ถูก -->
+                <a class="button" onclick="checkAnswer(false)">ทายาหม่อง</a> <!-- ผิด -->
+                <a class="button" onclick="checkAnswer(false)">เบตาดีน</a> <!-- ผิด -->
+                <a class="button" onclick="checkAnswer(false)">ปล่อยไว้อย่างนั้น</a> <!-- ผิด -->
+            </div>
+        </div>
+       
+        <!-- คำถามที่ สอง -->
+        <div id="question2" class="hidden">
+            <div class="image-container">
+                <img src="picture/ex1.5.png" alt="Next Question Image" width="200">
+            </div>
+            <h1>แล้วควรทำอย่างไรต่อ?</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(false)">บีบแผลให้เลือดออก</a> <!-- ผิด -->
+                <a class="button" onclick="checkAnswer(true)">รีบไปโรงพยาบาล</a> <!-- ถูก -->
+                <a class="button" onclick="checkAnswer(false)">ใช้ผ้ารัดเหนือแผล</a> <!-- ผิด -->
+                <a class="button" onclick="checkAnswer(false)">ล้างแผลด้วยแอลกอฮอล์</a> <!-- ผิด -->
+            </div>
+        </div>
+
+    </div>
+
+        <!-- หน้าสำหรับคำตอบผิด -->
+        <div id="wrong-answer" class="content hidden">
+            <h1>คุณตอบผิด!</h1>
+            <p>ลองอีกครั้งนะ!</p>
+            <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
+        </div>
+
+
+    <!-- Buttons -->
+    <a href="startGame.html" class="button button-upleft">BACK</a>
+
+    <!-- JS -->
+    <script src="gameplay.js"></script>
+    
+</body>
+</html>
