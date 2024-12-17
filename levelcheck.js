@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const level3Button = document.getElementById("level3-button");
+    const totalLevels = 19; 
 
-    // ตรวจสอบสถานะการปลดล็อกด่าน
-    const isLevel1Completed = localStorage.getItem("level1") === "true";
-    const isLevel2Completed = localStorage.getItem("level2") === "true";
+    for (let i = 1; i <= totalLevels; i++) {
+        const levelButton = document.getElementById(`level${i}-button`);
+        const levelCompleted = sessionStorage.getItem(`level${i}`) === "true";
+        const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
 
-    // ปลดล็อก Level 3 ถ้าเล่นผ่านด่าน 1 และ 2 แล้ว
-    if (isLevel1Completed && isLevel2Completed) {
-        level3Button.classList.remove("locked");
-        level3Button.removeAttribute("onclick");
-    } else {
-        // ล็อก Level 3 พร้อมข้อความแจ้งเตือน
-        level3Button.setAttribute("onclick", "alert('คุณต้องผ่าน Level 1 และ Level 2 ก่อน!'); return false;");
+        if (levelUnlocked) {
+            levelButton.classList.remove("locked");
+            levelButton.removeAttribute("onclick");
+        } else {
+            levelButton.classList.add("locked");
+            levelButton.setAttribute("onclick", `alert('คุณต้องผ่าน Level ${i - 1} ก่อน!'); return false;`);
+        }
     }
 });

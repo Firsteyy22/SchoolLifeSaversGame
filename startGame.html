@@ -3,52 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Life Savers</title>
-
-    <!-- <link rel="icon" href=""> for web icon-->
+    <title>School Life Savers - Map</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="map-page">
-    <!-- Map Page -->
-    
+<body class="map-page map-container">
     <div class="content">
         <p>hello world</p>
-        <p>This is Map page, which mean u have started the game! (_____ will take care of this page)</p>
+        <p>This is Map page, which means you have started the game!</p>
         <p>*ถ้าพึ่งเริ่มเล่น ตั้งใจว่า เข้ามาแล้วต้องทำ PRE-TEST ก่อน*</p>
-        <a href="level_01.html" id="level1-button" class="button">Level 1</a> <!-- ชั่วคราว แทนตัวกด map/lever เล่นเกม -->
-        <a href="level_02.html" id="level2-button" class="button">Level 2</a> <!-- ชั่วคราว แทนตัวกด map/lever เล่นเกม -->
-        <a href="level_03.html" id="level3-button" class="button locked">Level 3</a> <!-- ทดลอง ล็อกด่าน เล่นไม่ได้ เพราะต้องเคลียร์ด่านก่อน ๆ -->
+
+        <!-- เลือกด่าน map -->
+        <div id="level">
+            <a href="level_01.html?level=1" id="level1-button" class="button">Level 1</a>
+            <a href="level_02.html?level=2" id="level2-button" class="button locked">Level 2</a>
+            <a href="level_03.html?level=3" id="level3-button" class="button locked">Level 3</a>
+        </div>
     </div>
 
     <!-- Buttons -->
     <a href="index.html" class="button button-left">MENU</a>
-    <a href="aboutus.html" class="button button-right">TEST</a> <!-- ใช้หน้าเครดิตไปก่อน -->
+    <!-- <a class="button reset-button" onclick="resetGame()">Reset Game</a> -->
+    <a href="aboutus.html" class="button button-right">TEST</a>
 
     <!-- JS -->
-    <script src="levelcheck.js"></script>
-    <script src="gameplay.js"></script>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const level1Button = document.getElementById("level1-button");
-    const level2Button = document.getElementById("level2-button");
-    const level3Button = document.getElementById("level3-button");
-
-    // ตรวจสอบสถานะการปลดล็อกด่าน
-    const isLevel1Completed = localStorage.getItem("level1") === "true";
-    const isLevel2Completed = localStorage.getItem("level2") === "true";
-
-    // ปลดล็อก Level 2 ถ้าผ่าน Level 1
-    if (isLevel1Completed) {
-        level2Button.classList.remove("locked");
-    }
-
-    // ปลดล็อก Level 3 ถ้าผ่าน Level 1 และ Level 2
-    if (isLevel1Completed && isLevel2Completed) {
-        level3Button.classList.remove("locked");
-    }
-    });
-
-    </script>
+    <script src="levelcheck.js" defer></script>
+    <!-- <script>
+        function resetGame() {
+            localStorage.clear();
+            alert("รีเซ็ตเกมสำเร็จ! ข้อมูลทั้งหมดถูกลบแล้ว");
+            window.location.reload();
+        }
+    </script> -->
 </body>
 </html>

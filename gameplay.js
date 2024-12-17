@@ -1,38 +1,32 @@
-let currentLevel = 1; // กำหนดเริ่มต้นที่ Level 1
-let currentQuestion = 1; // เริ่มต้นที่คำถามแรก
+const params = new URLSearchParams(window.location.search);
+let currentLevel = parseInt(params.get("level")) || 1; 
+let currentQuestion = 1; 
 
 function checkAnswer(isCorrect) {
     if (isCorrect) {
-        // ถ้าตอบถูก ให้แสดงคำถามถัดไป
         document.getElementById(`question${currentQuestion}`).classList.add("hidden");
         currentQuestion++;
         const nextQuestion = document.getElementById(`question${currentQuestion}`);
+        
         if (nextQuestion) {
             nextQuestion.classList.remove("hidden");
         } else {
-            // ถ้าผ่านด่านแล้ว ให้บันทึกสถานะและไปที่หน้า startGame.html
             alert(`คุณผ่านด่าน ${currentLevel}!`);
-            completeLevel("level" + currentLevel);  // บันทึกสถานะการผ่านด่านที่ถูกต้อง
+            completeLevel(currentLevel);
         }
     } else {
-        // ถ้าตอบผิด ให้แสดงหน้าคำตอบผิด
-        document.getElementById(`question${currentQuestion}`).classList.add("hidden");
-        document.getElementById("wrong-answer").classList.remove("hidden");
+        alert("ตอบผิด ลองอีกครั้ง!");
     }
 }
 
-function reloadGame() {
-    // โหลดเกมใหม่
-    location.reload();
-}
-
 function completeLevel(level) {
-    // บันทึกสถานะการผ่านด่าน
-    localStorage.setItem(level, "true");
+    sessionStorage.setItem(`level${level}`, "true"); // บันทึกว่าผ่านด่านแล้ว
+    const nextLevel = level + 1;
 
-    // แจ้งผู้เล่นว่าผ่านด่านแล้ว
-    alert(`ยินดีด้วย! คุณผ่าน ${level} แล้ว`);
+    if (nextLevel <= 3) { // ปลดล็อกด่านถัดไป
+        sessionStorage.setItem(`level${nextLevel}_unlocked`, "true");
+    }
 
-    // กลับไปที่หน้า startGame.html
-    window.location.href = "startGame.html";
+    alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+    window.location.href = "startGame.html"; // กลับไปที่แผนที่
 }
