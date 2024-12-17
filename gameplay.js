@@ -21,6 +21,11 @@ function checkAnswer(isCorrect) {
     }
 }
 
+function reloadGame() {
+    // โหลดเกมใหม่
+    location.reload();
+}
+
 function completeLevel(level) {
     sessionStorage.setItem(`level${level}`, "true"); // บันทึกว่าผ่านด่านแล้ว
     const nextLevel = level + 1;
