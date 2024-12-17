@@ -15,7 +15,9 @@ function checkAnswer(isCorrect) {
             completeLevel(currentLevel);
         }
     } else {
-        alert("ตอบผิด ลองอีกครั้ง!");
+        // ถ้าตอบผิด ให้แสดงหน้าคำตอบผิด
+        document.getElementById(`question${currentQuestion}`).classList.add("hidden");
+        document.getElementById("wrong-answer").classList.remove("hidden");
     }
 }
 
