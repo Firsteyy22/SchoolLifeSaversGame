@@ -166,5 +166,5 @@ function completeLevel(level) {
     }
 
     alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-    window.location.href = "startGame.html"; // กลับไปที่หน้าหลัก
+    window.location.href = "../startGame.html"; // กลับไปที่หน้าหลัก
 }
