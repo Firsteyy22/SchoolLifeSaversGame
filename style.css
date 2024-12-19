@@ -210,15 +210,42 @@ p {
     left: 20px;
 }
 
-.image-container {
-    text-align: center;
-    margin: 20px 0;
+/* สีสำหรับปุ่มตอบถูก */
+.correct {
+    background-color: #4CAF50 !important; /* สีเขียว */
+    color: white;
 }
 
-.image-container img {
-    width: 400px; /* Adjust the size as needed อาจจะต้องเซ็ตให้รูปมีขนาดเท่ากันทุกรูป*/
-    height: auto;
-    border-radius: 10px; /* Optional: rounded corners */
+/* สีสำหรับปุ่มตอบผิด */
+.incorrect {
+    background-color: #F44336 !important; /* สีแดง */
+    color: white;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    text-align: center;
+    margin: 20px 0;
+    width: 100%; 
+    height: 400px; /* ความสูงของ container */
+    position: relative;
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+}
+
+.gif-container {
+    max-width: 100%; /* ไม่ให้ภาพใหญ่เกิน container */
+    max-height: 100%; /* จำกัดความสูง */
+    display: block; /* ลบพฤติกรรม inline */
+    border-radius: 10px; 
+    object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */
+}
+
+.wrong-image {
+    width: auto; 
+    height: auto; 
+    border-radius: 10px; 
 }
 
 /* สำหรับซ่อนเนื้อหา */
@@ -270,6 +297,23 @@ p {
 .button:active {
     transform: translate(0, 0.5em);
     box-shadow: none;
+}
+
+.button.correct {
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+}
+
+.button.incorrect {
+    background-color: #F44336; /* สีแดง */
+    color: white;
+}
+
+.button:disabled {
+    background-color: #ccc; /* สีปุ่มที่ถูกปิด */
+    color: #666; /* สีข้อความที่ดูจางลง */
+    pointer-events: none; 
+    opacity: 0.6;
 }
 
 @media (max-width: 600px) {

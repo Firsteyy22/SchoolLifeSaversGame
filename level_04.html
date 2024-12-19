@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Life Savers</title>
+    <link rel="icon" href="picture/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- ด่าน xx: เรื่อง xxxxx -->
+</head>
+<body class="gameplay-page">
+<!-- DRAFT -->
+    <div id="question-container" class="content">
+        <!-- คำถาม 1 -->
+        <div id="question1">
+            <div class="image-container">
+                <img id="gif-container-q1" class="gif-container" src="picture/" data-default-src="picture/" alt="Question Image">
+            </div>
+            <h1>ข้อความ</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, true, 'picture/', '', 'picture/')">ข้่อความ</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', 'ข้่อความ', 'picture/wrongANS/')">ข้่อความ</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', 'ข้่อความ', 'picture/wrongANS/')">ข้่อความ</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', 'ข้่อความ', 'picture/wrongANS/')">ข้่อความ</a>
+            </div>
+        </div>
+
+        <!-- คำถาม 2 -->
+        <div id="question2" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-q2" class="gif-container" src="picture/" data-default-src="picture/" alt="Question Image">
+            </div>
+            <h1>ข้่อความ</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, 'picture/', '', '')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">d</a>
+            </div>
+        </div>
+
+        <!-- คำถาม 3 -->
+        <div id="question2" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-q2" class="gif-container" src="picture/" data-default-src="picture/" alt="Question Image">
+            </div>
+            <h1>ข้่อความ</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, 'picture/', '', '')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, 'picture/wrongANS/', '...', '')">d</a>
+            </div>
+        </div>
+
+
+
+
+
+        
+    </div>
+
+
+    <!-- หน้าสำหรับคำตอบผิด -->
+    <div id="wrong-answer" class="content hidden">
+        <img id="wrong-image" class="wrong-image" src="" style="max-width: 300px;">
+        <h1 style="color: red;">คุณตอบผิด!</h1>
+        <h2 id="wrong-text">==ข้อความ==</h2>
+        <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
+    </div>
+
+    <!-- Buttons -->
+    <a href="startGame.html" class="button button-upleft">BACK</a>
+
+    <!-- JS -->
+    <script src="gameplay.js"></script>
+    <script src="levelcheck.js"></script>
+
+</body>
+</html>
