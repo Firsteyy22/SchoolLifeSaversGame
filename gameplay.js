@@ -5,7 +5,7 @@ const maxLevel = 19;
 let currentQuestion = 1; // ตัวแปรคำถามปัจจุบัน
 
 // ฟังก์ชันตรวจสอบคำตอบ
-function checkAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "") {
+function checkAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "", recapVideoSrc = "") {
     disableAllButtons(); // ปิดใช้งานปุ่มในคำถามปัจจุบัน
 
     if (isCorrect) {
@@ -16,9 +16,15 @@ function checkAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = ""
             if (afterGifPic) showImage(afterGifPic); 
             setTimeout(() => {
                 hideAnswerGIF();
-                nextQuestion();
+
+                // เล่นวิดีโอรีแคป ถ้ามี
+                if (recapVideoSrc) {
+                    playRecapVideo(recapVideoSrc, () => nextQuestion());
+                } else {
+                    nextQuestion();
+                }
             }, 0);
-        }, 2000);
+        }, 2000); // เล่น GIF 2 วินาที
     } else {
         button.classList.add("incorrect");
         showAnswerGIF(gifSrc);
@@ -32,6 +38,7 @@ function checkAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = ""
         }, 2000);
     }
 }
+
 
 function hideImage() {
     const gifContainer = document.getElementById(`gif-container-q${currentQuestion}`);
@@ -105,7 +112,7 @@ function nextQuestion() {
     if (nextQuestionElement) {
         nextQuestionElement.classList.remove("hidden");
 
-        // ตั้งค่าให้รูปแสดงทันทีเมื่อโหลดคำถาม
+        // ตั้งค่าให้รูปเริ่มต้นแสดงทันทีเมื่อโหลดคำถามใหม่
         const gifContainer = document.getElementById(`gif-container-q${currentQuestion}`);
         if (gifContainer) {
             const defaultSrc = gifContainer.getAttribute("data-default-src");
@@ -117,7 +124,7 @@ function nextQuestion() {
 
         enableAllButtons(); // เปิดใช้งานปุ่มใหม่
     } else {
-        completeLevel(currentLevel); // เรียกเฉพาะเมื่อทำคำถามถูกครบเท่านั้น
+        completeLevel(currentLevel); // เรียกเมื่อทำคำถามครบทุกข้อ
     }
 }
 
@@ -168,3 +175,54 @@ function completeLevel(level) {
     alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
     window.location.href = "../startGame.html"; // กลับไปที่หน้าหลัก
 }
+
+
+// **************
+// สำหรับพาร์ทเล่นเกม รูปแบบ 2 (ตอบแล้ว รีแคปวิดีโอแสดงการสอนแบบละเอียด แล้วไปยังคำถามถัดไป)
+function playRecapVideo(videoSrc, callback) {
+    // อ้างอิง HTML องค์ประกอบ
+    const videoContainer = document.getElementById("fullscreen-video-container");
+    const fullscreenVideo = document.getElementById("fullscreen-video");
+    const nextButton = document.getElementById("next-button");
+
+    let hasShownNextButton = false; // ตัวแปรสำหรับตรวจสอบว่าปุ่มถูกแสดงแล้วหรือยัง
+
+    // ซ่อนปุ่ม "ไปยังส่วนถัดไป" ตอนเริ่มต้น
+    nextButton.classList.add("hidden");
+
+    // แสดง Fullscreen Video Overlay
+    videoContainer.classList.remove("hidden");
+    fullscreenVideo.src = videoSrc; // ตั้งค่าแหล่งวิดีโอ
+    fullscreenVideo.autoplay = true;
+
+    // เริ่มเล่นวิดีโอ
+    fullscreenVideo
+        .play()
+        .then(() => {
+            console.log("Video is playing...");
+        })
+        .catch((error) => {
+            console.error("Failed to play video:", error);
+        });
+
+    // ตรวจจับเมื่อวิดีโอจบรอบแรก
+    fullscreenVideo.onended = () => {
+        if (!hasShownNextButton) {
+            console.log("Video ended for the first time.");
+            nextButton.classList.remove("hidden"); // แสดงปุ่ม "ไปยังส่วนถัดไป"
+            hasShownNextButton = true; // อัพเดตสถานะว่าปุ่มถูกแสดงแล้ว
+        }
+        // หลังจบรอบแรก ให้เล่นวิดีโอต่อ
+        fullscreenVideo.play();
+    };
+
+    // ฟังก์ชันสำหรับการกดปุ่ม "ไปยังส่วนถัดไป"
+    window.goToNextStep = () => {
+        console.log("Next button clicked.");
+        fullscreenVideo.pause();
+        fullscreenVideo.src = ""; // ล้างค่า src หลังเล่นเสร็จ
+        videoContainer.classList.add("hidden"); // ซ่อนวิดีโอ
+        if (callback) callback(); // เรียก callback ถ้ามี
+    };
+}
+

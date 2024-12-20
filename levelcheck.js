@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const totalLevels = 19; 
+    const totalLevels = 19;
 
     for (let i = 1; i <= totalLevels; i++) {
         const levelButton = document.getElementById(`level${i}-button`);

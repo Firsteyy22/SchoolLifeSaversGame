@@ -33,3 +33,6 @@ firsteyy22 (18-19/12/24)
 - flow = (press ans / GIF & button result / if true => next qustion, if false => pic + retry button
 - รวบไฟล์ ด่านเกมแต่ละด่าน ไว้ในโฟลเดอร์ level
 - เพิ่มไฟล์ map.html => แมพของนิค เอาโค้ดมาวางไว้เฉยๆ ใช้เสร็จก็ลบไฟล์นี้ทิ้ง
+
+firsteyy22 (20/12/24)
+- ทำพาร์ทเล่นเกม อีกรูปแบบ (ตอบคำถามแล้ว จะมี VDO สอดไส้ ก่อนไปส่วนถัดไป)
