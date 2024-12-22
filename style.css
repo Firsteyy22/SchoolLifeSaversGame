@@ -227,7 +227,7 @@ p {
     justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
     align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 100%; 
     height: 400px; /* ความสูงของ container */
     position: relative;
@@ -235,8 +235,8 @@ p {
 }
 
 .gif-container {
-    max-width: 100%; /* ไม่ให้ภาพใหญ่เกิน container */
-    max-height: 100%; /* จำกัดความสูง */
+    max-width: 400px; /* ไม่ให้ภาพใหญ่เกิน container */
+    max-height: 400px; /* จำกัดความสูง */
     display: block; /* ลบพฤติกรรม inline */
     border-radius: 10px; 
     object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */

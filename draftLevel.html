@@ -14,11 +14,11 @@
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
             <h1>ข้อความ</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '../picture/')">ข้่อความ</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/')">ข้่อความ</a>
                 <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
                 <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
                 <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
@@ -28,38 +28,71 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
             <h1>ข้่อความ</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">a</a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '')">b</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">c</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">d</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">d</a>
             </div>
         </div>
 
         <!-- คำถาม 3 -->
-        <div id="question2" class="hidden">
+        <div id="question3" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q3" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
             <h1>ข้่อความ</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">a</a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '')">b</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">c</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">d</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">d</a>
             </div>
         </div>
 
 
 
-
+        <!-- คำถาม x เปลี่ยนเลขด้วย-->
+        <div id="questionX" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-qX" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+            </div>
+            <h1>ข้่อความ</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/')">d</a>
+            </div>
+        </div>
 
         
+        <!-- คำถาม x เปลี่ยนเลขด้วย (แบบมีวิดีโอแสดงรายละเอียดแทรก)-->
+        <div id="questionX" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-qX" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+            </div>
+            <h1>ข้่อความ</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/', '')">a</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '')">b</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/', '')">c</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '../picture/wrongANS/', '')">d</a>
+            </div>
+        </div>
+
     </div>
 
+
+
+    <!-- Fullscreen Video Overlay -->
+    <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
+        <video id="fullscreen-video" class="fullscreen-video" muted></video>
+        <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
+    </div>
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">

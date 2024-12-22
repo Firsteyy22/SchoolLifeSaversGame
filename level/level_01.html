@@ -6,36 +6,51 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 1: เรื่อง xxxxx -->
+    <!-- ด่าน 1: เรื่อง แผลถลอก -->
 </head>
 <body class="gameplay-page">
+<!-- แบบ 1 ที่แพลนตั้งแต่แรก -->
 
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/ex01.png" data-default-src="../picture/ex01.png" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/ex01.png" data-default-src="../picture/questionIMG/ex01.png" alt="Question Image">
             </div>
-            <h1>แผลถลอกควรทำอย่างไร</h1>
+            <h1>เมื่อเกิดแผลถลอก ควรทำอย่างไรเป็นขั้นตอนแรก ?</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/ex1.5.png', '', '../picture/ex1.5.png')">ล้างน้ำเปล่า</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_01.gif', 'การทายาหม่อง...', '../picture/wrongANS/wrong1.png')">ทายาหม่อง</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_02.gif', 'เบตาดีนไม่เหมาะ...', '../picture/wrongANS/wrong2.png')">เบตาดีน</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_03.gif', 'ไม่ควรปล่อยแผล...', '../picture/wrongANS/wrong3.png')">ปล่อยไว้อย่างนั้น</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/ex1.5.png', '', '../picture/correctANS/ex1.5.png')">ล้างแผลด้วยน้ำเปล่าให้สะอาด</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_01.gif', 'แสบแผลมากกก คิดได้ไงถึงทายาหม่องเนี่ย', '../picture/wrongANS/wrong1.png')">ทายาหม่องที่แผล</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_02.gif', 'แผลถลอกมาใหม่ ๆ ไม่อยากทำความสะอาดก่อนหรอ', '../picture/wrongANS/wrong2.png')">ทาเบตาดีนที่แผล</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_03.gif', 'ปล่อยไว้ก็ไม่ได้ดีขึ้น แถมเสี่ยงติดเชื้อโรคได้ด้วยนะ', '../picture/wrongANS/wrong3.png')">ปล่อยทิ้งไว้ให้แห้ง</a>
             </div>
         </div>
 
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/ex1.5.png" data-default-src="../picture/ex1.5.png" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/ex1.5.png" data-default-src="../picture/correctANS/ex1.5.png" alt="Question Image">
             </div>
-            <h1>แล้วควรทำอย่างไรต่อ?</h1>
+            <h1>เมื่อล้างแผลถลอกด้วยน้ำเปล่าให้สะอาดแล้ว ควรทำอย่างไรต่อ ?</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong1.gif', 'ไม่ควรบีบแผล...', '../picture/wrongANS/wrong1.gif')">บีบแผลให้เลือดออก</a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/wrongANS/correct.gif', '', '')">รีบไปโรงพยาบาล</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong2.gif', 'การรัดแผล...', '')">ใช้ผ้ารัดเหนือแผล</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong3.gif', 'การเป่า...', '')">เป่า</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong1.gif', 'น้ำส้มอร่อยสดชื่น แต่แสบแผลเหมือนเดิม', '../picture/wrongANS/wrong1.gif')">ดื่มน้ำส้ม</a>                
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เกือบจะถูกแล้ว แต่ยังต้องทำความสะอาดอีกนิดนึงนะ', '../picture/wrongANS/')">ทาเบตาดีนที่แผล</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong3.gif', 'รักษาทางใจได้ แต่ไม่ได้รักษาแผลนะจ๊ะ', '../picture/wrongANS/')">เป่าให้แผลแห้ง</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/correct.gif', '', '../picture/correctANS/')">เช็ดแอลกอฮอล์ บริเวณรอบแผล</a> 
+            </div>
+        </div>
+
+        <!-- คำถาม 3 -->
+        <div id="question3" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-q3" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
+            </div>
+            <h1>เมื่อเช็ดรอบ ๆ แผลถลอกด้วยแอลกอฮอล์แล้ว ควรทำอย่างไรต่อ ?</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_01.gif', 'แสบแผลมากกกก คิดได้ไงถึงทายาหม่องเนี่ย', '../picture/wrongANS/wrong1.png')">ทายาหม่องที่แผล</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/')">ทาเบตาดีนที่แผล</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'น้ำส้มอร่อยสดชื่น แต่แสบแผลเหมือนเดิม', '../picture/wrongANS/')">ดื่มน้ำส้ม</a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เมื่อกี้ล้างน้ำเปล่าไปแล้วนี่หน่า', '../picture/wrongANS/')">ล้างแผลด้วยน้ำเปล่าให้สะอาด</a>
             </div>
         </div>
     </div>
