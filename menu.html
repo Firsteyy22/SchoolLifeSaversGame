@@ -7,25 +7,19 @@
     <link rel="icon" href="picture/LOGO.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="map-page map-container">
-    
-    <div class="content">
-        <!-- เลือกด่าน map -->
-        <div id="level">
-            <a href="level/level_01.html?level=1" id="level1-button" class="button">Level 1</a>
-            <a href="level/level_02.html?level=2" id="level2-button" class="button locked">Level 2</a>
-            <a href="level/level_03.html?level=3" id="level3-button" class="button locked">Level 3</a>
-            <a href="level/level_04.html?level=4" id="level4-button" class="button locked">Level 4</a>
-        </div>
+<body class="menu-page">
+    <!-- Menu page หน้าแรก -->
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="picture/LOGO.png" alt="Game Logo" class="logo">
     </div>
-
-    <!-- Buttons -->
-    <a href="menu.html" class="button button-left">MENU</a>
-    <!-- <a class="button reset-button" onclick="resetGame()">Reset Game</a> -->
-    <a href="map.html" class="button button-right">TEST</a>
+        
+    <!-- Buttons Section -->
+        <a href="startGame.html" class="button">START</a>
+        <a href="setting.html" class="button">SETTING</a>
+        <a href="aboutus.html" class="button">ABOUT US</a>
 
     <!-- JS -->
-    <script src="levelcheck.js" defer></script>
     <script src="setting.js" defer></script>
     <script src="audioController.js" defer></script>
     <script>
@@ -53,13 +47,15 @@
         });
     </script>
     
-        <!-- audio -->
-        <audio id="bg-music" loop>
-            <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
-        </audio>
-       
-        <audio id="sfx" preload="auto">
-            <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
-        </audio>
+    
+    
+    <!-- audio -->
+    <audio id="bg-music" loop>
+        <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
+    </audio>
+   
+    <audio id="sfx" preload="auto">
+        <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>

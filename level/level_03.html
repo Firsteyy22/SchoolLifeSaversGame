@@ -88,6 +88,42 @@
     <!-- JS -->
     <script src="../levelcheck.js"></script>
     <script src="../gameplay.js"></script>
-
+    <script src="../setting.js" defer></script>
+    <script src="../audioController.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (window.audioManager) {
+                window.audioManager.init();
+    
+                // ตรวจสอบ interaction ก่อนเล่น BGM
+                const hadInteraction = localStorage.getItem("hadUserInteraction") === "true";
+                if (hadInteraction) {
+                    try {
+                        await window.audioManager.playBGM();
+                    } catch (error) {
+                        console.error("Failed to play BGM:", error);
+                    }
+                }
+            }
+        });
+    
+        // ก่อนออกจากหน้า บันทึก currentTime
+        window.addEventListener("beforeunload", () => {
+            if (window.audioManager && window.audioManager.isPlayingBGM) {
+                localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
+            }
+        });
+    </script>
+    
+    
+        <!-- audio -->
+        <audio id="bg-music" loop>
+            <source src="../music/bgm/gameplay_bg.mp3" type="audio/mpeg">
+        </audio>
+       
+        <audio id="sfx" preload="auto">
+            <source src="../music/sfx/click-pop.mp3" type="audio/mpeg">
+        </audio>
+        
 </body>
 </html>

@@ -40,3 +40,6 @@ firsteyy22 (20/12/24)
 firsteyy22 (23/12/24)
 - ใส่ pic ใน text box คำตอบ
 - เพิ่มเนื้อหาใน aboutus.html
+
+firsteyy22 (26/12/24)
+- ใส่ BGM และ sfx

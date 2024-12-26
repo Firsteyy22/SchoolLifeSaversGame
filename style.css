@@ -33,7 +33,7 @@ body {
 /* Central content styling */
 .content {
     text-align: center; /* Center the text */
-    gap: 30px; /* Space between lines (if using flexbox inside the content) */
+
 }
 
 /*Fonts*/
@@ -145,6 +145,24 @@ h4 {
 }
 
 /* Setting page */
+.setting-page .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 90vh; /* หรือใช้ 100vh ตามต้องการ */
+    justify-content: space-between; /* กระจายเนื้อหา */
+    margin-bottom: 0; 
+}
+
+/* ปุ่ม Reset อยู่ใน Container */
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* ดันปุ่มไปล่าง */
+    margin-bottom: 20px; /* เพิ่มช่องว่างจากขอบล่าง */
+}
+
 .setting-page .button {
     position: absolute; /* ปุ่มในหน้า Map ใช้ absolute */
     display: inline-block;
@@ -172,6 +190,46 @@ h4 {
     height: 30px;
     bottom: 30px;
     left: 20px;
+}
+
+.setting-page .reset-button {
+    font-size: 1.5rem;
+    background: var(--colorShadeE);
+    color: var(--colorShadeA);
+    border: 2px solid var(--colorShadeA);
+    max-width: 300px;
+}
+
+.setting-item {
+    margin: 10px 0;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    justify-content: space-between; /* กระจายพื้นที่ระหว่างหัวข้อกับตัวควบคุม */
+}
+
+.setting-item h2 {
+    margin: 0;
+    flex-shrink: 0; /* ป้องกันข้อความถูกบีบ */
+    text-align: left; /* ชิดซ้าย (default) */
+    margin-right: 200px;
+}
+
+.setting-item .control-group {
+    display: flex; /* ใช้ Flexbox สำหรับ Toggle และ Label */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    gap: 10px; /* เว้นระยะระหว่าง toggle และ label */
+}
+
+.setting-item label, 
+.setting-item input[type="range"] {
+    margin: 0;
+    flex-grow: 1; /* ให้คอนโทรลขยายเต็มพื้นที่ */
+}
+
+.setting-item input[type="range"] {
+    margin-left: auto; /* ดัน Range Slider ให้ชิดขวา */
+    flex-grow: 1; /* ให้ Range Slider ปรับความกว้างตามพื้นที่ */
+    max-width: 200px; /* จำกัดขนาดสูงสุดเพื่อความสมดุล */
 }
 
 /* Game play page */
@@ -205,7 +263,7 @@ h4 {
     background: var(--colorShadeE);
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
-    width: 300px;
+    width: 350px;
     height: 50px;
     text-align: center;
     word-wrap: normal;

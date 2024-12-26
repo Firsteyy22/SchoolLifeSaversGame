@@ -3,20 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Life Savers</title>
-
-    <!-- <link rel="icon" href=""> for web icon-->
+    <title>Settings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="setting-page">
-    <!-- Menu -> Setting page หน้าการตั้งค่า -->
     <div class="content">
-        <p><h1>Setting</h1></p>
-        <p>This is Setting page (______ will take care of this page)</p>
+        <h1>Settings</h1>
+
+        <!-- Background Music Section -->
+        <div class="setting-item">
+            <h2>Background Music</h2>
+            <div class="control-group">
+                <input type="range" id="bg-music-volume" min="0" max="100" value="50">
+                <label for="bg-music-toggle">
+                    <input type="checkbox" id="bg-music-toggle" checked> Enable
+                </label>
+            </div>
+            <audio id="bg-music" loop>
+                <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Sound Effect Section -->
+        <div class="setting-item">
+            <h2>Sound Effects</h2>
+            <div class="control-group">
+                <input type="range" id="sfx-volume" min="0" max="100" value="50">
+                <label for="sfx-toggle">
+                    <input type="checkbox" id="sfx-toggle" checked> Enable
+                </label>
+            </div>
+            <audio id="sfx" preload="auto">
+                <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="reset-button-container">
+            <a id="reset-button" class="button">คืนค่าเริ่มต้น</a>
+        </div>
     </div>
 
-    <!-- Buttons Section -->
-    <a href="index.html" class="button button-left">BACK</a>
+    <!-- Navigation Buttons -->
+    <a href="menu.html" class="button button-left">BACK</a>
+
+    <!-- JS -->
+    <script src="setting.js" defer></script>
+    <script src="audioController.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (window.audioManager) {
+                window.audioManager.init();
+    
+                // ตรวจสอบ interaction ก่อนเล่น BGM
+                const hadInteraction = localStorage.getItem("hadUserInteraction") === "true";
+                if (hadInteraction) {
+                    try {
+                        await window.audioManager.playBGM();
+                    } catch (error) {
+                        console.error("Failed to play BGM:", error);
+                    }
+                }
+            }
+        });
+    
+        // ก่อนออกจากหน้า บันทึก currentTime
+        window.addEventListener("beforeunload", () => {
+            if (window.audioManager && window.audioManager.isPlayingBGM) {
+                localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
+            }
+        });
+    </script>
+    
+    
     
 </body>
 </html>

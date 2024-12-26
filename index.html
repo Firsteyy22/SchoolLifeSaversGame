@@ -8,16 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="menu-page">
-    <!-- Menu page หน้าแรก -->
-    <!-- Logo Section -->
     <div class="logo">
         <img src="picture/LOGO.png" alt="Game Logo" class="logo">
     </div>
-        
-    <!-- Buttons Section -->
-        <a href="startGame.html" class="button">START</a>
-        <a href="setting.html" class="button">SETTING</a>
-        <a href="aboutus.html" class="button">ABOUT US</a>
+    <div class="click-anywhere-text" style="text-align: center; position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%);">
+        <h2>Click anywhere to start</h2>
+    </div>
 
+    <!-- audio -->
+    <audio id="bg-music" loop>
+        <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx" preload="auto">
+        <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JS -->
+    <script src="audioController.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.addEventListener("click", async () => {
+                // บันทึก interaction เพื่อปลดล็อค autoplay
+                localStorage.setItem("hadUserInteraction", "true");
+                
+                // เล่น SFX (ถ้าเปิดใช้งาน)
+                if (window.audioManager) {
+                    try {
+                        await window.audioManager.playSFX();
+                    } catch (error) {
+                        console.error("SFX playback failed:", error);
+                    }
+                }
+    
+                // นำทางไปยัง menu.html
+                window.location.href = "menu.html";
+            });
+        });
+    </script>
+    
 </body>
 </html>

@@ -18,7 +18,7 @@
             </div>
             <h1>เลือดกำเดาไหล</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/ex2.5.png', '', '../picture/ex2.5.png')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/ex2.5.png', '', '../picture/ex2.5.png', '../video/')">
                     <img src="../picture/element/" class="button-element">
                     บีบจมูกและโน้มตัวไปข้างหน้า
                 </a>
@@ -44,19 +44,19 @@
             </div>
             <h1>แล้วควรทำอย่างไรต่อ?</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong1.gif', '...', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong1.gif', '...', '', '')">
                     <img src="../picture/element/" class="button-element">
                     a
                 </a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/wrongANS/correct.gif', '', '')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/wrongANS/correct.gif', '', '', '../video/')">
                     <img src="../picture/element/" class="button-element">
                     b
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong2.gif', '...', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong2.gif', '...', '', '')">
                     <img src="../picture/element/" class="button-element">
                     c
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong3.gif', '...', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong3.gif', '...', '', '')">
                     <img src="../picture/element/" class="button-element">
                     d
                 </a>
@@ -66,6 +66,11 @@
         
     </div>
 
+    <!-- Fullscreen Video Overlay -->
+    <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
+        <video id="fullscreen-video" class="fullscreen-video" muted></video>
+        <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
+    </div>    
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">
@@ -81,6 +86,41 @@
     <!-- JS -->
     <script src="../gameplay.js"></script>
     <script src="../levelcheck.js"></script>
-
+    <script src="../setting.js" defer></script>
+    <script src="../audioController.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (window.audioManager) {
+                window.audioManager.init();
+    
+                // ตรวจสอบ interaction ก่อนเล่น BGM
+                const hadInteraction = localStorage.getItem("hadUserInteraction") === "true";
+                if (hadInteraction) {
+                    try {
+                        await window.audioManager.playBGM();
+                    } catch (error) {
+                        console.error("Failed to play BGM:", error);
+                    }
+                }
+            }
+        });
+    
+        // ก่อนออกจากหน้า บันทึก currentTime
+        window.addEventListener("beforeunload", () => {
+            if (window.audioManager && window.audioManager.isPlayingBGM) {
+                localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
+            }
+        });
+    </script>
+    
+    
+        <!-- audio -->
+        <audio id="bg-music" loop>
+            <source src="../music/bgm/gameplay_bg.mp3" type="audio/mpeg">
+        </audio>
+       
+        <audio id="sfx" preload="auto">
+            <source src="../music/sfx/click-pop.mp3" type="audio/mpeg">
+        </audio>
 </body>
 </html>
