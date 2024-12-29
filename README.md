@@ -43,3 +43,6 @@ firsteyy22 (23/12/24)
 
 firsteyy22 (26/12/24)
 - ใส่ BGM และ sfx
+
+firsteyy22 (29/12/24)
+- UI หน้า seeting.html
