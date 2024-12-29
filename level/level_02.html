@@ -6,7 +6,7 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 2: เรื่อง เลือดกำเดาไหล -->
+    <!-- ด่าน 2: เรื่อง มีดบาด -->
 </head>
 <body class="gameplay-page">
 
@@ -14,25 +14,25 @@
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/ex02.png" data-default-src="../picture/ex02.png" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
-            <h1>เลือดกำเดาไหล</h1>
+            <h1>อ้ะ! โดนมีดบาดซะได้ ต้องทำยังไงละเนี่ย</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/ex2.5.png', '', '../picture/ex2.5.png', '../video/')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
                     <img src="../picture/element/" class="button-element">
-                    บีบจมูกและโน้มตัวไปข้างหน้า
+                    ล้างแผลด้วยน้ำเปล่า
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_04.gif', 'เท่ชะมัด แต่ไม่ได้ผลเท่าไหร่นะ...', '../picture/wrongANS/wrong4.png')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ใส่แว่นกันแดด
+                    ห้ามเลือด
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/gifexample_02.gif', 'เลือดไหลมากกว่าเดิม!', '../picture/wrongANS/wrong5.png')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    นวดจมูก
+                    เลียแผล
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong6.gif', 'เย็นจี๊ดดดดด', '../picture/wrongANS/wrong6.gif')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    เอาน้ำเย็นราดหัว
+                    ประคบน้ำแข็ง
                 </a>
             </div>
         </div>
@@ -40,30 +40,30 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/ex2.5.png" data-default-src="../picture/ex2.5.png" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
-            <h1>แล้วควรทำอย่างไรต่อ?</h1>
+            <h1>ล้างแผลแล้ว เลือดยังไหลอยู่เลย ทำไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong1.gif', '...', '', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    a
+                    ล้างน้ำอีกครั้ง
                 </a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/wrongANS/correct.gif', '', '', '../video/')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
                     <img src="../picture/element/" class="button-element">
-                    b
+                    ใช้ผ้าสะอาดวางบนแผลแล้วกดไว้
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong2.gif', '...', '', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    c
+                    โรยแผลด้วยเกลือ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/wrong3.gif', '...', '', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    d
+                    รอให้เลือดหยุดไหลไปเอง
                 </a>
             </div>
         </div>
 
-        
+    
     </div>
 
     <!-- Fullscreen Video Overlay -->

@@ -5,6 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* From Uiverse.io by r7chardgh */ 
+        /* The switch - the box around the slider */
+        .switch {
+          font-size: 20px;
+          position: relative;
+          display: inline-block;
+          width: 5em;
+          height: 2.5em;
+          user-select: none;
+        }
+        
+        /* Hide default HTML checkbox */
+        .switch .cb {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        /* The slider */
+        .toggle {
+          position: absolute;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          background-color: #373737;
+          border-radius: 0.25em;
+          transition: 0.4s;
+          text-transform: uppercase;
+          font-weight: 700;
+          overflow: hidden;
+          box-shadow: -0.3em 0 0 0 #373737, -0.3em 0.3em 0 0 #373737,
+            0.3em 0 0 0 #373737, 0.3em 0.3em 0 0 #373737, 0 0.3em 0 0 #373737;
+        }
+        
+        .toggle > .left {
+          position: absolute;
+          display: flex;
+          width: 50%;
+          height: 88%;
+          background-color: #f3f3f3;
+          color: red;
+          left: 0;
+          bottom: 0;
+          align-items: center;
+          justify-content: center;
+          transform-origin: right;
+          transform: rotateX(10deg);
+          transform-style: preserve-3d;
+          transition: all 150ms;
+        }
+        
+        .left::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: rgb(206, 206, 206);
+          transform-origin: center left;
+          transform: rotateY(90deg);
+        }
+        
+        .left::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: rgb(112, 112, 112);
+          transform-origin: center bottom;
+          transform: rotateX(90deg);
+        }
+        
+        .toggle > .right {
+          position: absolute;
+          display: flex;
+          width: 50%;
+          height: 88%;
+          background-color: #f3f3f3;
+          color: rgb(206, 206, 206);
+          right: 1px;
+          bottom: 0;
+          align-items: center;
+          justify-content: center;
+          transform-origin: left;
+          transform: rotateX(10deg) rotateY(-45deg);
+          transform-style: preserve-3d;
+          transition: all 150ms;
+        }
+        
+        .right::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: rgb(206, 206, 206);
+          transform-origin: center right;
+          transform: rotateY(-90deg);
+        }
+        
+        .right::after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: rgb(112, 112, 112);
+          transform-origin: center bottom;
+          transform: rotateX(90deg);
+        }
+        
+        .switch input:checked + .toggle > .left {
+          transform: rotateX(10deg) rotateY(45deg);
+          color: rgb(206, 206, 206);
+        }
+        
+        .switch input:checked + .toggle > .right {
+          transform: rotateX(10deg) rotateY(0deg);
+          color: #487bdb;
+        }
+
+        /* volume slider */
+        .range input {
+        -webkit-appearance: none; /* สำหรับเบราว์เซอร์ที่ใช้ WebKit */
+        -moz-appearance: none;    /* สำหรับ Firefox */
+        appearance: none;         /* ค่าเริ่มต้นสำหรับเบราว์เซอร์อื่น */
+    
+        width: 400px;             /* กำหนดความกว้าง */
+        height: 4px;              /* กำหนดความสูง */
+        border-radius: 5px;       /* มุมโค้งมน */
+        background-color: #ba3950; /* สีพื้นหลัง */
+        outline: none;            /* ลบเส้นขอบ */
+        }
+
+        .range input:focus {
+            outline: 2px solid #ffffff; /* แสดงเส้นขอบเมื่อ focus */
+        }
+
+        .range input::-webkit-slider-thumb{
+	    -webkit-appearance:none;
+        position: relative;
+        z-index: 2;
+	    width:20px;
+	    height:20px;
+	    border-radius:50%;
+	    background-color:#a83348;
+        }
+        .range span{
+	    position:absolute;
+	    margin-left:14px;
+	    width:50px;
+	    height:30px;
+	    background-color:#222;
+	    color:#fff;
+	    border-radius:3px;
+	    text-align:center;
+	    line-height:30px;
+        }
+        .range span:before{
+	    content:'';
+	    position:absolute;
+	    border-right:9px solid transparent;
+	    border-left:9px solid transparent;
+	    border-bottom:12px solid #222;
+	    left:-10px;
+	    top:50%;
+	    transform:translateY(-50%) rotate(-90deg);
+        }
+        /* สำหรับ Range ปรับ Volume */
+    </style>
+        
 </head>
 <body class="setting-page">
     <div class="content">
@@ -14,28 +183,50 @@
         <div class="setting-item">
             <h2>Background Music</h2>
             <div class="control-group">
-                <input type="range" id="bg-music-volume" min="0" max="100" value="50">
-                <label for="bg-music-toggle">
-                    <input type="checkbox" id="bg-music-toggle" checked> Enable
+
+                <div class='range'>
+                    <input type="range" id="bg-music-volume" min='0' max='100' step='1' value="50">
+                    <span>50%</span>
+                </div>                
+
+                <label class="switch" for="bg-music-toggle">
+                    <input class="cb" type="checkbox" id="bg-music-toggle">
+                    <span class="toggle">
+                      <span class="left">ปิด</span>
+                      <span class="right">เปิด</span>
+                    </span>
                 </label>
             </div>
+
             <audio id="bg-music" loop>
                 <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
             </audio>
+
         </div>
 
         <!-- Sound Effect Section -->
         <div class="setting-item">
             <h2>Sound Effects</h2>
             <div class="control-group">
-                <input type="range" id="sfx-volume" min="0" max="100" value="50">
-                <label for="sfx-toggle">
-                    <input type="checkbox" id="sfx-toggle" checked> Enable
+
+                <div class='range'>
+                    <input type="range" id="sfx-volume" min='0' max='100' step='1' value="50">
+                    <span>50%</span>
+                </div>
+
+                <label class="switch" for="sfx-toggle">
+                    <input class="cb" type="checkbox" id="sfx-toggle">
+                    <span class="toggle">
+                      <span class="left">ปิด</span>
+                      <span class="right">เปิด</span>
+                    </span>
                 </label>
             </div>
+
             <audio id="sfx" preload="auto">
                 <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
             </audio>
+
         </div>
 
         <!-- Reset Button -->
@@ -74,7 +265,73 @@
             }
         });
     </script>
-    
+
+    <!-- JS for volume slider -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+    $(function () {
+        $('.range input').on('mousemove', function () {
+            var getValRange = $(this).val();
+            // ค้นหา span ที่เกี่ยวข้องเฉพาะ slider ที่กำลังปรับ
+            $(this).siblings('span').text(getValRange + '%');
+        });
+    });
+
+    // Reset settings to default
+    $('#reset-button').on('click', function () {
+    // กำหนดค่าดีฟอลต์สำหรับ range และอัปเดต span
+    $('#bg-music-volume').val(50).siblings('span').text('50%');
+    $('#sfx-volume').val(50).siblings('span').text('50%');
+
+    // Reset ค่าอื่นๆ ใน localStorage หรือ audioManager (ถ้ามี)
+    if (window.audioManager) {
+        window.audioManager.saveSettings({
+            bgMusicVolume: 50,
+            sfxVolume: 50,
+            bgMusicEnabled: true,
+            sfxEnabled: true,
+        });
+    }
+
+    console.log("Settings reset to default.");
+    });
+
+    document.addEventListener("DOMContentLoaded", async () => {
+    // ซิงค์ค่าของ range และตัวเลข
+    function syncRangeWithSpan() {
+        document.querySelectorAll('.range').forEach((rangeContainer) => {
+            const input = rangeContainer.querySelector('input[type="range"]');
+            const span = rangeContainer.querySelector('span');
+
+            // ซิงค์ค่าของ input กับ span
+            span.textContent = input.value + '%';
+        });
+    }
+
+    // ซิงค์ค่าเมื่อหน้าโหลด
+    syncRangeWithSpan();
+
+    // หากมี audioManager บริหารจัดการการตั้งค่าเสียง
+    if (window.audioManager) {
+        window.audioManager.init();
+
+        // ตรวจสอบ interaction ก่อนเล่น BGM
+        const hadInteraction = localStorage.getItem("hadUserInteraction") === "true";
+        if (hadInteraction) {
+            try {
+                await window.audioManager.playBGM();
+            } catch (error) {
+                console.error("Failed to play BGM:", error);
+            }
+        }
+    }
+});
+
+	</script>
     
     
 </body>
