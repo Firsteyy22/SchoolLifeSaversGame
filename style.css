@@ -18,6 +18,7 @@ body {
     height: 100vh; /* Full height */
     width: 100%; /* Full width */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
     align-items: center; /* Center the content horizontally */
@@ -33,7 +34,6 @@ body {
 /* Central content styling */
 .content {
     text-align: center; /* Center the text */
-
 }
 
 /*Fonts*/
@@ -217,7 +217,7 @@ h4 {
 .setting-item .control-group {
     display: flex; /* ใช้ Flexbox สำหรับ Toggle และ Label */
     align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-    gap: 10px; /* เว้นระยะระหว่าง toggle และ label */
+    gap: 30px; /* เว้นระยะระหว่าง toggle และ label */
 }
 
 .setting-item label, 
