@@ -1,0 +1,120 @@
+svg {
+    display: inline-block;
+}
+
+.svg-container {
+    position: relative;
+}
+
+#hover-image {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: -28%; /* Add spacing between the SVG and the image */
+    margin-top: -10%;
+    width: 10%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image2 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: 7%; /* Add spacing between the SVG and the image */
+    margin-top: -15%;
+    width: 10%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image3 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: 10%; /* Add spacing between the SVG and the image */
+    margin-top: 15%;
+    width: 8%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image4 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: 49%; /* Add spacing between the SVG and the image */
+    margin-top: -1%;
+    width: 10%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image5 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: -19%; /* Add spacing between the SVG and the image */
+    margin-top: 20%;
+    width: 10%; /* Default width */
+    z-index: 10;
+}
+
+.blink {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(10 10 20px rgba(255, 255, 255, 0.6));
+    }
+    100% {
+        filter: drop-shadow(20 20 40px rgba(255, 255, 255, 1));
+    }
+}
+
+.hvbig {
+    transition: transform 0.2s ease-in-out; /* Smooth transition */
+    transform-origin: 1000px 1000px; /* Set transform origin to the center of the circle */
+}
+
+.hvbig:hover {
+    transform: scale(1.2); /* Scale up 20% on hover */
+}
+
+.zoom:click {
+    transform: scale(1.2); /* Scale up 20% when zoomed */
+    transform-origin: center;
+}
+
+.shake {
+    animation: shake 0.5s infinite; /* Apply the 'shake' animation on hover with infinite iterations */
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
