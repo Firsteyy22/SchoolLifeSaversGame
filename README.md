@@ -7,6 +7,9 @@ Update code to Github (open terminal in VSCode)
 1) git add .
 2) git commit -m "Update code changes"
 3) git push origin main
+
+Update code from friend
+= git pull origin main
 ============
 
 firsteyy22 (09/11/24): add font to CSS + add page setting + add page credit + start game + ใส่ basic button ไปด้วย
@@ -41,3 +44,5 @@ firsteyy22 (23/12/24): ใส่ pic ใน text box คำตอบ + เพิ
 firsteyy22 (26/12/24): ใส่ BGM และ sfx หน้า setting.html
 
 firsteyy22 (29/12/24): ปรับ UI หน้า seeting.html
+
+Arthurz & firsteyy22 (02/01/25): ใส่ isometric map
