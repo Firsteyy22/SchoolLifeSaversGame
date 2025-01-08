@@ -6,7 +6,7 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน xx: เรื่อง xxxxx -->
+    <!-- ด่าน 5: เรื่อง ไฟไหม้ น้ำร้อนลวก -->
 </head>
 <body class="gameplay-page">
 <!-- DRAFT -->
@@ -16,23 +16,23 @@
             <div class="image-container">
                 <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>ข้อความ</h1>
+            <h1>น้ำร้อนลวก มีกี่ระดับ</h1>
             <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'น้อยไปหน่อยนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    1 ระดับ
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ใกล้เคียง แต่ยังไม่ถูก', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    2 ระดับ
+                </a>
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความA
+                    3 ระดับ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ใกล้เคียง แต่ยังไม่ถูก', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความB
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความC
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความD
+                    4 ระดับ
                 </a>
             </div>
         </div>
@@ -42,53 +42,52 @@
             <div class="image-container">
                 <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>ข้่อความ</h1>
+            <h1>ถ้าเป็นแผลระดับ 2 หรือ 3 ควรทำอย่างไร</h1>
             <div class="button-grid">
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความA
+                    ล้างด้วยน้ำสะอาด อุณหภูมิปกติ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรเพราะทำให้ระคายเคือง', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความB
+                    ทาด้วยยาสีฟัน สูตรไม่เย็น
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'แสบกว่าเดิม และเพิ่มความเสี่ยงติดเชื้อ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความC
+                    ทายาหม่อง สูตรเย็น
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'กันแดดไม่ช่วยอะไรเลย', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความD
+                    ทากันแดด สูตรป้องกัน UV
                 </a>
             </div>
         </div>
         
-        <!-- คำถาม x เปลี่ยนเลขด้วย -->
-        <div id="questionX" class="hidden">
+        <!-- คำถาม 3 เปลี่ยนเลขด้วย -->
+        <div id="question3" class="hidden">
             <div class="image-container">
-                <img id="gif-container-qX" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
             <h1>ข้่อความ</h1>
             <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำเพราะอาจเกิดการติดเชื้อ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    เจาะตุ่มด้วยตัวเอง
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ผิดจุดประสงค์ และไม่ควรกินยาเอง', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    กินยาแก้ปวด
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'แผลเริ่มแย่ลง ไม่ควรแปะพลาสเตอร์เฉย ๆ สิ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ติดพลาสเตอร์ที่แผล
+                </a>
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ข้่อความA
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความB
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความC
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความD
+                    พบแพทย์
                 </a>
             </div>
         </div>
-
     </div>
 
     <!-- Fullscreen Video Overlay -->

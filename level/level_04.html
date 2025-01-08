@@ -6,62 +6,64 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน xx: เรื่อง xxxxx -->
+    <!-- ด่าน 4: เรื่อง กระดูกหัก -->
 </head>
 <body class="gameplay-page">
-<!-- DRAFT -->
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>ข้อความ</h1>
+            <h1>กระดูกแขนหัก! ทำยังไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '../picture/')">ข้่อความ</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/')">ข้่อความ</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                    <img src="../picture/element/" class="button-element">
+                    วางแขนบนไม้หรือหนังสือหนา ๆ
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ อาจทำให้พิการได้นะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ขยับแขนไปมาให้เข้าที่
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'สายไปแล้ว!! ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ดื่มนมให้กระดูกแข็งแรงขึ้น
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ ควรให้แพทย์หรือผู้เชี่ยวชาญช่วย', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    รอให้เพื่อนมาช่วยขยับให้
+                </a>
             </div>
         </div>
 
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>ข้่อความ</h1>
+            <h1>เมื่อมีความจำเป็นต้องเคลื่อนย้าย ให้ใช้ผ้ายึดเพื่อยึดไม้กับแขนไม่ให้เคลื่อนไหว นั้นเป็นเรื่องที่...</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">a</a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '')">b</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">c</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">d</a>
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                    <img src="../picture/element/" class="button-element">
+                    ถูกต้อง
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ไม่ถูกต้อง
+                </a>
             </div>
         </div>
-
-        <!-- คำถาม 3 -->
-        <div id="question3" class="hidden">
-            <div class="image-container">
-                <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
-            </div>
-            <h1>ข้่อความ</h1>
-            <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">a</a>
-                <a class="button" onclick="checkAnswer(this, true, '../picture/', '', '')">b</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">c</a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '...', '')">d</a>
-            </div>
-        </div>
-
-
-
-
     </div>
 
+    <!-- Fullscreen Video Overlay -->
+    <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
+        <video id="fullscreen-video" class="fullscreen-video" muted></video>
+        <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
+    </div>
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">
-        <img id="wrong-image" class="wrong-image" src="" style="max-width: 300px;">
+        <img id="wrong-image" class="wrong-image" src="" style="max-width: 400px;">
         <h1 style="color: red;">คุณตอบผิด!</h1>
         <h2 id="wrong-text">==ข้อความ==</h2>
         <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
