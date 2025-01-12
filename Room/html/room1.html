@@ -7,6 +7,7 @@
     <link rel="icon" href="/picture/LOGO.png">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/Room/css/style_room1.css">
+	<link rel="stylesheet" href="/Room/css/allroom.css">
 </head>
 
 <body class="map-page map-container svg-container">
@@ -7147,6 +7148,8 @@
 		</g>
 	</g>
 
+<!-- LEVEL 03 : ลวก -->
+<a href="/level/level_03.html">
 	<g id="scararm" class="blink">
 		<path class="st187" d="M2593.39,1848.07c6.89,3.93,31.43,13.13,42.59,6.06s7.82-24.08-8.63-34.57s-35.11-12.99-44.45-4.26
 			C2577.23,1820.6,2575.53,1837.88,2593.39,1848.07z"/>
@@ -7225,10 +7228,11 @@
 			c0.08,2.31,1.33,4.11,4.79,4.79c0.63,0.12,1.34,0.21,2.1,0.27c0.73-0.79,0.85-2.8,0.9-4.26
 			C2605.99,1783.16,2607.28,1781.26,2606.31,1780.45z"/>
 	</g>
+</a>
 
 <!-- LEVEL 01 : แผลถลอก -->
 <a href="/level/level_01.html">
-	<g id="scarleg" class="blink">
+	<g id="scarleg stage1" class="blink stage not-passed">
 		<path class="st187" d="M2057.94,1609.15c0,0,13.35-8.99,23.23-14.41c9.87-5.42,29.13-19.15,38.11-19.15s25.93,9.36,17.42,12.71
 			s-35.59,15.96-42.38,18.37c-6.78,2.4-26.79,11.62-30.11,12.94C2060.9,1620.93,2051.94,1615.62,2057.94,1609.15z"/>
 		<path class="st187" d="M2203.08,1592.28c-0.22-2.71-9.71-9.29-15.22-11.92c-4.35-2.07-11.74-2.56-14.66-2.68
@@ -7294,6 +7298,8 @@
 	</g>
 </a>
 
+<!-- LEVEL 04 : แขนหัก -->
+<a href="/level/level_04.html">
 	<g id="brokenarm" class="blink">
 		<path class="st187" d="M939.82,1575.36c3.18-3.4,15.55-9.62,23.76-12.6c0.03-5.76,4.93-12.5,14.42-17.4
 			c15.66-8.09,33.42-10,42.3-3.28c5.39,4.08,7.01,17.4-9.99,25.25c-6.49,3-29.38,9.95-40.16,4.84
@@ -7405,7 +7411,10 @@
 		<polyline class="st200" points="988.34,1454.13 995.04,1455.48 990.78,1460.32 		"/>
 		<polyline class="st200" points="1012.94,1448.07 1008.23,1452.9 1014.71,1452.9 		"/>
 	</g>
+</a>
 
+<!-- LEVEL 02 : มีดบาด -->
+<a href="/level/level_02.html">
 	<g id="blood" class="blink">
 		<g class="st275">
 		</g>
@@ -7519,7 +7528,10 @@
 				C1341.21,1148.16,1340.95,1146.83,1341.83,1146.84L1341.83,1146.84z"/>
 		</g>
 	</g>
-    
+</a>  
+
+<!-- LEVEL 05 : ไฟ -->
+<a href="/level/level_05.html">
 	<g id="fire" class="blink">
 		<path class="st187" d="M362.36,1720.79c-1.15-3.98-1.19-11.31,1.17-13.84c3-3.23,166.42,99.1,166.42,99.1
 			c2.74,1.88,6.23,7.88-2.48,7.88c-8.71,0-8.32-4.76-16.98-8.77c-8.66-4.01-29.89-12.72-37.61-17.56
@@ -7602,7 +7614,7 @@
 			c-4.08,4.93-8.32,21.74-5.27,24.71c3.26,3.16,12.17,3.1,16.81,2.2c4.74-0.91,7.32-16.94,11.92-18.73
 			C371.15,1653.53,382.63,1650.87,383.15,1648.59z"/>
 	</g>
-
+</a>
 	<g id="armnurse">
 		<path class="st305" d="M1742.39,2223.56c-0.35,7.73-1.88,20.1-1.79,28.75c-2.75,2.28-13.82,2.73-17.45,3.29
 			c-7.53,1.15-10.75-1.45-10.75-1.45s-0.16-9.47,0.95-26.15c1.51-22.52,12.68-30.42,12.68-30.42
@@ -7897,12 +7909,17 @@
 </g>
 </svg>
 
-
 <img id="hover-image" src="/picture/isokid/room1/brokenarm.png" alt="Hovered Image">
 <img id="hover-image2" src="/picture/isokid/room1/blood.png" alt="Hovered Image2">
 <img id="hover-image3" src="/picture/isokid/room1/scarleg.png" alt="Hovered Image3">
 <img id="hover-image4" src="/picture/isokid/room1/scararm.png" alt="Hovered Image4">
 <img id="hover-image5" src="/picture/isokid/room1/fire.png" alt="Hovered Image5">
+
+
+<div id="unlock-map" class="hidden">
+	<h2>Congratulations! You have unlocked the new map!</h2>
+	<a href="select.html">Go to the New Map</a>
+</div>
 
     <!-- <div class="content"> -->
         <!-- เลือกด่าน map -->
@@ -7924,6 +7941,7 @@
     <script src="/levelcheck.js" defer></script>
     <script src="/setting.js" defer></script>
     <script src="/audioController.js" defer></script>
+	<script src="/gameplay.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             if (window.audioManager) {

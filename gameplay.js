@@ -226,3 +226,23 @@ function playRecapVideo(videoSrc, callback) {
     };
 }
 
+//// ROOM 1
+
+let completedTasks = 0;
+const totalTasks = 5;
+
+// ฟังก์ชันเมื่อทำภารกิจเสร็จ
+function completeTask(taskNumber) {
+    const taskElement = document.getElementById(`task${taskNumber}`);
+
+    if (!taskElement.classList.contains('completed-task')) {
+        taskElement.classList.add('completed-task');
+        completedTasks++;
+
+        if (completedTasks === totalTasks) {
+            localStorage.setItem('level1_completed', 'true'); // Ensure this key is correctly set
+            alert("ยินดีด้วย! คุณปลดล็อกด่านใหม่ แล้ว");
+            window.location.href = "/Room/html/select.html"; // Redirect to the level select page
+        }
+    }
+}

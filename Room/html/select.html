@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Life Savers</title>
+    <link rel="icon" href="picture/LOGO.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Room/css/select.css">
+</head>
+<body class="map-page map-container">
+   <!-- HTML Structure -->
+   <!-- Buttons -->
+   <!-- <a href="/startGame.html" class="button button-upleft">BACK</a> -->
+
+        <div class="center">
+            <h1>เลือกด่าน</h1>
+            <div class="carousel"></div><br>
+
+            </div>
+        </div>
+
+
+        
+    <!-- <เลือกด่าน map> -->
+    <!-- <div id="level">
+         <a href="/Room/html/room1.html" id="level1" class="button unlocked">Level 1</a>
+         <a href="/Room/html/room2.html" id="level2" class="button locked" >Level 2</a> 
+         <a href="/Room/html/room3.html" id="level3" class="button locked" >Level 3</a>
+         <a href="/Room/html/room4.html" id="level4" class="button locked" >Level 4</a>
+    </div>  -->
+
+  
+
+
+ <!-- JS -->
+ <script src="/Room/js/select.js"></script>
+ <script src="/gameplay.js"></script>
+ <script src="/levelcheck.js"></script>
+ <script src="/setting.js" defer></script>
+ <script src="/audioController.js" defer></script>
+ <script>
+     document.addEventListener("DOMContentLoaded", async () => {
+         if (window.audioManager) {
+             window.audioManager.init();
+ 
+             // ตรวจสอบ interaction ก่อนเล่น BGM
+             const hadInteraction = localStorage.getItem("hadUserInteraction") === "true";
+             if (hadInteraction) {
+                 try {
+                     await window.audioManager.playBGM();
+                 } catch (error) {
+                     console.error("Failed to play BGM:", error);
+                 }
+             }
+         }
+     });
+ 
+     // ก่อนออกจากหน้า บันทึก currentTime
+     window.addEventListener("beforeunload", () => {
+         if (window.audioManager && window.audioManager.isPlayingBGM) {
+             localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
+         }
+     });
+ </script>
+ 
+     <!-- audio -->
+     <audio id="bg-music" loop>
+         <source src="music/bgm/main_bg.mp3" type="audio/mpeg">
+     </audio>
+    
+     <audio id="sfx" preload="auto">
+         <source src="music/sfx/click-pop.mp3" type="audio/mpeg">
+     </audio>
+</body>
+</html>

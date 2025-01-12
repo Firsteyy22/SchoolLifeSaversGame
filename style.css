@@ -372,6 +372,10 @@ h4 {
     display: block;
 }
 
+.center{
+    text-align: center;
+}
+
 /* สำหรับซ่อนเนื้อหา */
 .hidden { 
     display: none; 
@@ -382,6 +386,12 @@ h4 {
     pointer-events: none; 
     opacity: 0.5; 
     cursor: not-allowed; 
+}
+
+/* ปลดล็อกด่าน */
+.unlocked {
+    opacity: 1; 
+    cursor: pointer;
 }
 /* --------------------------- */
 
