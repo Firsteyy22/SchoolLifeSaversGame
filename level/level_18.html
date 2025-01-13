@@ -6,33 +6,33 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 2: เรื่อง มีดบาด -->
-     <!-- ROOM 1 -->
+    <!-- ด่าน 18: เรื่อง เป็นลม -->
+    <!-- ROOM 4 -->
 </head>
 <body class="gameplay-page">
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>อ้ะ! โดนมีดบาดซะได้ ต้องทำยังไงละเนี่ย</h1>
+            <h1>เมื่อพบคนเป็นลมควรทำอย่างไรเป็นอย่างแรก</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ล้างแผลด้วยน้ำเปล่า
+                    นอนราบ หนุนขาให้สูงขึ้น
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ห้ามเลือด
+                    หนุนหัวให้สูง ขาวางราบ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ยังไม่ถูกนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    เลียแผล
+                    ประคบร้อนที่หัว
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบน้ำแข็ง
+                    เทน้ำให้ดื่ม
                 </a>
             </div>
         </div>
@@ -40,37 +40,35 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>ล้างแผลแล้ว เลือดยังไหลอยู่เลย ทำไงดี</h1>
+            <h1>เมื่อพบคนเป็นลม ข้อใดไม่ควรทำ</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ล้างน้ำอีกครั้ง
+                    เมื่อฟื้นแล้วลุกขึ้นทันที
                 </a>
-                <a id="task2-level1" class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ควรทำ เผื่อตัดสินใจในการปฐมพยาบาลต่อหรือส่งโรงพยาบาลทันที', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ใช้ผ้าสะอาดวางบนแผลแล้วกดไว้
+                    สังเกตการหายใจและจับชีพจร
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ควรทำ เพื่อให้หายใจได้สะดวกขึ้น', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    โรยแผลด้วยเกลือ
+                    คลายเสื้อผ้าให้ไม่คับ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'สามารถทำได้ เพื่อให้อาการถ่ายเท และหายใจได้ดีขึ้น', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    รอให้เลือดหยุดไหลไปเอง
+                    พัดและให้ดมหงษ์ไทย
                 </a>
             </div>
         </div>
-
-    
     </div>
 
     <!-- Fullscreen Video Overlay -->
     <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
         <video id="fullscreen-video" class="fullscreen-video" muted></video>
         <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
-    </div>    
+    </div>
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">
@@ -122,5 +120,6 @@
         <audio id="sfx" preload="auto">
             <source src="../music/sfx/click-pop.mp3" type="audio/mpeg">
         </audio>
+        
 </body>
 </html>

@@ -6,33 +6,33 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 2: เรื่อง มีดบาด -->
-     <!-- ROOM 1 -->
+    <!-- ด่าน 15: เรื่อง เคล็ด/แพลง -->
+    <!-- ROOM 4 -->
 </head>
 <body class="gameplay-page">
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>อ้ะ! โดนมีดบาดซะได้ ต้องทำยังไงละเนี่ย</h1>
+            <h1>วิ่งผิดจังหวะ ข้อเท้าแพลงเลย ทำยังไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ล้างแผลด้วยน้ำเปล่า
+                    วางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'อาจทำให้บวมมากขึ้น ไม่ควรนวด', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ห้ามเลือด
+                    นวดบริเวณที่เกิดอาการแพลง
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากไม่ช่วยแล้วยังไม่หายด้วย', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    เลียแผล
+                    กินน้ำผลไม้เพิ่มวิตามิน
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควร! จะทำให้บวมและเจ็บมากขึ้นนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบน้ำแข็ง
+                    ยืนตัวตรง เพื่อให้เลือดไหลลงเท้ามากขึ้น
                 </a>
             </div>
         </div>
@@ -40,37 +40,45 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>ล้างแผลแล้ว เลือดยังไหลอยู่เลย ทำไงดี</h1>
+            <h1>หลังจากวางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ ควรทำอย่างไรต่อ</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ล้างน้ำอีกครั้ง
+                    ประคบเย็น
                 </a>
-                <a id="task2-level1" class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ห้ามประคบร้อนภายใน 24 ชั่วโมงแรก', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ใช้ผ้าสะอาดวางบนแผลแล้วกดไว้
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    โรยแผลด้วยเกลือ
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    รอให้เลือดหยุดไหลไปเอง
+                    ประคบร้อน
                 </a>
             </div>
         </div>
-
-    
+        
+        <!-- คำถาม 3 เปลี่ยนเลขด้วย -->
+        <div id="question3" class="hidden">
+            <div class="image-container">
+                <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+            </div>
+            <h1>ถ้ามีอาการ ปวด บวม เดินไม่ได้ อาจมีกระดูกหักด้วย ถูกต้องหรือไม่</h1>
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                    <img src="../picture/element/" class="button-element">
+                    ถูก
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เกือบถูก แต่ผิดนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ผิด
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Fullscreen Video Overlay -->
     <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
         <video id="fullscreen-video" class="fullscreen-video" muted></video>
         <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
-    </div>    
+    </div>
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">
@@ -122,5 +130,6 @@
         <audio id="sfx" preload="auto">
             <source src="../music/sfx/click-pop.mp3" type="audio/mpeg">
         </audio>
+        
 </body>
 </html>

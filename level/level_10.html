@@ -6,71 +6,75 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 2: เรื่อง มีดบาด -->
-     <!-- ROOM 1 -->
+    <!-- ด่าน 10: เรื่อง ผึ้งต่อย -->
+    <!-- ROOM 3 -->
 </head>
 <body class="gameplay-page">
+<!-- DRAFT -->
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <div id="question1">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>อ้ะ! โดนมีดบาดซะได้ ต้องทำยังไงละเนี่ย</h1>
+            <h1>ถ้าถูกผึ้ง ต่อ หรือแตน ต่อยและพบเหล็กใน ข้อใดเป็นคำตอบที่ผิด</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ล้างแผลด้วยน้ำเปล่า
+                    กดเหล็กในออกด้วยลูกกุญแจที่มีรู
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ห้ามเลือด
+                    รีบดึงเหล็กในด้วยมือออกทันที
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    เลียแผล
+                    ใช้บัตรแข็งขูดเหล็กในออก
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบน้ำแข็ง
+                    ทาแอมโมเนียลงแผลทันที
                 </a>
             </div>
         </div>
 
         <!-- คำถาม 2 -->
+        <!-- (**เรียงลำดับคำตอบ**) -->
         <div id="question2" class="hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>ล้างแผลแล้ว เลือดยังไหลอยู่เลย ทำไงดี</h1>
-            <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ล้างน้ำอีกครั้ง
-                </a>
-                <a id="task2-level1" class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/')">
-                    <img src="../picture/element/" class="button-element">
-                    ใช้ผ้าสะอาดวางบนแผลแล้วกดไว้
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    โรยแผลด้วยเกลือ
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    รอให้เลือดหยุดไหลไปเอง
-                </a>
-            </div>
-        </div>
+            <h1>เรียงลำดับวิธีปฐมพยาบาลเมื่อโดนผึ้ง ต่อ แตน ต่อย ให้ถูกต้อง</h1>
 
-    
+            <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความA
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความB
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความC
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความD
+                </a>
+            </div>
+
+        </div>
+        
+
     </div>
 
     <!-- Fullscreen Video Overlay -->
     <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
         <video id="fullscreen-video" class="fullscreen-video" muted></video>
         <a id="next-button" class="hidden button next-button" onclick="goToNextStep()">ไปยังส่วนถัดไป</a>
-    </div>    
+    </div>
 
     <!-- หน้าสำหรับคำตอบผิด -->
     <div id="wrong-answer" class="content hidden">
@@ -122,5 +126,6 @@
         <audio id="sfx" preload="auto">
             <source src="../music/sfx/click-pop.mp3" type="audio/mpeg">
         </audio>
+        
 </body>
 </html>

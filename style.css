@@ -114,6 +114,12 @@ h4 {
     right: 20px;
 }
 
+.map-page .button-upleft {
+    position: absolute;
+    top: 20px;          /* ระยะจากด้านบน */
+    left: 20px;         /* ระยะจากด้านซ้าย */
+}
+
 /* About us page */
 .aboutus-page .button {
     position: absolute; /* ปุ่มในหน้า Map ใช้ absolute */
@@ -272,7 +278,7 @@ h4 {
 }
 
 .gameplay-page .button img.button-element {
-    width: 40px; /* ขนาดของไอคอน */
+    width: 80px; /* ขนาดของไอคอน */
     height: auto;
     border-radius: 5px; /* มุมมน */
 }
