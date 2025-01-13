@@ -10,6 +10,8 @@ Update code from friend
 = git pull origin main
 ============
 
+ถ้า pull ไม่ได้ = git pull --rebase origin main
+
 Process Update
 ============
 firsteyy22 (09/11/24): add font to CSS + add page setting + add page credit + start game + ใส่ basic button ไปด้วย
