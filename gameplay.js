@@ -307,4 +307,3 @@ function playRecapVideo(videoSrc, callback) {
 //         }
 //     }
 // }
-
