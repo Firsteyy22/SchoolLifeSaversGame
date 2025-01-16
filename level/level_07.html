@@ -6,8 +6,8 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 15: เรื่อง เคล็ด/แพลง -->
-    <!-- ROOM 4 -->
+    <!-- ด่าน 07: เรื่อง สารเคมีเข้าตา -->
+    <!-- ROOM 2 -->
 </head>
 <body class="gameplay-page">
     <div id="question-container" class="content">
@@ -16,23 +16,23 @@
             <div class="image-container">
                 <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>วิ่งผิดจังหวะ ข้อเท้าแพลงเลย ทำยังไงดี</h1>
+            <h1>แย่แล้ว โดนน้ำยาล้างห้องน้ำกระเด็นเข้าตา ทำยังไงดี</h1>
             <div class="button-grid">
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    วางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ
+                    ล้างตาด้วยน้ำที่สะอาดที่สุด
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'อาจทำให้บวมมากขึ้น ไม่ควรนวด', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ ควรหาน้ำสะอาดล้างตานะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    นวดบริเวณที่เกิดอาการแพลง
+                    ล้างตาด้วยนม
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากไม่ช่วยแล้วยังไม่หายด้วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ น้ำส้มมีความเป็นกรด จะทำให้ระคายเคืองมากขึ้น', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    กินน้ำผลไม้เพิ่มวิตามิน
+                    ล้างตาด้วยน้ำส้ม
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควร! จะทำให้บวมและเจ็บมากขึ้นนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ เพราะจะทำให้แสบตามากขึ้น', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ยืนตัวตรง เพื่อให้เลือดไหลลงเท้ามากขึ้น
+                    ล้างตาด้วยแอลกอฮอล์
                 </a>
             </div>
         </div>
@@ -42,15 +42,23 @@
             <div class="image-container">
                 <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>หลังจากวางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ ควรทำอย่างไรต่อ</h1>
+            <h1>สารเคมีเข้าตาแบบนี้ ต้องหาหมอเลยใช่ไหมนะ?</h1>
             <div class="button-grid">
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบเย็น
+                    หลังล้างตา ถ้าไม่ระคายเคือง เฝ้าดูอาการก็พอ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ห้ามประคบร้อนภายใน 24 ชั่วโมงแรก', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรใช้ยาเอง ถ้ามีอาการระคายเคือง ควรปรึกษาแพทย์หรือเภสัชในการใช้ยา', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบร้อน
+                    หลังล้างตา หยอดยาด้วยตัวเองแล้วไม่ต้องพบแพทย์ 
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'การเจือจางสารเป็นเรื่องสำคัญ ควรล้างตาเป็นอันดับแรกนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ไม่ต้องล้างตา ควรพบแพทย์ให้เร็วที่สุด
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ถึงน้ำตาจะช่วยได้บางส่วนแต่ยังไงก็ต้องล้างตาด้วยน้ำสะอาดนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ไม่ต้องล้างตา ร้องไห้แล้วน้ำตาขับออกมาเอง
                 </a>
             </div>
         </div>
@@ -60,18 +68,27 @@
             <div class="image-container">
                 <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
-            <h1>ถ้ามีอาการ ปวด บวม เดินไม่ได้ อาจมีกระดูกหักด้วย ถูกต้องหรือไม่</h1>
+            <h1>ข้อใดถูกต้องบ้าง</h1>
             <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นคำตอบที่ถูกต้อง แต่ยังมีอีกนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    กรดเข้าตา รุนแรงน้อยกว่า ด่างเข้าตา
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นคำตอบที่ถูกต้อง แต่ยังมีอีกนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    สารเคมีเข้าตา อาจทำให้ตาบอดได้
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เป็นคำตอบที่ถูกต้อง แต่ยังมีอีกนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    สารเคมีเข้าตา ลืมตาในน้ำเกลือได้
+                </a>
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ถูก
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เกือบถูก แต่ผิดนะ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ผิด
-                </a>
+                    ถูกทุกข้อ
+                </a>                
             </div>
         </div>
+
     </div>
 
     <!-- Fullscreen Video Overlay -->

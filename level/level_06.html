@@ -6,8 +6,8 @@
     <title>School Life Savers</title>
     <link rel="icon" href="../picture/LOGO.png">
     <link rel="stylesheet" href="../style.css">
-    <!-- ด่าน 15: เรื่อง เคล็ด/แพลง -->
-    <!-- ROOM 4 -->
+    <!-- ด่าน 06: เรื่อง สัมผัสสารเคมี -->
+    <!-- ROOM 2 -->
 </head>
 <body class="gameplay-page">
     <div id="question-container" class="content">
@@ -16,43 +16,46 @@
             <div class="image-container">
                 <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
-            <h1>วิ่งผิดจังหวะ ข้อเท้าแพลงเลย ทำยังไงดี</h1>
+            <h1>สารเคมี หมายถึง เฉพาะของเหลวในห้องแลปใช่หรือไม่</h1>
             <div class="button-grid">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ตอบผิดนะ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ใช่
+                </a>                
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    วางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'อาจทำให้บวมมากขึ้น ไม่ควรนวด', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    นวดบริเวณที่เกิดอาการแพลง
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากไม่ช่วยแล้วยังไม่หายด้วย', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    กินน้ำผลไม้เพิ่มวิตามิน
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควร! จะทำให้บวมและเจ็บมากขึ้นนะ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ยืนตัวตรง เพื่อให้เลือดไหลลงเท้ามากขึ้น
+                    ไม่ใช่
                 </a>
             </div>
         </div>
 
         <!-- คำถาม 2 -->
+        <!-- เลือกคำตอบที่ถูกต้อง หลายช้อย -->
         <div id="question2" class="hidden">
             <div class="image-container">
                 <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
-            <h1>หลังจากวางเท้าให้สูงขึ้น และอยู่นิ่ง ๆ ควรทำอย่างไรต่อ</h1>
+            <h1>แย่แล้ว โดนสารเคมีบนผิวหนัง ทำอย่างไรดี</h1>
+
             <div class="button-grid">
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบเย็น
+                    ข้่อความA
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ห้ามประคบร้อนภายใน 24 ชั่วโมงแรก', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ประคบร้อน
+                    ข้่อความB
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความC
+                </a>
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
+                    <img src="../picture/element/" class="button-element">
+                    ข้่อความD
                 </a>
             </div>
+
         </div>
         
         <!-- คำถาม 3 -->
@@ -60,18 +63,19 @@
             <div class="image-container">
                 <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
-            <h1>ถ้ามีอาการ ปวด บวม เดินไม่ได้ อาจมีกระดูกหักด้วย ถูกต้องหรือไม่</h1>
+            <h1>จำเป็นต้องรู้หรือไม่ว่าสารที่โดนนั้นคือสารเคมีอะไร</h1>
             <div class="button-grid">
                 <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    ถูก
+                    ควร
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'เกือบถูก แต่ผิดนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'รู้ดีกว่าไม่รู้นะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ผิด
+                    ไม่ควร
                 </a>
             </div>
         </div>
+
     </div>
 
     <!-- Fullscreen Video Overlay -->
