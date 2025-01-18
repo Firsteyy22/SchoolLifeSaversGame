@@ -9,13 +9,15 @@
     --colorShadeC: rgb(150, 232, 195);
     --colorShadeD: rgb(187, 232, 211);
     --colorShadeE: rgb(205, 255, 232);
+
+    --colorShadeF: rgb(255, 207, 51);
     --colorTextHover: rgb(255, 255, 255); /* สีข้อความสว่าง */
 }
 
 body {
     margin: 0;
     font-family: "Pridi", serif;
-    height: 100vh; /* Full height */
+    height: 95vh; /* Full height */
     width: 100%; /* Full width */
     display: flex;
     flex-wrap: wrap;
@@ -292,17 +294,187 @@ h4 {
     left: 20px;
 }
 
+.button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
+}
+
+.button.correct {
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+}
+
+.button.incorrect {
+    background-color: #F44336; /* สีแดง */
+    color: white;
+}
+
+.button:disabled {
+    background-color: #ccc; /* สีปุ่มที่ถูกปิด */
+    color: #666; /* สีข้อความที่ดูจางลง */
+    pointer-events: none; 
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .button {
+        font-size: 1.2rem;
+        padding: 0.8em 1.5em;
+    }
+}
+/* --------------------------- */
+
+
+/* จัด layout สำหรับ gameplay เลือกหลาย choices */
+.gameplay-page .button-grid-choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ปรับความยืดหยุ่น */
+    gap: 25px; /* ระยะห่างระหว่างปุ่ม */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    width: 100%;
+    max-width: 1200px; /* ขยายขนาดตามที่ต้องการ */
+    margin: 0 auto;
+}
+
+.gameplay-page .button-choices {
+    height: 70px;
+    width: 100%; /* ใช้เต็มความกว้างของคอลัมน์ */
+    max-width: 700px; /* กำหนดขนาดสูงสุด */
+    padding: 1em;
+    box-sizing: border-box;
+
+    /* สไตล์พื้นฐาน */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 0.5em;
+    background: var(--colorShadeE);
+    color: var(--colorShadeA);
+    font-size: 1.3rem;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+/* ปุ่มยืนยันคำตอบ */
+.gameplay-page .button-submit-answer {
+    position: fixed; /* ติดอยู่กับตำแหน่งล่างของหน้าจอ */
+    bottom: 10px; /* ระยะห่างจากล่าง */
+    left: 50%; /* จัดกึ่งกลางตามแนวนอน */
+    transform: translateX(-50%); /* จัดกึ่งกลาง */
+    width: 150px;
+    height: 50px;
+    background-color: #8bd3dd;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ hover */
+.gameplay-page .button-submit-answer:hover {
+    background-color: #5fa8af;
+}
+
+.button-choices::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.button-choices:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.button-choices:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.button-choices:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.button-choices:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
+}
+
+/* สไตล์สำหรับปุ่มที่ถูกเลือก */
+.button-choices.selected {
+    background: var(--colorShadeF); /* สีพื้นหลังใหม่เมื่อเลือก */
+    transform: translate(0, 0.25em); /* ปรับความสูง */
+    color: var(--colorTextHover); /* เปลี่ยนสีข้อความ */
+}
+
+.button-choices.selected::before {
+    transform: translate3d(0, 0em, -0.5em); /* เลียนแบบ hover */
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
 /* สีสำหรับปุ่มตอบถูก */
-.correct {
+.button-choices.correct {
     background-color: #4CAF50 !important; /* สีเขียว */
     color: white;
 }
 
 /* สีสำหรับปุ่มตอบผิด */
-.incorrect {
+.button-choices.incorrect {
     background-color: #F44336 !important; /* สีแดง */
     color: white;
 }
+
+/**/
 
 .image-container {
     display: flex;
@@ -319,9 +491,13 @@ h4 {
 .gif-container {
     max-width: 400px; /* ไม่ให้ภาพใหญ่เกิน container */
     max-height: 400px; /* จำกัดความสูง */
-    display: block; /* ลบพฤติกรรม inline */
+    display: none; /* ลบพฤติกรรม inline */
     border-radius: 10px; 
     object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */
+}
+
+.gif-container img.show {
+    display: block; /* แสดง GIF เมื่อเพิ่ม class "show" */
 }
 
 .wrong-image {
@@ -402,64 +578,4 @@ h4 {
 /* --------------------------- */
 
 
-/* Button Styles when HOVER*/
-.button::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--colorShadeC);
-    border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
-    transform: translate3d(0, 0.5em, -0.5em);
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
-}
 
-.button:hover {
-    background: var(--colorShadeD);
-    transform: translate(0, 0.25em);
-    color: var(--colorTextHover);
-}
-
-.button:hover::before {
-    transform: translate3d(0, 0em, -0.5em);
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
-}
-
-.button:focus {
-    outline: 3px solid var(--colorFocus);
-}
-
-.button:active {
-    transform: translate(0, 0.5em);
-    box-shadow: none;
-}
-
-.button.correct {
-    background-color: #4CAF50; /* สีเขียว */
-    color: white;
-}
-
-.button.incorrect {
-    background-color: #F44336; /* สีแดง */
-    color: white;
-}
-
-.button:disabled {
-    background-color: #ccc; /* สีปุ่มที่ถูกปิด */
-    color: #666; /* สีข้อความที่ดูจางลง */
-    pointer-events: none; 
-    opacity: 0.6;
-}
-
-@media (max-width: 600px) {
-    .button {
-        font-size: 1.2rem;
-        padding: 0.8em 1.5em;
-    }
-}
-/* --------------------------- */

@@ -1,3 +1,4 @@
+// code เดิม
 const params = new URLSearchParams(window.location.search);
 let currentLevel = parseInt(params.get("level")) || 1;
 const maxLevel = 19;
@@ -163,22 +164,6 @@ function reloadGame() {
     }
 }
 
-// ฟังก์ชันจบ Level
-// function completeLevel(level) {
-//     sessionStorage.setItem(`level${level}`, "true"); // บันทึกการผ่านด่าน
-//     const nextLevel = level + 1;
-
-//     if (nextLevel <= maxLevel) {
-//         sessionStorage.setItem(`level${nextLevel}_unlocked`, "true"); // ปลดล็อกด่านถัดไป
-//     }
-
-//     alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-//     window.location.href = "/Room/html/room1.html"; // กลับไปที่หน้าหลัก
-// }
-
-
-// **************
-// สำหรับพาร์ทเล่นเกม รูปแบบ 2 (ตอบแล้ว รีแคปวิดีโอแสดงการสอนแบบละเอียด แล้วไปยังคำถามถัดไป)
 function playRecapVideo(videoSrc, callback) {
     // อ้างอิง HTML องค์ประกอบ
     const videoContainer = document.getElementById("fullscreen-video-container");
@@ -226,84 +211,6 @@ function playRecapVideo(videoSrc, callback) {
     };
 }
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const totalLevels = 4;
-//     const totalTasksPerLevel = [5, 4, 4, 4]; // Total tasks for each level
-//     const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0); // Sum of all tasks across levels
 
-//     function unlockLevel(levelNumber) {
-//         const nextLevel = levelNumber + 1;
-//         if (nextLevel <= totalLevels) {
-//             const nextLevelButton = document.getElementById(`level${nextLevel}-button`);
-//             const nextTasksContainer = document.getElementById(`tasks-level${nextLevel}`);
-//             if (nextLevelButton && nextTasksContainer) {
-//                 nextLevelButton.classList.remove("locked");
-//                 nextTasksContainer.style.display = 'block'; // Show tasks for the next level
-//                 sessionStorage.setItem(`level${nextLevel}_unlocked`, 'true');
-//             }
-//         }
-//     }
 
-//     let totalCompletedTasks = 0;
-
-//     totalTasksPerLevel.forEach((tasksCount, levelIndex) => {
-//         let completedTasks = 0;
-//         const levelNumber = levelIndex + 1;
-//         for (let i = 1; i <= tasksCount; i++) {
-//             const taskButton = document.getElementById(`task${i}-level${levelNumber}`);
-//             if (taskButton) {
-//                 taskButton.onclick = function() {
-//                     if (!this.classList.contains('completed-task')) {
-//                         this.classList.add('completed-task');
-//                         completedTasks++;
-//                         totalCompletedTasks++;
-//                         if (completedTasks === tasksCount) {
-//                             unlockLevel(levelNumber);
-//                             if (levelNumber < totalLevels) {
-//                                 alert(`Congratulations! You have unlocked Level ${levelNumber + 1}`);
-
-//                                 console.log(`ผ่าน Level ${levelNumber + 1}`); // Correctly format and localize console log
-//                             }
-//                         }
-//                         if (totalCompletedTasks === totalTasks) {
-//                             alert(`Congratulations! You have finished all tasks!`);
-//                         }
-//                     }
-//                 };
-//             }
-//         }
-//     });
-
-//     for (let i = 1; i <= totalLevels; i++) {
-//         const levelButton = document.getElementById(`level${i}-button`);
-//         const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
-//         if (levelUnlocked) {
-//             levelButton.classList.remove("locked");
-//             if (i > 1) {
-//                 const tasksContainer = document.getElementById(`tasks-level${i}`);
-//                 if (tasksContainer) {
-//                     tasksContainer.style.display = 'block';
-//                 }
-//             }
-//         }
-//     }
-// });
-
-// let completedTasks = 0;
-// const totalTasks = 5;
-
-// // ฟังก์ชันเมื่อทำภารกิจเสร็จ
-// function completeTask(taskNumber) {
-//     const taskElement = document.getElementById(`task${taskNumber}`);
-
-//     if (!taskElement.classList.contains('completed-task')) {
-//         taskElement.classList.add('completed-task');
-//         completedTasks++;
-
-//         if (completedTasks === totalTasks) {
-//             localStorage.setItem('level1_completed', 'true'); // Ensure this key is correctly set
-//             alert("ยินดีด้วย! คุณปลดล็อกด่านใหม่ แล้ว");
-//             window.location.href = "/Room/html/select.html"; // Redirect to the level select page
-//         }
-//     }
-// }
+  
