@@ -2,15 +2,53 @@
 // ฟังก์ชันจบ Level
 function completeLevel(level) {
     sessionStorage.setItem(`level${level}`, "true"); // บันทึกการผ่านด่าน
-    const nextLevel = level + 1;
+    console.log(`Level ${level} completed. Stored in sessionStorage: level${level} = true`);
 
-    if (nextLevel <= maxLevel) {
-        sessionStorage.setItem(`level${nextLevel}_unlocked`, "true"); // ปลดล็อกด่านถัดไป
+    // ตรวจสอบการปลดล็อก Room
+    if (level === 5) {
+        sessionStorage.setItem("room2_unlocked", "true");
+        console.log("Unlocked Room 2: room2_unlocked = true");
+    } else if (level === 9) {
+        sessionStorage.setItem("room3_unlocked", "true");
+        console.log("Unlocked Room 3: room3_unlocked = true");
+    } else if (level === 13) {
+        sessionStorage.setItem("room4_unlocked", "true");
+        console.log("Unlocked Room 4: room4_unlocked = true");
     }
 
-    alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-    window.location.href = "/Room/html/room1.html"; // กลับไปที่หน้าหลัก
+    // เปลี่ยนเส้นทางกลับไปที่ Room ที่เกี่ยวข้อง
+    if (level >= 1 && level <= 5) {
+        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+        console.log(`Redirecting to /Room/html/room1.html`);
+        window.location.href = "/Room/html/room1.html";
+
+    } else if (level >= 6 && level <= 9) {
+        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+        console.log(`Redirecting to /Room/html/room2.html`);
+        window.location.href = "/Room/html/room2.html";
+
+    } else if (level >= 10 && level <= 13) {
+        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+        console.log(`Redirecting to /Room/html/room3.html`);
+        window.location.href = "/Room/html/room3.html";
+
+    } else if (level >= 14 && level <= 18) {
+        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+        console.log(`Redirecting to /Room/html/room4.html`);
+        window.location.href = "/Room/html/room4.html";
+        
+    } else {
+        console.error("Invalid level range");
+    }
 }
+
+
+
+
+
+    
+
+
 
 
 // // document.addEventListener("DOMContentLoaded", function () {

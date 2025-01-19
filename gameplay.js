@@ -108,24 +108,29 @@ function nextQuestion() {
         }
     }
 
-    currentQuestion++;
-    const nextQuestionElement = document.getElementById(`question${currentQuestion}`);
-    if (nextQuestionElement) {
-        nextQuestionElement.classList.remove("hidden");
+    const totalQuestions = document.querySelectorAll('.question').length;
 
-        // ตั้งค่าให้รูปเริ่มต้นแสดงทันทีเมื่อโหลดคำถามใหม่
-        const gifContainer = document.getElementById(`gif-container-q${currentQuestion}`);
-        if (gifContainer) {
-            const defaultSrc = gifContainer.getAttribute("data-default-src");
-            if (defaultSrc) {
-                gifContainer.src = defaultSrc; // ตั้ง src เป็นรูปเริ่มต้น
-            }
-            gifContainer.style.display = "block"; // แสดงภาพทันที
-        }
-
-        enableAllButtons(); // เปิดใช้งานปุ่มใหม่
+    if (currentQuestion === totalQuestions) {
+        // ถึงคำถามสุดท้ายแล้ว
+        showCompletionScreen(); // แสดง Completion Screen
     } else {
-        completeLevel(currentLevel); // เรียกเมื่อทำคำถามครบทุกข้อ
+        currentQuestion++;
+        const nextQuestionElement = document.getElementById(`question${currentQuestion}`);
+        if (nextQuestionElement) {
+            nextQuestionElement.classList.remove("hidden");
+
+            // ตั้งค่าให้รูปเริ่มต้นแสดงทันทีเมื่อโหลดคำถามใหม่
+            const gifContainer = document.getElementById(`gif-container-q${currentQuestion}`);
+            if (gifContainer) {
+                const defaultSrc = gifContainer.getAttribute("data-default-src");
+                if (defaultSrc) {
+                    gifContainer.src = defaultSrc; // ตั้ง src เป็นรูปเริ่มต้น
+                }
+                gifContainer.style.display = "block"; // แสดงภาพทันที
+            }
+
+            enableAllButtons(); // เปิดใช้งานปุ่มใหม่
+        }
     }
 }
 
@@ -211,6 +216,11 @@ function playRecapVideo(videoSrc, callback) {
     };
 }
 
+function showCompletionScreen() {
+    document.getElementById("question-container").classList.add("hidden");
+    document.getElementById("completion-screen").classList.remove("hidden");
+}
 
-
-  
+function confirmCompletion(level) {
+    completeLevel(level); // เรียกใช้ฟังก์ชันบันทึกใน levelcheck.js
+}

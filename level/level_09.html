@@ -10,16 +10,11 @@
     <!-- ROOM 2 -->
 </head>
 <body class="gameplay-page">
-    <div id="question-container" class="content">
+<div id="question-container" class="content">
 
 <!-- คำถาม 1 -->
-<div id="question1" class="question">
+<div class="question" id="question1">
     <div class="image-container">
-        <!-- สำหรับแสดง GIF -->
-        <div class="gif-container">
-            <img src="" alt="Answer GIF" style="display: none;">
-        </div>
-        <!-- สำหรับรูปคำถาม -->
         <img id="gif-container-q1" class="question-image" src="../picture/questionIMG/ex01.png" data-default-src="../picture/questionIMG/ex01.png" alt="Question Image">
     </div>
     <h1>แย่แล้ว นี่มันน้ำยาล้างจาน ไม่ใช่น้ำมะนาวนี่! เผลอดื่มไปแล้วทำยังไงดี (สารเคมีฤทธิ์เป็นกรด)</h1>
@@ -34,11 +29,10 @@
     <a id="submit-answer-q1" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 </div>
 
-
 <!-- คำถาม 2 -->
-<div id="question2" class="question hidden">
+<div class="question hidden" id="question2">
     <div class="image-container">
-        <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
+        <img id="gif-container-q2" class="question-image" src="../picture/questionIMG/ex02.png" data-default-src="../picture/questionIMG/ex02.png" alt="Question Image">
     </div>
     <h1>เผลอดูดน้ำมันเครื่องนี่เข้าปาก เผลอกินไปแล้วด้วย ทำยังไงดี (สารเคมีประเภทน้ำมัน)</h1>
     <div class="button-grid-choices">
@@ -53,9 +47,9 @@
 </div>
 
 <!-- คำถาม 3 -->
-<div id="question3" class="question hidden">
+<div class="question hidden" id="question3">
     <div class="image-container">
-        <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+        <img id="gif-container-q3" class="question-image" src="../picture/questionIMG/ex03.png" data-default-src="../picture/questionIMG/ex03.png" alt="Question Image">
     </div>
     <h1>ผมกลืนพาราเซตามอลไป 100 เม็ดเพราะนึกว่าเป็นนมอัดเม็ด ทำอย่างไรดีครับ (กินยาเกินขนาด)</h1>
     <div class="button-grid-choices">
@@ -69,7 +63,7 @@
     <a id="submit-answer-q3" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 </div>
 
-    </div>
+</div>
 
 <!-- Fullscreen Video Overlay -->
 <div id="fullscreen-video-container" class="fullscreen-video-container hidden">
@@ -85,12 +79,19 @@
     <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
 </div>
 
+    <!-- Finish page -->
+    <div id="completion-screen" class="content hidden">
+        <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
+        <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
+    </div>
+
 
     <!-- Buttons -->
     <a href="../startGame.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
     <script src="../gameplay.js"></script>
+    <script src="../gameplay_02.js"></script>
     <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
     <script src="../audioController.js" defer></script>
@@ -119,206 +120,20 @@
         });
     </script>
 
-    <!-- JS ของการตอบหลาย choices -->
+    <!-- VDO for gameplay_02.js -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    const questions = [
-        { id: 'question1', correctAnswers: [0, 1], recapVideoSrc: '../video/VDO_01.mp4', multiAnswer: true },
-        { id: 'question2', correctAnswers: [0, 1, 3, 4], recapVideoSrc: '../video/VDO_02.mp4', multiAnswer: true },
-        { id: 'question3', correctAnswers: [2, 3, 5], recapVideoSrc: '../video/VDO_03.mp4', multiAnswer: true },
-    ];
+        const questions = [
+            { id: 'question1', correctAnswers: [0, 1], recapVideoSrc: '../video/VDO_01.mp4', multiAnswer: true },
+            { id: 'question2', correctAnswers: [0, 1, 3, 4], recapVideoSrc: '../video/VDO_02.mp4', multiAnswer: true },
+            { id: 'question3', correctAnswers: [2, 3, 5], recapVideoSrc: '../video/VDO_03.mp4', multiAnswer: true },
+        ];
 
-    initQuestions(questions);
-    showQuestion('question1'); // แสดงคำถามแรก
-});
-
-// ฟังก์ชันเริ่มต้นการจัดการคำถามทั้งหมด
-function initQuestions(questions) {
-    questions.forEach(question => {
-        handleQuestion(question);
-    });
-}
-
-// ฟังก์ชันจัดการคำถามแต่ละข้อ
-function handleQuestion(question) {
-    const questionElement = document.getElementById(question.id);
-    const submitButton = questionElement.querySelector('.button-submit-answer');
-    const selectedAnswers = new Set();
-
-    // ซ่อนปุ่ม Submit ตอนเริ่มต้น
-    submitButton.classList.add('hidden');
-
-    // เพิ่ม event listener ให้ตัวเลือกคำตอบ
-    questionElement.querySelectorAll('.button-choices').forEach(button => {
-        button.addEventListener('click', () => {
-            if (question.multiAnswer) {
-                toggleAnswerSelection(button, selectedAnswers, submitButton);
-            } else {
-                handleSingleAnswer(button, selectedAnswers, submitButton);
-            }
+        initQuestions(questions);
+        showQuestion('question1'); // แสดงคำถามแรก
         });
-    });
+    </script> 
 
-    // ตรวจสอบคำตอบเมื่อกดปุ่ม Submit
-    submitButton.addEventListener('click', () => {
-        revealSelectedAnswerColors(question, selectedAnswers);
-    });
-}
-
-// ฟังก์ชันจัดการคำตอบหลายตัวเลือก
-function toggleAnswerSelection(button, selectedAnswers, submitButton) {
-    const index = parseInt(button.getAttribute('data-answer'), 10);
-
-    if (selectedAnswers.has(index)) {
-        selectedAnswers.delete(index);
-        button.classList.remove('selected');
-    } else {
-        selectedAnswers.add(index);
-        button.classList.add('selected');
-    }
-
-    // แสดงหรือซ่อนปุ่ม Submit
-    submitButton.classList.toggle('hidden', selectedAnswers.size === 0);
-}
-
-// ฟังก์ชันจัดการคำตอบเดียว
-function handleSingleAnswer(button, selectedAnswers, submitButton) {
-    const index = parseInt(button.getAttribute('data-answer'), 10);
-
-    // เลือกคำตอบเดียว (reset ทุกอัน)
-    selectedAnswers.clear();
-    selectedAnswers.add(index);
-
-    document.querySelectorAll('.button-choices').forEach(btn => btn.classList.remove('selected'));
-    button.classList.add('selected');
-
-    // แสดงปุ่ม Submit
-    submitButton.classList.remove('hidden');
-}
-
-// ฟังก์ชันเฉลยสีเฉพาะคำตอบที่กดเลือก
-function revealSelectedAnswerColors(question, selectedAnswers) {
-    const questionElement = document.getElementById(question.id);
-
-    // ลบสีจากปุ่มทั้งหมด
-    questionElement.querySelectorAll('.button-choices').forEach(button => {
-        button.classList.remove('correct', 'incorrect');
-    });
-
-    // เพิ่มสีให้กับคำตอบที่เลือก
-    selectedAnswers.forEach(selectedIndex => {
-        const button = questionElement.querySelector(`.button-choices[data-answer="${selectedIndex}"]`);
-        if (question.correctAnswers.includes(selectedIndex)) {
-            button.classList.add('correct');
-        } else {
-            button.classList.add('incorrect');
-        }
-    });
-
-    const isCorrect =
-        question.correctAnswers.every(ans => selectedAnswers.has(ans)) &&
-        selectedAnswers.size === question.correctAnswers.length;
-
-    setTimeout(() => {
-        if (isCorrect) {
-            showAnswerGIF('../picture/correctANS/correct.gif');
-            setTimeout(() => {
-                const nextQuestionId = getNextQuestionId(question.id);
-                if (nextQuestionId) {
-                    showQuestion(nextQuestionId);
-                } else {
-                    showFullscreenVideo(question.recapVideoSrc);
-                }
-            }, 2000); // รอ 2 วินาทีก่อนดำเนินการถัดไป
-        } else {
-            showWrongAnswerPage('คุณตอบผิด!', '../picture/wrongANS/wrong.png', 'ลองดูคำตอบให้ดี!');
-        }
-    }, 2000);
-}
-
-// ฟังก์ชันแสดง GIF ของคำตอบ
-function showAnswerGIF(gifSrc) {
-    const currentQuestionElement = document.querySelector('.question:not(.hidden)');
-    const gifContainer = currentQuestionElement.querySelector('.gif-container img');
-
-    if (gifContainer) {
-        gifContainer.src = gifSrc;
-        gifContainer.style.display = "block";
-    } else {
-        console.error('Gif container not found or image element is missing.');
-    }
-}
-
-// ฟังก์ชันแสดงคำถาม
-function showQuestion(questionId) {
-    resetImageSrc();
-    resetButtonColors();
-    document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
-    const questionElement = document.getElementById(questionId);
-    if (questionElement) {
-        questionElement.classList.remove('hidden');
-    }
-}
-
-// ฟังก์ชันแสดงหน้าสำหรับคำตอบผิด
-function showWrongAnswerPage(message, imageUrl, text) {
-    const wrongAnswerContainer = document.getElementById('wrong-answer');
-    const wrongImage = document.getElementById('wrong-image');
-    const wrongText = document.getElementById('wrong-text');
-
-    wrongAnswerContainer.classList.remove('hidden');
-    wrongImage.src = imageUrl;
-    wrongText.textContent = text;
-
-    document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
-}
-
-// ฟังก์ชันหาคำถามถัดไป
-function getNextQuestionId(currentQuestionId) {
-    const questionElements = Array.from(document.querySelectorAll('.question'));
-    const currentIndex = questionElements.findIndex(q => q.id === currentQuestionId);
-    return currentIndex < questionElements.length - 1 ? questionElements[currentIndex + 1].id : null;
-}
-
-// ฟังก์ชันรีเซ็ตรูปภาพของคำถาม
-function resetImageSrc() {
-    document.querySelectorAll('img[data-default-src]').forEach(img => {
-        img.src = img.getAttribute('data-default-src');
-    });
-}
-
-// ฟังก์ชันรีเซ็ตสีของปุ่ม
-function resetButtonColors() {
-    document.querySelectorAll('.button-choices').forEach(button => {
-        button.classList.remove('correct', 'incorrect', 'selected');
-    });
-}
-
-// ฟังก์ชันแสดงวิดีโอแบบเต็มหน้าจอ
-function showFullscreenVideo(videoSrc) {
-    const container = document.getElementById('fullscreen-video-container');
-    const video = document.getElementById('fullscreen-video');
-    const nextButton = document.getElementById('next-button');
-
-    setTimeout(() => {
-        container.classList.remove('hidden');
-        video.src = videoSrc;
-        video.play();
-
-        video.addEventListener('ended', () => {
-            nextButton.classList.remove('hidden');
-        });
-    }, 2000);
-}
-
-    </script>
-        
-        
-        
-        
-        
-        
-    
     
         <!-- audio -->
         <audio id="bg-music" loop>

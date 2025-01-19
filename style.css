@@ -491,7 +491,6 @@ h4 {
 .gif-container {
     max-width: 400px; /* ไม่ให้ภาพใหญ่เกิน container */
     max-height: 400px; /* จำกัดความสูง */
-    display: none; /* ลบพฤติกรรม inline */
     border-radius: 10px; 
     object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */
 }
