@@ -12,25 +12,25 @@
 <body class="gameplay-page">
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
-        <div id="question1">
+        <div id="question1" class="question">
             <div class="image-container">
                 <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
             <h1>อ้ะ! โดนมีดบาดซะได้ ต้องทำยังไงละเนี่ย</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/testVDO.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/testVDO.mp4')">
                     <img src="../picture/element/" class="button-element">
                     ล้างแผลด้วยน้ำเปล่า
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ค่อยห้ามเลือดทีหลัง อันดันแรกทำอย่างอื่นก่อนนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ห้ามเลือด
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'นอกจากจะไม่สะอาดแล้ว อาจจะติดเชื้อได้นะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     เลียแผล
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'บรื๋อ~ นอกจากเย็นแล้วยังไม่ถูกด้วย', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ประคบน้ำแข็ง
                 </a>
@@ -38,25 +38,25 @@
         </div>
 
         <!-- คำถาม 2 -->
-        <div id="question2" class="hidden">
+        <div id="question2" class="question hidden">
             <div class="image-container">
                 <img id="gif-container-q2" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
             </div>
             <h1>ล้างแผลแล้ว เลือดยังไหลอยู่เลย ทำไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ล้างต่อไปเลือดก็ยังไหลอยู่ดี!', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ล้างน้ำอีกครั้ง
                 </a>
-                <a id="task2-level1" class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/testVDO.mp4')">
+                <a id="task2-level1" class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/testVDO.mp4')">
                     <img src="../picture/element/" class="button-element">
                     ใช้ผ้าสะอาดวางบนแผลแล้วกดไว้
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'โอ๊ยแสบแผล เปลืองทั้งเลือดเปลืองทั้งเกลือเลยทีนี้', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     โรยแผลด้วยเกลือ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ให้ฉันรอ รออีกนานแค่ไหน', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     รอให้เลือดหยุดไหลไปเอง
                 </a>
@@ -77,8 +77,14 @@
         <img id="wrong-image" class="wrong-image" src="" style="max-width: 400px;">
         <h1 style="color: red;">คุณตอบผิด!</h1>
         <h2 id="wrong-text">==ข้อความ==</h2>
-        <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
+        <a class="button" onclick="reloadGame()">ลองใหม่อีกครั้ง</a>
     </div>
+
+    <!-- Finish page -->
+    <div id="completion-screen" class="content hidden">
+        <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
+        <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
+    </div>    
 
     <!-- Buttons -->
     <a href="/Room/html/room1.html" class="button button-upleft">BACK</a>
@@ -113,6 +119,9 @@
         });
     </script>
     
+    <script>
+        currentLevel = 2; // ระบุว่านี่คือ level 2
+    </script>
     
         <!-- audio -->
         <audio id="bg-music" loop>

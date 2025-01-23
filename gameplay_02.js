@@ -1,6 +1,5 @@
 // gameplay ตอบหลาย choices
 
-
 let currentQuestionId = null;
 
 function initQuestions(questions) {
@@ -81,33 +80,51 @@ function revealSelectedAnswerColors(question, selectedAnswers) {
 
     setTimeout(() => {
         if (isCorrect) {
-            // เลือก img ภายในข้อคำถามปัจจุบันเท่านั้น
             const gifContainer = questionElement.querySelector('.image-container img');
             if (gifContainer) {
-                // เก็บ src เดิมไว้
                 const originalSrc = gifContainer.src;
-                
                 gifContainer.src = '../picture/correctANS/correct.gif';
                 gifContainer.style.display = "block";
-                
+
                 setTimeout(() => {
-                    // คืนค่า src กลับไปเป็นรูปคำถามเดิม
                     gifContainer.src = originalSrc;
                     showFullscreenVideo(question.recapVideoSrc, () => {
                         const nextQuestionId = getNextQuestionId(question.id);
                         if (nextQuestionId) {
                             transitionToNextQuestion(nextQuestionId);
+                        } else {
+                            showCompletionScreen();
                         }
                     });
                 }, 2000);
+            } else {
+                const nextQuestionId = getNextQuestionId(question.id);
+                if (nextQuestionId) {
+                    transitionToNextQuestion(nextQuestionId);
+                } else {
+                    showCompletionScreen();
+                }
             }
         } else {
-            showWrongAnswerPage(
-                'คุณตอบผิด!',
-                '../picture/wrongANS/wrong.png',
-                'ลองดูคำตอบให้ดี!',
-                () => resetCurrentQuestion(currentQuestionId)
-            );
+            const gifContainer = questionElement.querySelector('.image-container img');
+            if (gifContainer) {
+                const originalSrc = gifContainer.src;
+                gifContainer.src = '../picture/wrongANS/wrong.gif';
+                gifContainer.style.display = "block";
+
+                gifContainer.style.maxWidth = "400px"; 
+                gifContainer.style.height = "auto";
+
+                setTimeout(() => {
+                    gifContainer.src = originalSrc;
+                    showWrongAnswerPage(
+                        'คุณตอบผิด!',
+                        '../picture/wrongANS/wrong.png',
+                        'ลองดูคำตอบให้ดี!',
+                        () => resetCurrentQuestion(currentQuestionId)
+                    );
+                }, 2000);
+            }
         }
     }, 1000);
 }
@@ -143,52 +160,78 @@ function showFullscreenVideo(videoSrc, callback) {
     const nextButton = document.getElementById('next-button');
     let hasShownNextButton = false;
 
+    // ซ่อนปุ่ม "Next" ตอนเริ่มต้น
+    nextButton.classList.add('hidden');
+
+    // แสดง video container
     container.classList.remove('hidden');
-    video.src = videoSrc;
-    video.play();
+    video.src = videoSrc; // ตั้งค่า video source ใหม่
+    video.currentTime = 0; // รีเซ็ตเวลาเริ่มต้นของวิดีโอ
+    video.loop = true; // ตั้งค่าให้เล่นซ้ำ
+    video.load(); // โหลด video ใหม่
+    video.autoplay = true; // เริ่มเล่นอัตโนมัติ
 
-    // Clear any existing event listeners
-    video.removeEventListener('ended', null);
-    nextButton.removeEventListener('click', null);
-
-    video.addEventListener('ended', () => {
+    // เมื่อวิดีโอเล่นจบแล้ว
+    video.onended = () => {
         if (!hasShownNextButton) {
-            nextButton.classList.remove('hidden');
+            nextButton.classList.remove('hidden'); // แสดงปุ่ม "Next"
             hasShownNextButton = true;
         }
-        video.play();
+    };
+
+    // ตรวจสอบเมื่อวิดีโอเล่นถึงเวลาสุดท้าย
+    video.addEventListener('timeupdate', function () {
+        if (video.currentTime >= video.duration - 0.5 && !hasShownNextButton) {
+            video.pause(); // หยุดชั่วคราว
+            nextButton.classList.remove('hidden'); // แสดงปุ่ม "Next"
+            hasShownNextButton = true;
+            video.play(); // เล่นต่อ
+        }
     });
 
+    // เมื่อคลิกปุ่ม "Next"
     nextButton.addEventListener('click', () => {
-        video.pause();
-        video.src = "";
-        container.classList.add('hidden');
-        nextButton.classList.add('hidden');
-        hasShownNextButton = false;
-        if (callback) callback();
+        container.classList.add('hidden'); // ซ่อน video container
+        video.pause(); // หยุดวิดีโอ
+        video.currentTime = 0; // รีเซ็ตเวลา
+        video.src = ''; // ล้าง source ของวิดีโอ
+        nextButton.classList.add('hidden'); // ซ่อนปุ่ม "Next"
+        if (callback) callback(); // เรียก callback ไปยังขั้นตอนถัดไป
     });
 }
 
+
+let isTransitioning = false;
+
 function transitionToNextQuestion(nextQuestionId) {
-    if (nextQuestionId === null) {
-        console.log("ไม่มีคำถามถัดไป แสดง completion screen...");
-        showCompletionScreen();
+    if (isTransitioning) {
+        console.warn("transitionToNextQuestion ถูกเรียกซ้ำ");
         return;
     }
 
-    // ซ่อนคำถามทั้งหมด
+    isTransitioning = true;
+    console.log(`กำลังเปลี่ยนจากคำถาม ${currentQuestionId} ไปยังคำถาม ${nextQuestionId}`);
+
+    if (!nextQuestionId) {
+        console.log("ไม่มีคำถามถัดไป แสดง completion screen...");
+        showCompletionScreen();
+        isTransitioning = false;
+        return;
+    }
+
     document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
 
-    // แสดงคำถามถัดไป
     const nextQuestion = document.getElementById(nextQuestionId);
     if (nextQuestion) {
-        console.log("แสดงคำถามถัดไป:", nextQuestionId);
+        console.log(`กำลังแสดงคำถาม ${nextQuestionId}`);
         nextQuestion.classList.remove('hidden');
         currentQuestionId = nextQuestionId;
+    } else {
+        console.error("ไม่พบคำถามใน DOM:", nextQuestionId);
     }
+
+    isTransitioning = false;
 }
-
-
 
 function showQuestion(questionId) {
     resetImageSrc();
@@ -218,7 +261,6 @@ function showWrongAnswerPage(_message, imageUrl, text, callback) {
         if (callback) callback();
     });
 }
-
 
 function resetCurrentQuestion(questionId) {
     resetImageSrc();
@@ -250,20 +292,21 @@ function resetSelectedAnswers(questionElement) {
     return new Set();
 }
 
-
 function getNextQuestionId(currentQuestionId) {
     const questionElements = Array.from(document.querySelectorAll('.question'));
     const currentIndex = questionElements.findIndex(q => q.id === currentQuestionId);
 
-    // ตรวจสอบถ้าเป็นคำถามสุดท้าย
+    console.log("currentQuestionId:", currentQuestionId, "currentIndex:", currentIndex);
+
     if (currentIndex !== -1 && currentIndex === questionElements.length - 1) {
+        console.log("ไม่มีคำถามถัดไป (สุดท้าย)");
         return null;
     }
 
-    return questionElements[currentIndex + 1]?.id || null;
+    const nextQuestionId = questionElements[currentIndex + 1]?.id || null;
+    console.log("nextQuestionId:", nextQuestionId);
+    return nextQuestionId;
 }
-
-
 
 function resetImageSrc() {
     document.querySelectorAll('img[data-default-src]').forEach(img => {
@@ -293,13 +336,16 @@ function goToNextStep() {
 }
 
 function showCompletionScreen() {
-    console.log("เรียก showCompletionScreen");
+    // Hide all questions first
+    document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+    
+    // Show completion screen
     const completionScreen = document.getElementById("completion-screen");
     if (completionScreen) {
-        console.log("พบ #completion-screen ใน DOM");
         completionScreen.classList.remove("hidden");
+        console.log("Completion screen shown successfully");
     } else {
-        console.error("ไม่พบ #completion-screen ใน DOM");
+        console.error("Completion screen element not found");
     }
 }
 
@@ -307,4 +353,3 @@ function confirmCompletion(level) {
     console.log("เรียก confirmCompletion สำหรับ level:", level);
     completeLevel(level);
 }
-

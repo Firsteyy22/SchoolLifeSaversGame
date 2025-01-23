@@ -393,16 +393,15 @@ h4 {
 
 /* ปุ่มยืนยันคำตอบ */
 .gameplay-page .button-submit-answer {
-    position: fixed; /* ติดอยู่กับตำแหน่งล่างของหน้าจอ */
-    bottom: 10px; /* ระยะห่างจากล่าง */
-    left: 50%; /* จัดกึ่งกลางตามแนวนอน */
-    transform: translateX(-50%); /* จัดกึ่งกลาง */
-    width: 150px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px; /* เปลี่ยนจาก left เป็น right และกำหนดระยะห่างจากขอบขวา */
+    width: 160px;
     height: 50px;
     background-color: #8bd3dd;
     border: none;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 25px;
     color: #fff;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -474,7 +473,40 @@ h4 {
     color: white;
 }
 
-/**/
+/* --------------------------- */
+.sortable-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sortable-item {
+    padding: 10px;
+    background-color: rgb(176, 240, 211);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: grab;
+    text-align: center;
+}
+
+.sortable-item.dragging {
+    opacity: 0.5;
+}
+
+.sortable-item.correct {
+    background-color: #4CAF50; /* สีเขียว */
+    transition: background-color 0.3s ease;
+}
+
+.sortable-item.incorrect {
+    background-color: #F44336; /* สีแดง */
+    transition: background-color 0.3s ease;
+}
+
+/* --------------------------- */
 
 .image-container {
     display: flex;
@@ -491,7 +523,8 @@ h4 {
 .gif-container {
     max-width: 400px; /* ไม่ให้ภาพใหญ่เกิน container */
     max-height: 400px; /* จำกัดความสูง */
-    border-radius: 10px; 
+    border-radius: 10px;
+    display: block; 
     object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */
 }
 
@@ -500,7 +533,7 @@ h4 {
 }
 
 .wrong-image {
-    width: auto; 
+    width: 400px; 
     height: auto; 
     border-radius: 10px; 
 }
@@ -515,12 +548,13 @@ h4 {
 }
 
 .wrong-answer .button {
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px; /* กำหนดขนาดปุ่ม */
-    height: 80px;  /* กำหนดความสูงของปุ่ม */
 }
+
 
 /* VDO สอดแทรกหลังตอบคำถาม */
 .fullscreen-video-container {
@@ -574,7 +608,7 @@ h4 {
     opacity: 1; 
     cursor: pointer;
 }
-/* --------------------------- */
+
 
 
 

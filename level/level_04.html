@@ -12,25 +12,25 @@
 <body class="gameplay-page">
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
-        <div id="question1">
+        <div id="question1" class="question">
             <div class="image-container">
                 <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
             </div>
             <h1>กระดูกแขนหัก! ทำยังไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
                     วางแขนบนไม้หรือหนังสือหนา ๆ
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ อาจทำให้พิการได้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ อาจทำให้พิการได้นะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ขยับแขนไปมาให้เข้าที่
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'สายไปแล้ว!! ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'สายไปแล้ว!! ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ดื่มนมให้กระดูกแข็งแรงขึ้น
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ ควรให้แพทย์หรือผู้เชี่ยวชาญช่วย', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ ควรให้แพทย์หรือผู้เชี่ยวชาญช่วย', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     รอให้เพื่อนมาช่วยขยับให้
                 </a>
@@ -38,17 +38,17 @@
         </div>
 
         <!-- คำถาม 2 -->
-        <div id="question2" class="hidden">
+        <div id="question2" class="question hidden">
             <div class="image-container">
                 <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
             </div>
             <h1>เมื่อมีความจำเป็นต้องเคลื่อนย้าย ให้ใช้ผ้ายึดเพื่อยึดไม้กับแขนไม่ให้เคลื่อนไหว นั้นเป็นเรื่องที่...</h1>
             <div class="button-grid">
-                <a id="task4-level1" class="button task4-level1" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                <a id="task4-level1" class="button task4-level1" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
                     <img src="../picture/element/" class="button-element">
                     ถูกต้อง สามารถทำได้
                 </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', '❌ สามารถทำได้ ตอบใหม่อีกทีนะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', '❌ สามารถทำได้ ตอบใหม่อีกทีนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
                     ไม่ถูกต้อง ไม่สามารถทำได้
                 </a>
@@ -67,8 +67,14 @@
         <img id="wrong-image" class="wrong-image" src="" style="max-width: 400px;">
         <h1 style="color: red;">คุณตอบผิด!</h1>
         <h2 id="wrong-text">==ข้อความ==</h2>
-        <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
+        <a class="button" onclick="reloadGame()">ลองใหม่อีกครั้ง</a>
     </div>
+
+    <!-- Finish page -->
+    <div id="completion-screen" class="content hidden">
+        <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
+        <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
+    </div>    
 
     <!-- Buttons -->
     <a href="/Room/html/room1.html" class="button button-upleft">BACK</a>
@@ -101,6 +107,10 @@
                 localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
             }
         });
+    </script>
+
+    <script>
+        currentLevel = 4; // ระบุว่านี่คือ level 4
     </script>
     
     

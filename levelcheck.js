@@ -1,52 +1,90 @@
 // **************
 // ฟังก์ชันจบ Level
+// กำหนดค่าคงที่สำหรับระบุ level ในแต่ละห้อง
+const ROOM_LEVELS = {
+    ROOM1: { min: 1, max: 5 },
+    ROOM2: { min: 6, max: 9 },
+    ROOM3: { min: 10, max: 13 },
+    ROOM4: { min: 14, max: 18 }
+};
+
+// กำหนดค่าคงที่สำหรับการปลดล็อคห้อง
+const UNLOCK_LEVELS = {
+    ROOM2: 5,
+    ROOM3: 9,
+    ROOM4: 13
+};
+
 function completeLevel(level) {
-    sessionStorage.setItem(`level${level}`, "true"); // บันทึกการผ่านด่าน
-    console.log(`Level ${level} completed. Stored in sessionStorage: level${level} = true`);
-
-    // ตรวจสอบการปลดล็อก Room
-    if (level === 5) {
-        sessionStorage.setItem("room2_unlocked", "true");
-        console.log("Unlocked Room 2: room2_unlocked = true");
-    } else if (level === 9) {
-        sessionStorage.setItem("room3_unlocked", "true");
-        console.log("Unlocked Room 3: room3_unlocked = true");
-    } else if (level === 13) {
-        sessionStorage.setItem("room4_unlocked", "true");
-        console.log("Unlocked Room 4: room4_unlocked = true");
+    console.log("Received level value:", level, typeof level); // เพิ่มบรรทัดนี้
+    
+    // ตรวจสอบความถูกต้องของ level
+    if (!level || isNaN(level)) {
+        console.error("Invalid level value:", level);
+        return;
     }
 
-    // เปลี่ยนเส้นทางกลับไปที่ Room ที่เกี่ยวข้อง
-    if (level >= 1 && level <= 5) {
-        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-        console.log(`Redirecting to /Room/html/room1.html`);
-        window.location.href = "/Room/html/room1.html";
+    // แปลง level เป็นตัวเลข
+    level = parseInt(level);
+    
+    try {
+        // บันทึกการผ่านด่าน
+        sessionStorage.setItem(`level${level}`, "true");
+        console.log(`Level ${level} completed. Stored in sessionStorage: level${level} = true`);
 
-    } else if (level >= 6 && level <= 9) {
-        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-        console.log(`Redirecting to /Room/html/room2.html`);
-        window.location.href = "/Room/html/room2.html";
+        // ตรวจสอบและปลดล็อคห้อง
+        if (level === UNLOCK_LEVELS.ROOM2) {
+            sessionStorage.setItem("room2_unlocked", "true");
+            console.log("Unlocked Room 2");
+        } else if (level === UNLOCK_LEVELS.ROOM3) {
+            sessionStorage.setItem("room3_unlocked", "true");
+            console.log("Unlocked Room 3");
+        } else if (level === UNLOCK_LEVELS.ROOM4) {
+            sessionStorage.setItem("room4_unlocked", "true");
+            console.log("Unlocked Room 4");
+        }
 
-    } else if (level >= 10 && level <= 13) {
-        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-        console.log(`Redirecting to /Room/html/room3.html`);
-        window.location.href = "/Room/html/room3.html";
+        // นำทางไปยังห้องที่เหมาะสม
+        let targetRoom;
+        if (level >= ROOM_LEVELS.ROOM1.min && level <= ROOM_LEVELS.ROOM1.max) {
+            targetRoom = "room1";
+        } else if (level >= ROOM_LEVELS.ROOM2.min && level <= ROOM_LEVELS.ROOM2.max) {
+            targetRoom = "room2";
+        } else if (level >= ROOM_LEVELS.ROOM3.min && level <= ROOM_LEVELS.ROOM3.max) {
+            targetRoom = "room3";
+        } else if (level >= ROOM_LEVELS.ROOM4.min && level <= ROOM_LEVELS.ROOM4.max) {
+            targetRoom = "room4";
+        } else {
+            throw new Error("Invalid level range");
+        }
 
-    } else if (level >= 14 && level <= 18) {
+        // แสดงข้อความและนำทางไปยังห้อง
         alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
-        console.log(`Redirecting to /Room/html/room4.html`);
-        window.location.href = "/Room/html/room4.html";
-        
-    } else {
-        console.error("Invalid level range");
+        window.location.href = `/Room/html/${targetRoom}.html`;
+
+    } catch (error) {
+        console.error("Error in completeLevel:", error);
+        alert("เกิดข้อผิดพลาดในการบันทึกความคืบหน้า กรุณาลองใหม่อีกครั้ง");
     }
+}
+
+// เพิ่มฟังก์ชันสำหรับตรวจสอบสถานะของด่าน
+function isLevelCompleted(level) {
+    return sessionStorage.getItem(`level${level}`) === "true";
+}
+
+// เพิ่มฟังก์ชันสำหรับตรวจสอบการปลดล็อคห้อง
+function isRoomUnlocked(roomNumber) {
+    if (roomNumber === 1) return true; // ห้อง 1 ปลดล็อคเสมอ
+    return sessionStorage.getItem(`room${roomNumber}_unlocked`) === "true";
 }
 
 
 
 
 
-    
+
+
 
 
 

@@ -13,57 +13,39 @@
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <!-- (**เรียงลำดับคำตอบ**) -->
-        <div id="question1">
+        <div id="question1" class="question" data-recap-video="../video/VDO_01.mp4">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/ex02.png" data-default-src="../picture/questionIMG/ex02.png" alt="Question Image">
             </div>
             <h1>เมื่อศีรษะเกิดการกระแทกและมีอาการบวม หรือ “หัวโน” ควรทำอย่างไร จงเรียงลำดับ</h1>
 
-            <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความA
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความB
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความC
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ข้่อความ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ข้่อความD
-                </a>
+            <div id="sortable" class="sortable-container">
+                <div class="sortable-item" data-order="1" draggable="true">ข้อความ A</div>
+                <div class="sortable-item" data-order="2" draggable="true">ข้อความ B</div>
+                <div class="sortable-item" data-order="3" draggable="true">ข้อความ C</div>
+                <div class="sortable-item" data-order="4" draggable="true">ข้อความ D</div>
             </div>
+            <a id="submit-order1" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 
         </div>
 
         <!-- คำถาม 2 -->
-        <div id="question2" class="hidden">
+        <!-- (**เรียงลำดับคำตอบ**) -->
+        <div id="question2" class="question hidden" data-recap-video="../video/VDO_02.mp4">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/questionIMG/ex01.png" data-default-src="../picture/questionIMG/ex01.png" alt="Question Image">
             </div>
-            <h1>การประคบเย็นที่ถูกต้อง ควรทำอย่างไร</h1>
-            <div class="button-grid">
-                <a class="button" onclick="checkAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
-                    <img src="../picture/element/" class="button-element">
-                    ถุงน้ำแข็ง ห่อด้วยผ้า แล้วประคบ
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ชื้น และความเย็นไม่พอ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ผ้าชุบน้ำเย็นแล้ววาง
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควร เพราะเย็นเกินไป', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    วางถุงน้ำแข็งลงบนผิวเพื่อให้ความเย็นทั่วถึง
-                </a>
-                <a class="button" onclick="checkAnswer(this, false, '../picture/wrongANS/', 'ไม่ควร เพราะชื้น อาจทำให้เวียนศีรษะ และถ้าแผลเปิด อาจเกิดการติดเชื้อ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
-                    ก้มหัวจุ่มน้ำ
-                </a>
+            <h1>เรียงลำดับวิธีปฐมพยาบาลเมื่อโดนผึ้ง ต่อ แตน ต่อย ให้ถูกต้อง</h1>
+
+            <div id="sortable" class="sortable-container">
+                <div class="sortable-item" data-order="1" draggable="true">กดเหล็กในออก A</div>
+                <div class="sortable-item" data-order="2" draggable="true">กดหรือบีบรอบ ๆ แผลเพื่อไล่พิษ B</div>
+                <div class="sortable-item" data-order="3" draggable="true">ล้างแผลด้วยน้ำสะอาด C</div>
+                <div class="sortable-item" data-order="4" draggable="true">ทาแอมโมเนียรอบ ๆ แผล D</div>
+                <div class="sortable-item" data-order="5" draggable="true">ประคบเย็น เพื่อลดอาการบวม ปวด E</div>
             </div>
+            <a id="submit-order2" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
+
         </div>
     </div>
 
@@ -78,14 +60,20 @@
         <img id="wrong-image" class="wrong-image" src="" style="max-width: 400px;">
         <h1 style="color: red;">คุณตอบผิด!</h1>
         <h2 id="wrong-text">==ข้อความ==</h2>
-        <a class="button" onclick="reloadGame()">กลับไปเริ่มใหม่</a>
+        <a class="button" onclick="reloadGame()">ลองใหม่อีกครั้ง</a>
     </div>
+
+    <!-- Finish page -->
+    <div id="completion-screen" class="content hidden">
+        <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
+        <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
+    </div>    
 
     <!-- Buttons -->
     <a href="../startGame.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
-    <script src="../gameplay.js"></script>
+    <script src="../gameplay_03.js"></script>
     <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
     <script src="../audioController.js" defer></script>
@@ -114,6 +102,9 @@
         });
     </script>
     
+    <script>
+        currentLevel = 13;  // ระบุว่านี่คือ level 13
+    </script>
     
         <!-- audio -->
         <audio id="bg-music" loop>
