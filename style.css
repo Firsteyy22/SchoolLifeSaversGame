@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* Button colors */
 /* เพิ่มชื่ออีก ถ้าต้องการเปลี่ยนสี*/
@@ -10,14 +10,14 @@
     --colorShadeD: #449cc5; /* สีตอน Hover*/
     --colorShadeE: #318AB4; /* สี BG ชั้น 1*/
 
-    --colorShadeF: rgb(255, 207, 51);
+    --colorShadeF: #ffcf33;
 
     --colorTextHover: rgb(255, 255, 255); /* สีข้อความสว่าง */
 }
 
 body {
     margin: 0;
-    font-family: "Pridi", serif;
+    font-family: "Kodchasan", serif;
     height: 95vh; /* Full height */
     width: 100%; /* Full width */
     display: flex;

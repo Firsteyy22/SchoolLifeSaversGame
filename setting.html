@@ -5,25 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* From Uiverse.io by r7chardgh */ 
-        /* The switch - the box around the slider */
-        .switch {
-          font-size: 20px;
-          position: relative;
-          display: inline-block;
-          width: 5em;
-          height: 2.5em;
-          user-select: none;
-        }
-        
-        /* Hide default HTML checkbox */
-        .switch .cb {
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-        
+    <style>        
         /* The slider */
         .toggle {
           position: absolute;
@@ -188,14 +170,6 @@
                     <input type="range" id="bg-music-volume" min='0' max='100' step='1' value="50">
                     <span>50%</span>
                 </div>                
-
-                <label class="switch" for="bg-music-toggle">
-                    <input class="cb" type="checkbox" id="bg-music-toggle">
-                    <span class="toggle">
-                      <span class="left">ปิด</span>
-                      <span class="right">เปิด</span>
-                    </span>
-                </label>
             </div>
 
             <audio id="bg-music" loop>
@@ -213,14 +187,6 @@
                     <input type="range" id="sfx-volume" min='0' max='100' step='1' value="50">
                     <span>50%</span>
                 </div>
-
-                <label class="switch" for="sfx-toggle">
-                    <input class="cb" type="checkbox" id="sfx-toggle">
-                    <span class="toggle">
-                      <span class="left">ปิด</span>
-                      <span class="right">เปิด</span>
-                    </span>
-                </label>
             </div>
 
             <audio id="sfx" preload="auto">
