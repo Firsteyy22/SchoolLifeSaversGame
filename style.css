@@ -4,13 +4,14 @@
 /* Button colors */
 /* เพิ่มชื่ออีก ถ้าต้องการเปลี่ยนสี*/
 :root {
-    --colorShadeA: rgb(106, 163, 137);
-    --colorShadeB: rgb(121, 186, 156);
-    --colorShadeC: rgb(150, 232, 195);
-    --colorShadeD: rgb(187, 232, 211);
-    --colorShadeE: rgb(205, 255, 232);
+    --colorShadeA: #FFFFFF; /* สี Font*/
+    --colorShadeB: #297694; /* สี ขอบ ชั้น 1*/ /* สี ขอบ ชั้น 2*/ /* สี BG ชั้น 3*/
+    --colorShadeC: #3592b6; /* สี BG ชั้น 2*/
+    --colorShadeD: #449cc5; /* สีตอน Hover*/
+    --colorShadeE: #318AB4; /* สี BG ชั้น 1*/
 
     --colorShadeF: rgb(255, 207, 51);
+
     --colorTextHover: rgb(255, 255, 255); /* สีข้อความสว่าง */
 }
 
@@ -57,6 +58,43 @@ h4 {
     font-weight: 200; /* Extra-light */
 }
 
+/* Buttons */
+.setting-page .button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.setting-page .button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.setting-page .button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.setting-page .button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.setting-page .button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
+}
+
 /* Menu page */
 .menu-page .button {
     position: relative; /* ปุ่มในหน้า Menu ไม่ใช้ absolute */
@@ -67,12 +105,12 @@ h4 {
     vertical-align: middle;
     text-decoration: none;
     font-size: 1.5rem;
-    color: var(--colorShadeA);
+    color: var(--colorShadeA); /* สี Font*/
     font-weight: 400;
     padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB); /* สี ขอบ ชั้น 1*/
     border-radius: 1em;
-    background: var(--colorShadeE);
+    background: var(--colorShadeE); /* สี BG ชั้น 1*/
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
     width: auto;
@@ -81,7 +119,49 @@ h4 {
 
 }
 
+.menu-page .button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.menu-page .button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.menu-page .button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.menu-page .button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.menu-page .button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
+}
+
 /* Start game page (Map) */
+.map-page .button .visitRoomButton { /*หน้า select ยังเปลี่ยนตัวปุ่มให้เหมือนตัวอื่น ๆ ไม่ได้*/
+    color: var(--colorShadeA); /* สี Font*/
+    border: 2px solid var(--colorShadeB); /* สี ขอบ ชั้น 1*/
+    background: var(--colorShadeE); /* สี BG ชั้น 1*/
+}
+
 .map-page .button {
     position: relative;
     display: inline-block;
@@ -94,7 +174,7 @@ h4 {
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB);
     border-radius: 1em;
     background: var(--colorShadeE);
     transform-style: preserve-3d;
@@ -122,6 +202,42 @@ h4 {
     left: 20px;         /* ระยะจากด้านซ้าย */
 }
 
+.map-page .button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.map-page .button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.map-page .button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.map-page .button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.map-page .button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
+}
+
 /* About us page */
 .aboutus-page .button {
     position: absolute; /* ปุ่มในหน้า Map ใช้ absolute */
@@ -135,7 +251,7 @@ h4 {
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB);
     border-radius: 1em;
     background: var(--colorShadeE);
     transform-style: preserve-3d;
@@ -150,6 +266,42 @@ h4 {
     height: 30px;
     bottom: 30px;
     left: 20px;
+}
+
+.aboutus-page .button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.aboutus-page .button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.aboutus-page .button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.aboutus-page .button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.aboutus-page .button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
 }
 
 /* Setting page */
@@ -183,7 +335,7 @@ h4 {
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB);
     border-radius: 1em;
     background: var(--colorShadeE);
     transform-style: preserve-3d;
@@ -206,6 +358,42 @@ h4 {
     color: var(--colorShadeA);
     border: 2px solid var(--colorShadeA);
     max-width: 300px;
+}
+
+.setting-page .button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
+    transform: translate3d(0, 0.5em, -0.5em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.setting-page .button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+    color: var(--colorTextHover);
+}
+
+.setting-page .button:hover::before {
+    transform: translate3d(0, 0em, -0.5em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+}
+
+.setting-page .button:focus {
+    outline: 3px solid var(--colorFocus);
+}
+
+.setting-page .button:active {
+    transform: translate(0, 0.5em);
+    box-shadow: none;
 }
 
 .setting-item {
@@ -266,7 +454,7 @@ h4 {
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 3em; /* ลด padding ด้านข้างเพื่อเว้นที่สำหรับรูป */
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB);
     border-radius: 1em;
     background: var(--colorShadeE);
     transform-style: preserve-3d;
@@ -294,7 +482,7 @@ h4 {
     left: 20px;
 }
 
-.button::before {
+.gameplay-page .button::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -303,44 +491,44 @@ h4 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--colorShadeC);
+    background: var(--colorShadeC); /* สี BG ชั้น 2*/
     border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
+    box-shadow: 0 0 0 2px var(--colorShadeB)/* สี ขอบ ชั้น 2*/, 0 0.5em 0 0 var(--colorShadeB); /* สี BG ชั้น 3*/
     transform: translate3d(0, 0.5em, -0.5em);
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.button:hover {
+.gameplay-page .button:hover {
     background: var(--colorShadeD);
     transform: translate(0, 0.25em);
     color: var(--colorTextHover);
 }
 
-.button:hover::before {
+.gameplay-page .button:hover::before {
     transform: translate3d(0, 0em, -0.5em);
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
 }
 
-.button:focus {
+.gameplay-page .button:focus {
     outline: 3px solid var(--colorFocus);
 }
 
-.button:active {
+.gameplay-page .button:active {
     transform: translate(0, 0.5em);
     box-shadow: none;
 }
 
-.button.correct {
+.gameplay-page .button.correct {
     background-color: #4CAF50; /* สีเขียว */
-    color: white;
+    transition: background-color 0.3s ease;
 }
 
-.button.incorrect {
+.gameplay-page .button.incorrect {
     background-color: #F44336; /* สีแดง */
-    color: white;
+    transition: background-color 0.3s ease;
 }
 
-.button:disabled {
+.gameplay-page .button:disabled {
     background-color: #ccc; /* สีปุ่มที่ถูกปิด */
     color: #666; /* สีข้อความที่ดูจางลง */
     pointer-events: none; 
@@ -381,7 +569,7 @@ h4 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: 2px solid var(--colorShadeA);
+    border: 2px solid var(--colorShadeB);
     border-radius: 0.5em;
     background: var(--colorShadeE);
     color: var(--colorShadeA);
@@ -398,7 +586,7 @@ h4 {
     right: 10px; /* เปลี่ยนจาก left เป็น right และกำหนดระยะห่างจากขอบขวา */
     width: 160px;
     height: 50px;
-    background-color: #8bd3dd;
+    background-color: #28a745;
     border: none;
     border-radius: 10px;
     font-size: 25px;
@@ -410,7 +598,7 @@ h4 {
 
 /* เพิ่มเอฟเฟกต์เมื่อ hover */
 .gameplay-page .button-submit-answer:hover {
-    background-color: #5fa8af;
+    background-color: #218838;
 }
 
 .button-choices::before {
@@ -424,7 +612,7 @@ h4 {
     bottom: 0;
     background: var(--colorShadeC);
     border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeB);
     transform: translate3d(0, 0.5em, -0.5em);
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
@@ -452,25 +640,26 @@ h4 {
 /* สไตล์สำหรับปุ่มที่ถูกเลือก */
 .button-choices.selected {
     background: var(--colorShadeF); /* สีพื้นหลังใหม่เมื่อเลือก */
+    border: 2px solid var(--colorShadeA);
     transform: translate(0, 0.25em); /* ปรับความสูง */
     color: var(--colorTextHover); /* เปลี่ยนสีข้อความ */
 }
 
 .button-choices.selected::before {
     transform: translate3d(0, 0em, -0.5em); /* เลียนแบบ hover */
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+    box-shadow: 0 0 0 2px var(--colorShadeA), 0 0.2em 0 0 var(--colorShadeA);
 }
 
 /* สีสำหรับปุ่มตอบถูก */
 .button-choices.correct {
     background-color: #4CAF50 !important; /* สีเขียว */
-    color: white;
+    transition: background-color 0.3s ease;
 }
 
 /* สีสำหรับปุ่มตอบผิด */
 .button-choices.incorrect {
     background-color: #F44336 !important; /* สีแดง */
-    color: white;
+    transition: background-color 0.3s ease;
 }
 
 /* --------------------------- */
@@ -485,11 +674,16 @@ h4 {
 
 .sortable-item {
     padding: 10px;
-    background-color: rgb(176, 240, 211);
+    background-color: #b9d6f3;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: grab;
     text-align: center;
+}
+
+.sortable-item:hover{
+    background-color: #a5ccf3;
+    transform: translate(0, 0.1em);
 }
 
 .sortable-item.dragging {
