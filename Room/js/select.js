@@ -1,99 +1,99 @@
-'use strict';
-
-class Carousel {
-  constructor(el) {
-    this.el = el;
-    this.carouselOptions = ['previous', 'next'];
-    this.carouselData = [
-        { 'id': '3', 'src': '/picture/roompng/Emergency3.png', 'href': '/Room/html/room1.html' },
-        { 'id': '4', 'src': '/picture/roompng/Emergency4.png', 'href': '/Room/html/room2.html' },
-        { 'id': '1', 'src': '/picture/roompng/Emergency1.png', 'href': '/Room/html/room3.html'},
-        { 'id': '2', 'src': '/picture/roompng/Emergency2.png', 'href': '/Room/html/room4.html' },
-        // Add more images
-    ];
-    this.currentItemIndex = 0; // Track the current item
-    this.carouselContainer;
-    this.carouselPlayState;
+// Card interface
+class Card {
+  constructor(node, position) {
+    this.node = node;
+    this.position = position;
   }
 
-  mounted() {
-    this.setupCarousel();
-    this.addButton();
-  }
+  nextPosition() {
+    let nextPosition = 1;
 
-  setupCarousel() {
-    const container = document.createElement('div');
-    const controls = document.createElement('div');
-
-    this.el.append(container, controls);
-    container.className = 'carousel-container';
-    controls.className = 'carousel-controls';
-
-    this.carouselData.forEach((item, index) => {
-      const carouselItem = document.createElement('img');
-
-      carouselItem.className = `carousel-item carousel-item-${index + 1}`;
-      carouselItem.src = item.src;
-      carouselItem.setAttribute('loading', 'lazy');
-      carouselItem.setAttribute('data-index', `${index + 1}`);
-
-      container.appendChild(carouselItem);
-    });
-
-    this.carouselOptions.forEach((option) => {
-      const btn = document.createElement('button');
-      btn.textContent = option; // Simplified button text
-      btn.className = `carousel-control carousel-control-${option}`;
-      btn.setAttribute('data-name', option);
-      controls.appendChild(btn);
-    });
-
-    this.setControls([...controls.children]);
-    this.carouselContainer = container;
-  }
-
-  addButton() {
-    const btn = document.createElement('button');
-    btn.id = 'visitRoomButton';  // Set the ID for the button
-    btn.textContent = 'CONFIRM';
-    btn.onclick = () => {
-      const href = this.carouselData[this.currentItemIndex].href;
-      window.location.href = href;
-    };
-    this.el.appendChild(btn);
-  }  
-
-  setControls(controls) {
-    controls.forEach(control => {
-      control.onclick = (event) => {
-        event.preventDefault();
-        const direction = control.getAttribute('data-name');
-        this.navigate(direction);
-      };
-    });
-  }
-
-  navigate(direction) {
-    if (direction === 'previous') {
-      this.currentItemIndex = (this.currentItemIndex - 1 + this.carouselData.length) % this.carouselData.length;
-    } else if (direction === 'next') {
-      this.currentItemIndex = (this.currentItemIndex + 1) % this.carouselData.length;
+    if (this.position != 4) {
+      nextPosition = this.position + 1;
     }
-    this.updateCarousel();
+
+    return nextPosition;
   }
 
-  updateCarousel() {
-    // Update carousel display and adjust button link
-    const currentData = this.carouselData[this.currentItemIndex];
-    const carouselItems = this.el.querySelectorAll('.carousel-item');
+  prevPosition() {
+    let prevPosition = 4;
 
-    carouselItems.forEach((item, index) => {
-      const dataIndex = (this.currentItemIndex + index) % this.carouselData.length;
-      item.src = this.carouselData[dataIndex].src;
-    });
+    if (this.position != 1) {
+      prevPosition = this.position - 1;
+    }
+
+    return prevPosition;
+  }
+
+  moveNext() {
+    this.node.classList.replace(
+      `position${this.position}`,
+      `position${this.nextPosition()}`
+    );
+
+    this.position = this.nextPosition();
+  }
+
+  movePrev() {
+    this.node.classList.replace(
+      `position${this.position}`,
+      `position${this.prevPosition()}`
+    );
+
+    this.position = this.prevPosition();
   }
 }
 
-const el = document.querySelector('.carousel');
-const exampleCarousel = new Carousel(el);
-exampleCarousel.mounted();
+// Initializations
+const [prev, next] = document.querySelectorAll("i");
+const gallery = document.querySelector(".gallery");
+const cards = [];
+
+// Instantiate cards and populate cards array
+document.querySelectorAll(".card").forEach((node, index) => {
+  cards.push(new Card(node, index + 1));
+});
+
+// Handle click events by swapping the functionality
+prev.addEventListener("click", () => {
+  cards.forEach((card) => {
+    card.moveNext();
+  });
+});
+
+next.addEventListener("click", () => {
+  cards.forEach((card) => {
+    card.movePrev();
+  });
+});
+
+// Handle touch slide events
+gallery.addEventListener("touchstart", (event) => {
+  start = event.targetTouches[0].screenX;
+});
+
+gallery.addEventListener("touchend", (event) => {
+  let end = event.changedTouches[0].screenX;
+  const range = Math.abs(start - end);
+
+  if (range > 30) {
+    if (start < end) {
+      cards.forEach((card) => {
+        card.movePrev();
+      });
+    } else if (start > end) {
+      cards.forEach((card) => {
+        card.moveNext();
+      });
+    }
+  }
+});
+
+  // Select all locked level cards
+  document.querySelectorAll(".card.locked").forEach(card => {
+      card.addEventListener("click", function(event) {
+          event.preventDefault(); // Prevents clicking the link
+          alert("🔒 This level is locked! Complete previous levels to unlock.");
+          console.log(`⛔ Attempted to access a locked level: ${this.id}`);
+      });
+  });

@@ -4,11 +4,11 @@
 /* Button colors */
 /* เพิ่มชื่ออีก ถ้าต้องการเปลี่ยนสี*/
 :root {
-    --colorShadeA: #FFFFFF; /* สี Font*/
-    --colorShadeB: #297694; /* สี ขอบ ชั้น 1*/ /* สี ขอบ ชั้น 2*/ /* สี BG ชั้น 3*/
-    --colorShadeC: #3592b6; /* สี BG ชั้น 2*/
-    --colorShadeD: #449cc5; /* สีตอน Hover*/
-    --colorShadeE: #318AB4; /* สี BG ชั้น 1*/
+    --colorShadeA: #fff; /* สี Font*/
+    --colorShadeB: #96B0EA; /* สี ขอบ ชั้น 1*/ /* สี ขอบ ชั้น 2*/ /* สี BG ชั้น 3*/ 
+    --colorShadeC: #566089; /* สี BG ชั้น 2*/
+    --colorShadeD: #7b9de6; /* สีตอน Hover*/
+    --colorShadeE: #5c79c8; /* สี BG ชั้น 1*/
 
     --colorShadeF: #ffcf33;
 
@@ -30,7 +30,7 @@ body {
 }
 
 .logo img {
-    max-width: 400px; /* Set the max width for the logo */
+    max-width: 800px; /* Set the max width for the logo */
     height: auto; /* Ensure the logo scales proportionally */
 }
 
@@ -802,7 +802,5 @@ h4 {
     opacity: 1; 
     cursor: pointer;
 }
-
-
 
 

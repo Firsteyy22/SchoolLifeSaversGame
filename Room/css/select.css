@@ -1,209 +1,177 @@
-/* page styles */
-.ax-hidden {
-    visibility: hidden;
-    position: absolute;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-/* carousel styles */
-.carousel {
-    --carousel-height: 600px;
-    --carousel-width: 900px;
-    --carousel-item-height: 50%;
-    --carousel-item-width: auto;
-    
-    width: 100%;
-    height: auto;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-.carousel-container {
-    align-items: center;
-    display: flex;
-    min-height: var(--carousel-height);
-    margin: 0 auto;
-    max-width: var(--carousel-width);
-    position: relative;
+body {
+  background-color: white;
 }
 
-.carousel-item {
-    height: var(--carousel-item-height);
-    opacity: 0;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: all 0.3s ease-in-out;
-    width: var(--carousel-item-width);
-    z-index: 0;
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 5em;
+  z-index: 99;
 }
 
-.carousel-item-1 {
-    left: 25%;
-    opacity: 0;
-    
+.container {
+  height: 70vh;
+  display: flex;
+  align-items: center;
 }
 
-.carousel-item-2,
-.carousel-item-4 {
-    height: calc(var(--carousel-item-height) * 1.5);
-    opacity: 1;
-    width: calc(var(--carousel-item-width) * 1.5);
-    z-index: 1;
+.prev,
+.next {
+  height: 100%;
+  width: 30vw;
+  display: flex;
+  align-items: center;
 }
 
-.carousel-item-2 {
-    left: -55%;
-    opacity: 50%;
+.prev {
+  justify-content: end;
 }
 
-.carousel-item-3 {
-    /* box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1); */
-    height: calc(var(--carousel-item-height) * 2);
-    opacity: 1;
-    left: 50%;
-    width: calc(var(--carousel-item-width) * 2);
-    z-index: 2;
+.next {
+  justify-content: start;
 }
 
-.carousel-item-4 {
-    left: 150%;
-    opacity: 50%;
+i {
+  font-size: 2em;
+  color: white;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    margin: 0px 0;
+i:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-/* carousel button styles */
-.carousel-control {
-    background-color: transparent;
-    border: 3px solid; /* Increased border size */
-    border-radius: 6px; /* Increased border radius */
-    color: #000000;
-    cursor: pointer;
-    height: 40px; /* Increased button height */
-    margin: 2%; /* Adjusted margin for more space */
-    position: absolute; /* Fixed position */
-    top: 50%; /* Vertically center the buttons */
-    transform: translateY(-50%) scale(2); /* Center vertically and increase size */
-    transition: transform 0.3s ease-out; /* Smooth transition */
-    width: 40px; /* Increased button width */
-    z-index: 10; /* Keep on top */
+.gallery {
+  position: relative;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  left: -17%;
 }
 
-.carousel-control:hover {
-    transform: translateY(-50%) scale(1.8); /* Adjust hover effect for larger size */
+.card {
+  position: absolute;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
 
-/* previous button */
-.carousel-control-previous::after,
-.carousel-control-previous::before {
-    box-sizing: border-box;
-    content: '';
-    display: block;
-    height: 10px; /* Increased arrow size */
-    position: absolute;
-    top: 7px; /* Adjusted position */
+img {
+  width: 100%;
 }
 
-.carousel-control-previous::after {
-    border-bottom: 10px solid transparent; /* Larger arrow size */
-    border-right: 15px solid; /* Larger arrow size */
-    border-top: 10px solid transparent; /* Larger arrow size */
-    right: 10px; /* Adjusted position */
-    width: 0;
+/* Position 1 is typically the focal point, so it's fully scaled and centered */
+.position1 {
+  left: 35%;
+  z-index: 3;
+  transform: scale(1);
+  opacity: 1;
 }
 
-/* next button */
-.carousel-control-next::after,
-.carousel-control-next::before {
-    box-sizing: border-box;
-    content: "";
-    display: block;
-    height: 10px; /* Increased arrow size */
-    position: absolute;
-    top: 7px; /* Adjusted position */
+/* Scale up on hover to provide a dynamic, interactive feel */
+.position1:hover {
+  transform: scale(1.1);
 }
 
-.carousel-control-next::after {
-    border-bottom: 10px solid transparent; /* Larger arrow size */
-    border-left: 15px solid; /* Larger arrow size */
-    border-top: 10px solid transparent; /* Larger arrow size */
-    left: 7px; /* Adjusted position */
-    width: 0;
+/* Position 2 is slightly to the right and less prominent */
+.position2 {
+  left: 65%;
+  z-index: 2;
+  transform: scale(0.8);
+  opacity: 0.6;
 }
 
-/* Position previous and next buttons to the left and right */
-.carousel-control-previous {
-    left: 20px; /* Left button position */
-    z-index: 5;
+/* Position 3 is further diminished in focus and size */
+.position3 {
+  left: 55%;  /* Adjusting this might be necessary based on layout and visibility */
+  z-index: 1;
+  transform: scale(0.6);
+  opacity: 0.6;
 }
 
-.carousel-control-next {
-    right: 20px; /* Right button position */
-    z-index: 5;
+/* Position 4 is to the far left, mimicking the style of Position 3 */
+.position4 {
+  left: -15%;
+  z-index: 1;
+  transform: scale(0.6);
+  opacity: 0.6;
 }
 
-#visitRoomButton {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: var(--colorShadeA);
-    font-weight: 400;
-    padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
-    border-radius: 1em;
-    background: var(--colorShadeE);
-    transform-style: preserve-3d;
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
-    width: auto;
-    max-width: 300px;
-    margin: 5px 0; 
+
+@media only screen and (max-width: 720px) {
+  .prev,
+  .next {
+    display: none;
   }
-  
-  #visitRoomButton:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--colorShadeC);
-    border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA);
-    transform: translate3d(0, 0.5em, -0.5em);
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+
+  .container {
+    align-items: flex-start;
+  }
+
+  .heading {
+    height: 20vh;
+  }
 }
 
-#visitRoomButton:hover {
-    background: var(--colorShadeD);
-    transform: translate(0, 0.25em);
-    color: var(--colorTextHover);
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+/* Arrow Container */
+.slider-arrow-container {
+  position: absolute;
+  top: 50%; /* Center vertically in relation to the slider container */
+  transform: translateY(-50%); /* Offset for exact centering */
+  width: 100%; /* Cover the full width of the slider */
+  pointer-events: none; /* Prevents the container from blocking clicks */
 }
 
-#visitRoomButton:hover::before {
-    transform: translate3d(0, 0em, -0.5em);
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.2em 0 0 var(--colorShadeB);
+/* Left Arrow */
+.fas.fa-chevron-circle-left {
+  position: absolute;
+  left: 10%; /* Distance from the left edge of the container */
+  font-size: 10em; /* Size of the arrow */
+  color: black; /* Arrow color, change as needed */
+  cursor: pointer; /* Indicates the arrow is clickable */
+  pointer-events: auto; /* Allows the arrow to be clickable */
+  opacity: 0.8; /* Opacity for a slight transparency effect */
 }
 
-#visitRoomButton:focus {
-    outline: 3px solid var(--colorFocus);
+.fas.fa-chevron-circle-left:hover {
+  opacity: 1; /* Full opacity on hover to highlight interactivity */  
+  transition: opacity 2s ease-in-out; /* Smooth transition for mouse hover */
 }
 
-#visitRoomButton:active {
-    transform: translate(0, 0.5em);
-    box-shadow: none;
+/* Left Arrow */
+.fas.fa-chevron-circle-right {
+  position: absolute;
+  right: 10%; /* Distance from the left edge of the container */
+  font-size: 10em; /* Size of the arrow */
+  color:black; /* Arrow color, change as needed */
+  cursor: pointer; /* Indicates the arrow is clickable */
+  pointer-events: auto; /* Allows the arrow to be clickable */
+  opacity: 0.8; /* Opacity for a slight transparency effect */
 }
 
-#visitRoomButton:disabled {
-    background-color: #ccc; /* สีปุ่มที่ถูกปิด */
-    color: #666; /* สีข้อความที่ดูจางลง */
-    pointer-events: none; 
-    opacity: 0.6;
+.fas.fa-chevron-circle-right:hover {
+  opacity: 1 ; /* Full opacity on hover to highlight interactivity */
+  transition: opacity 3s ease-in-out; /* Smooth transition for mouse hover */
 }
+
