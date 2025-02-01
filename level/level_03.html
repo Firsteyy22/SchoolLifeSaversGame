@@ -14,7 +14,7 @@
         <!-- คำถาม 1 -->
         <div id="question1" class="question">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Main Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map1/lv3/lv3_q1.png" data-default-src="../map1/lv3/lv3_q1.png" alt="Main Image">
             </div>
             <h1>โอ้ย เดินชนโต๊ะ ฟกช้ำซะได้ พี่พยาบาลจะให้ประคบอะไรเนี่ย</h1>
             <div class="button-grid">
@@ -41,7 +41,7 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Main Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/map1/lv3/lv3_q2.png" data-default-src="../picture/map1/lv3/lv3_q2.png" alt="Main Image">
             </div>
             <h1>หลังผ่านไป 48 ชั่วโมง ต้องประคบด้วยอะไรต่อ</h1>
             <div class="button-grid">
@@ -49,7 +49,7 @@
                     <img src="../picture/element/coldpocket.png" class="button-element">
                     ประคบเย็น
                 </a>
-                <a id="task3-level1" class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '../picture/correctANS/', '../video/recap2.mp4')">
+                <a id="task3-level1" class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '', '../video/recap2.mp4')">
                     <img src="../picture/element/hotpocket.png" class="button-element">
                     ประคบร้อน
                 </a>
@@ -81,9 +81,10 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
-        <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
+        <img src="../picture/map1/lv3/lv3_end.png" style="max-width: 400px;">
+        <h1>ยินดีด้วย! คุณรักษาได้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
-    </div>    
+    </div>  
 
     <!-- Buttons -->
     <a href="/Room/html/room1.html" class="button button-upleft">BACK</a>

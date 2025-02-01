@@ -711,7 +711,6 @@ h4 {
 .image-container {
     display: flex;
     justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
     text-align: center;
     margin: 15px 0;
     width: 100%; 
