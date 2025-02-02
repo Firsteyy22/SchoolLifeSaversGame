@@ -1,99 +1,96 @@
-// Card interface
-class Card {
-  constructor(node, position) {
-    this.node = node;
-    this.position = position;
-  }
+document.addEventListener("DOMContentLoaded", () => {
+    const prev = document.querySelector(".prev i");
+    const next = document.querySelector(".next i");
+    const confirmBtn = document.querySelector("#confirm");
 
-  nextPosition() {
-    let nextPosition = 1;
+    let cardOrder = ["level1-button", "level2-button", "level3-button", "level4-button"];
+    const totalLevels = 4;
+    const levelUrls = {
+        "level1-button": "/Room/html/room1.html",
+        "level2-button": "/Room/html/room2.html",
+        "level3-button": "/Room/html/room3.html",
+        "level4-button": "/Room/html/room4.html"
+    };
 
-    if (this.position != 4) {
-      nextPosition = this.position + 1;
+    function updateCardPositions() {
+        document.querySelectorAll(".card").forEach(card => {
+            card.classList.remove("position1", "position2", "position3", "position4", "selected");
+        });
+
+        cardOrder.forEach((id, index) => {
+            let card = document.getElementById(id);
+            if (card) {
+                card.classList.add(`position${index + 1}`);
+                if (index === 0) {
+                    card.classList.add("selected");
+                }
+            }
+        });
     }
 
-    return nextPosition;
-  }
-
-  prevPosition() {
-    let prevPosition = 4;
-
-    if (this.position != 1) {
-      prevPosition = this.position - 1;
+    function moveCards(direction) {
+        if (direction === "next") {
+            cardOrder.push(cardOrder.shift());
+        } else {
+            cardOrder.unshift(cardOrder.pop());
+        }
+        updateCardPositions();
     }
 
-    return prevPosition;
-  }
+    prev.addEventListener("click", () => moveCards("prev"));
+    next.addEventListener("click", () => moveCards("next"));
 
-  moveNext() {
-    this.node.classList.replace(
-      `position${this.position}`,
-      `position${this.nextPosition()}`
-    );
+    confirmBtn.addEventListener("click", () => {
+        let selectedCard = document.querySelector(".card.selected");
+        if (selectedCard) {
+            let selectedId = selectedCard.id;
+            let targetURL = levelUrls[selectedId];
 
-    this.position = this.nextPosition();
-  }
+            if (selectedCard.classList.contains("locked")) {
+                Swal.fire({
+                    title: "ห้องถูกล็อก!",
+                    text: "คุณต้องปลดล็อกด่านนี้ก่อน!",
+                    icon: "warning",
+                    confirmButtonText: "เข้าใจแล้ว"
+                });
+            } else {
+                Swal.fire({
+                    title: "เข้าไปในห้องนี้?",
+                    text: "คุณต้องการเข้าไปในด่านนี้ใช่หรือไม่?",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "ใช่! ไปเลย",
+                    cancelButtonText: "ไม่"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = targetURL;
+                    }
+                });
+            }
+        } else {
+            Swal.fire({
+                title: "ยังไม่ได้เลือกด่าน",
+                text: "กรุณาเลือกด่านก่อนกดปุ่มยืนยัน",
+                icon: "error",
+                confirmButtonText: "ตกลง"
+            });
+        }
+    });
 
-  movePrev() {
-    this.node.classList.replace(
-      `position${this.position}`,
-      `position${this.prevPosition()}`
-    );
-
-    this.position = this.prevPosition();
-  }
-}
-
-// Initializations
-const [prev, next] = document.querySelectorAll("i");
-const gallery = document.querySelector(".gallery");
-const cards = [];
-
-// Instantiate cards and populate cards array
-document.querySelectorAll(".card").forEach((node, index) => {
-  cards.push(new Card(node, index + 1));
-});
-
-// Handle click events by swapping the functionality
-prev.addEventListener("click", () => {
-  cards.forEach((card) => {
-    card.moveNext();
-  });
-});
-
-next.addEventListener("click", () => {
-  cards.forEach((card) => {
-    card.movePrev();
-  });
-});
-
-// Handle touch slide events
-gallery.addEventListener("touchstart", (event) => {
-  start = event.targetTouches[0].screenX;
-});
-
-gallery.addEventListener("touchend", (event) => {
-  let end = event.changedTouches[0].screenX;
-  const range = Math.abs(start - end);
-
-  if (range > 30) {
-    if (start < end) {
-      cards.forEach((card) => {
-        card.movePrev();
-      });
-    } else if (start > end) {
-      cards.forEach((card) => {
-        card.moveNext();
-      });
+    function updateUnlockedLevels() {
+        for (let i = 1; i <= totalLevels; i++) {
+            let levelButton = document.getElementById(`level${i}-button`);
+            if (levelButton) {
+                if (i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true") {
+                    levelButton.classList.remove("locked");
+                    levelButton.classList.add("unlocked");
+                } else {
+                    levelButton.classList.add("locked");
+                }
+            }
+        }
     }
-  }
-});
 
-  // Select all locked level cards
-  document.querySelectorAll(".card.locked").forEach(card => {
-      card.addEventListener("click", function(event) {
-          event.preventDefault(); // Prevents clicking the link
-          alert("🔒 This level is locked! Complete previous levels to unlock.");
-          console.log(`⛔ Attempted to access a locked level: ${this.id}`);
-      });
-  });
+    updateUnlockedLevels();
+    updateCardPositions();
+});

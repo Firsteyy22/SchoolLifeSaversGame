@@ -59,10 +59,14 @@ i:hover {
 .gallery {
   position: relative;
   height: 70%;
-  width: 100%;
+  width: 170%; /* Adjusted for better responsiveness */
+  max-width: 1200px; /* Ensures it doesn't stretch too much on large screens */
   display: flex;
   align-items: center;
-  left: -17%;
+  justify-content: center; /* Centers content */
+  margin: 0 auto; /* Centers the gallery in the page */
+  left: -18%; /* Removes manual left shifting */
+  transform: translateX(0); /* Ensures it's properly positioned */
 }
 
 .card {
@@ -86,7 +90,7 @@ img {
 
 /* Scale up on hover to provide a dynamic, interactive feel */
 .position1:hover {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 /* Position 2 is slightly to the right and less prominent */
@@ -175,3 +179,14 @@ img {
   transition: opacity 3s ease-in-out; /* Smooth transition for mouse hover */
 }
 
+.confirm {
+  position: fixed;  /* Fixes position relative to viewport */
+  bottom: 20px;      /* 20px from the bottom for spacing */
+  left: 50%;         /* Center horizontally */
+  transform: translateX(-50%); /* Shift back by 50% of its width for perfect centering */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;       /* Ensure full width for responsiveness */
+}

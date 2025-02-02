@@ -79,62 +79,54 @@ function isRoomUnlocked(roomNumber) {
     return sessionStorage.getItem(`room${roomNumber}_unlocked`) === "true";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const totalLevels = 4;
-    const totalTasksPerLevel = [5, 4, 4, 4]; // Total tasks for each level
-    const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0); // Sum of all tasks across levels
+    const totalTasksPerLevel = [1, 4, 4, 4]; // Number of tasks per level
+    const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0);
+    let totalCompletedTasks = 0;
 
     function unlockLevel(levelNumber) {
         const nextLevel = levelNumber + 1;
         if (nextLevel <= totalLevels) {
-            const nextLevelButton = document.getElementById(`level${nextLevel}-button`);
-            const nextTasksContainer = document.getElementById(`tasks-level${nextLevel}`);
-            if (nextLevelButton && nextTasksContainer) {
-                nextLevelButton.classList.remove("locked");
-                nextTasksContainer.style.display = 'block'; // Show tasks for the next level
-                sessionStorage.setItem(`level${nextLevel}_unlocked`, 'true');
-                
-                // ✅ Log when a new level is unlocked
-                console.log(`🎉 Level ${nextLevel} unlocked!`);
+            sessionStorage.setItem(`level${nextLevel}_unlocked`, "true");
+            console.log(`🎉 Level ${nextLevel} unlocked!`);
+        }
+    }
+
+    function updateLevelStates() {
+        for (let i = 1; i <= totalLevels; i++) {
+            const levelButton = document.getElementById(`level${i}-button`);
+            const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
+
+            if (levelButton) {
+                levelButton.classList.toggle("locked", !levelUnlocked);
+                levelButton.classList.toggle("unlocked", levelUnlocked);
+                console.log(levelUnlocked ? `✅ Level ${i}: UNLOCKED` : `🔒 Level ${i}: LOCKED`);
             }
         }
     }
 
-    let totalCompletedTasks = 0; // Global counter for all completed tasks
-
     totalTasksPerLevel.forEach((tasksCount, levelIndex) => {
         let completedTasks = 0;
         const levelNumber = levelIndex + 1;
-        
+
         for (let i = 1; i <= tasksCount; i++) {
             const taskButton = document.getElementById(`task${i}-level${levelNumber}`);
             if (taskButton) {
-                taskButton.onclick = function() {
-                    if (!this.classList.contains('completed-task')) {
-                        this.classList.add('completed-task');
+                taskButton.onclick = function () {
+                    if (!this.classList.contains("completed-task")) {
+                        this.classList.add("completed-task");
                         completedTasks++;
                         totalCompletedTasks++;
 
-                        // ✅ Console log task completion progress per level
                         console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
-
-                        // ✅ Console log total progress across all levels
                         console.log(`📊 Total completed tasks: ${totalCompletedTasks}/${totalTasks}`);
 
                         if (completedTasks === tasksCount) {
                             unlockLevel(levelNumber);
-                            if (levelNumber < totalLevels) {
-                                alert(`🎉 Congratulations! You have unlocked Level ${levelNumber + 1}`);
-                                
-                                // ✅ Log when unlocking the next level
-                                console.log(`🔓 Level ${levelNumber + 1} has been unlocked.`);
-                            }
                         }
 
                         if (totalCompletedTasks === totalTasks) {
-                            alert(`🏆 Congratulations! You have finished all tasks!`);
-                            
-                            // ✅ Log when all tasks are completed
                             console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
                         }
                     }
@@ -143,32 +135,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    console.log("📌 Initial Level States:");
-    for (let i = 1; i <= totalLevels; i++) {
-        const levelButton = document.getElementById(`level${i}-button`);
-        const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
-
-        if (levelButton) {
-            if (levelUnlocked) {
-                levelButton.classList.remove("locked");
-                levelButton.classList.add("unlocked");
-                levelButton.removeAttribute("disabled");
-                console.log(`✅ Level ${i}: UNLOCKED`);
-            } else {
-                console.log(`🔒 Level ${i}: LOCKED`);
-            }
-
-            // ✅ Log user clicks on level buttons
-            levelButton.addEventListener("click", function() {
-                console.log(`➡️ Level ${i} button clicked!`);
-            });
-
-            if (i > 1) {
-                const tasksContainer = document.getElementById(`tasks-level${i}`);
-                if (tasksContainer) {
-                    tasksContainer.style.display = levelUnlocked ? 'block' : 'none';
-                }
-            }
-        }
-    }
+    updateLevelStates();
 });
