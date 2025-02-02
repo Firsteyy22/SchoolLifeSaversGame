@@ -81,7 +81,7 @@ function isRoomUnlocked(roomNumber) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const totalLevels = 4;
-    const totalTasksPerLevel = [1, 4, 4, 4]; // Number of tasks per level
+    const totalTasksPerLevel = [1, 4, 4, 5]; // Number of tasks per level
     const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0);
     let totalCompletedTasks = 0;
 
@@ -113,24 +113,27 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 1; i <= tasksCount; i++) {
             const taskButton = document.getElementById(`task${i}-level${levelNumber}`);
             if (taskButton) {
-                taskButton.onclick = function () {
+                taskButton.addEventListener('click', function () {
                     if (!this.classList.contains("completed-task")) {
-                        this.classList.add("completed-task");
-                        completedTasks++;
-                        totalCompletedTasks++;
-
-                        console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
-                        console.log(`📊 Total completed tasks: ${totalCompletedTasks}/${totalTasks}`);
-
-                        if (completedTasks === tasksCount) {
-                            unlockLevel(levelNumber);
-                        }
-
-                        if (totalCompletedTasks === totalTasks) {
-                            console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
-                        }
+                        // รอให้ validateAnswer ทำงานเสร็จก่อน
+                        setTimeout(() => {
+                            this.classList.add("completed-task");
+                            completedTasks++;
+                            totalCompletedTasks++;
+                
+                            console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
+                            console.log(`📊 Total completed tasks: ${totalCompletedTasks}/${totalTasks}`);
+                
+                            if (completedTasks === tasksCount) {
+                                unlockLevel(levelNumber);
+                            }
+                
+                            if (totalCompletedTasks === totalTasks) {
+                                console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
+                            }
+                        }, 100);
                     }
-                };
+                });
             }
         }
     });
