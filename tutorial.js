@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (localStorage.getItem("pretestCompleted") === "true") {
         tutorialButton.style.display = "block";
+        
+        // เช็คว่าเป็นการเข้าครั้งแรกหรือไม่
+        if (localStorage.getItem("isFirstVisit") === "true") {
+            localStorage.setItem("isFirstVisit", "false"); // ลบสถานะครั้งแรก
+            setTimeout(() => {
+                showTutorialOverlay();
+            }, 500); // หน่วงเวลาเล็กน้อยเพื่อให้แน่ใจว่าโหลดทุกอย่างเรียบร้อย
+        }
     }
 
     tutorialButton.addEventListener("click", function (event) {

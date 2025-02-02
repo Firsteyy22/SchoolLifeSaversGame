@@ -222,6 +222,7 @@ class PretestManager {
     finishPretest() {
         localStorage.setItem('pretestCompleted', 'true');
         localStorage.setItem('pretestScore', this.score);
+        localStorage.setItem('isFirstVisit', 'true');
         window.location.href = 'startGame.html';
     }
 
