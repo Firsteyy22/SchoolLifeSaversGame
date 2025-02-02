@@ -24,7 +24,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
                     nextQ();
                 }
             }, 0);
-        }, 2000); // เล่น GIF 2 วินาที
+        }, 4000); 
     } else {
         button.classList.add("incorrect");
         displayAnswerGIF(gifSrc);
@@ -35,7 +35,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
                 hideAnswerGIF();
                 showWrongAnswerPage(wrongText, afterGifPic, wrongText, resetQ);
             }, 0);
-        }, 2000);
+        }, 3500);
     }
 }
 

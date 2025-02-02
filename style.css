@@ -720,8 +720,8 @@ h4 {
 }
 
 .gif-container {
-    max-width: 400px; /* ไม่ให้ภาพใหญ่เกิน container */
-    max-height: 400px; /* จำกัดความสูง */
+    width: 100%; 
+    height: auto;
     border-radius: 10px;
     display: block; 
     object-fit: contain; /* ให้ภาพหรือ GIF อยู่ใน container โดยไม่ถูกครอบ */
@@ -732,18 +732,19 @@ h4 {
 }
 
 .wrong-image {
-    width: 400px; 
-    height: auto; 
+    width: 100%; 
+    height: auto;
     border-radius: 10px; 
 }
 
 .wrong-answer {
+    width: 100%; 
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh; /* ทำให้เนื้อหาอยู่กลางจอ */
 }
 
 .wrong-answer .button {
