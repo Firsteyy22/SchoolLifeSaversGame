@@ -2,7 +2,7 @@ class PretestManager {
     constructor() {
         this.questions = [
             {
-                image: "picture/questionIMG/.png",
+                image: "picture/PreTest/q1.png",
                 question: "การปฐมพยาบาล คืออะไร ?",
                 options: [
                     {
@@ -24,7 +24,7 @@ class PretestManager {
                 ]
             },
             {
-                image: "picture/questionIMG/.png",
+                image: "picture/PreTest/q2.png",
                 question: "ถ้าเกิดอาการฟกช้ำ จะต้องทำอะไร ?",
                 options: [
                     {
@@ -46,7 +46,7 @@ class PretestManager {
                 ]
             },
             {
-                image: "picture/questionIMG/lv01_q.png",
+                image: "picture/PreTest/q3.png",
                 question: "เมื่อเกิดแผลถลอก ควรทำอย่างไรเป็นขั้นตอนแรก ?",
                 options: [
                     {
@@ -68,7 +68,7 @@ class PretestManager {
                 ]
             },
             {
-                image: "picture/questionIMG/.png",
+                image: "picture/PreTest/q4.png",
                 question: "เผลอดมสารเคมี ทำยังไงดี ?",
                 options: [
                     {
@@ -90,7 +90,7 @@ class PretestManager {
                 ]
             },
             {
-                image: "picture/questionIMG/.png",
+                image: "picture/PreTest/q5.png",
                 question: "เรียกรถพยาบาล ต้องติดต่อสายด่วนอะไร ?",
                 options: [
                     {
@@ -111,28 +111,116 @@ class PretestManager {
                     }
                 ]
             },
-            // {
-            //     image: "picture/questionIMG/.png",
-            //     question: "XXXX ?",
-            //     options: [
-            //         {
-            //             text: "X",
-            //             isCorrect: true
-            //         },
-            //         {
-            //             text: "XX",
-            //             isCorrect: false
-            //         },
-            //         {
-            //             text: "XXX",
-            //             isCorrect: false
-            //         },
-            //         {
-            //             text: "XXXX",
-            //             isCorrect: false
-            //         }
-            //     ]
-            // },
+            {
+                image: "picture/PreTest/q6.png",
+                question: "XXXX ?",
+                options: [
+                    {
+                        text: "X",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXX",
+                        isCorrect: true
+                    },
+                    {
+                        text: "XXXX",
+                        isCorrect: false
+                    }
+                ]
+            },
+            {
+                image: "picture/PreTest/q7.png",
+                question: "XXXX ?",
+                options: [
+                    {
+                        text: "X",
+                        isCorrect: true
+                    },
+                    {
+                        text: "XX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXXX",
+                        isCorrect: false
+                    }
+                ]
+            },
+            {
+                image: "picture/PreTest/q8.png",
+                question: "XXXX ?",
+                options: [
+                    {
+                        text: "X",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XX",
+                        isCorrect: true
+                    },
+                    {
+                        text: "XXX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXXX",
+                        isCorrect: false
+                    }
+                ]
+            },
+            {
+                image: "picture/PreTest/q9.png",
+                question: "XXXX ?",
+                options: [
+                    {
+                        text: "X",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXXX",
+                        isCorrect: true
+                    }
+                ]
+            },
+            {
+                image: "picture/PreTest/q10.png",
+                question: "XXXX ?",
+                options: [
+                    {
+                        text: "X",
+                        isCorrect: true
+                    },
+                    {
+                        text: "XX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXX",
+                        isCorrect: false
+                    },
+                    {
+                        text: "XXXX",
+                        isCorrect: false
+                    }
+                ]
+            },
             // เพิ่มคำถามอื่นๆ ตามต้องการ
         ];
         this.currentQuestion = 0;
@@ -167,7 +255,7 @@ class PretestManager {
                             <img src="${question.image}" alt="Question Image">
                         </div>
                     ` : ''}                
-                    <h3>${question.question}</h3>
+                    <h2>${question.question}</h2>
                     <div class="options">
                         ${question.options.map((option, index) => `
                             <a class="option-button" onclick="pretestManager.validateAnswer(${option.isCorrect})">

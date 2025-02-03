@@ -1,45 +1,121 @@
 class PostTestManager {
     constructor() {
-        this.questions = [
+        this.allquestions = [
             {
-                image: "picture/questionIMG/ex01.png",
-                question: "การช่วยเหลือผู้ป่วยหมดสติ ควรทำอย่างไร?",
+                image: "picture/PostTest/.png",
+                question: "1?",
                 options: [
-                    { text: "ให้ผู้ป่วยนอนหงายแล้วตบที่หน้า", isCorrect: false },
-                    { text: "เรียกรถพยาบาลและตรวจการหายใจ", isCorrect: true },
-                    { text: "ให้ดื่มน้ำเพื่อช่วยฟื้นตัว", isCorrect: false },
-                    { text: "ใช้พัดลมเป่าที่หน้าเพื่อให้ตื่น", isCorrect: false }
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
                 ]
             },
             {
-                image: "picture/questionIMG/.png",
-                question: "ข้อใดเป็นหลักการปฐมพยาบาลที่ถูกต้อง?",
+                image: "picture/PostTest/.png",
+                question: "2?",
                 options: [
-                    { text: "ห้ามเคลื่อนย้ายผู้บาดเจ็บที่คอหรือกระดูกสันหลัง", isCorrect: true },
-                    { text: "ถ้ามีเลือดออกให้ใช้มือเปล่ากดแผล", isCorrect: false },
-                    { text: "ใช้แอลกอฮอล์ล้างแผลลึก", isCorrect: false },
-                    { text: "ถ้าเจ็บหน้าอกให้บังคับให้นอนราบ", isCorrect: false }
+                    { text: "X", isCorrect: false },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: true },
+                    { text: "XXXX", isCorrect: false }
                 ]
             },
+            {
+                image: "picture/PostTest/.png",
+                question: "3?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "4?",
+                options: [
+                    { text: "X", isCorrect: false },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: true }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "5?",
+                options: [
+                    { text: "X", isCorrect: false },
+                    { text: "XX", isCorrect: true },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            // {
+            //     image: "picture/PostTest/.png",
+            //     question: "การช่วยเหลือผู้ป่วยหมดสติ ควรทำอย่างไร?",
+            //     options: [
+            //         { text: "ให้ผู้ป่วยนอนหงายแล้วตบที่หน้า", isCorrect: false },
+            //         { text: "เรียกรถพยาบาลและตรวจการหายใจ", isCorrect: true },
+            //         { text: "ให้ดื่มน้ำเพื่อช่วยฟื้นตัว", isCorrect: false },
+            //         { text: "ใช้พัดลมเป่าที่หน้าเพื่อให้ตื่น", isCorrect: false }
+            //     ]
+            // },
+            // {
+            //     image: "picture/PostTest/.png",
+            //     question: "ข้อใดเป็นหลักการปฐมพยาบาลที่ถูกต้อง?",
+            //     options: [
+            //         { text: "ห้ามเคลื่อนย้ายผู้บาดเจ็บที่คอหรือกระดูกสันหลัง", isCorrect: true },
+            //         { text: "ถ้ามีเลือดออกให้ใช้มือเปล่ากดแผล", isCorrect: false },
+            //         { text: "ใช้แอลกอฮอล์ล้างแผลลึก", isCorrect: false },
+            //         { text: "ถ้าเจ็บหน้าอกให้บังคับให้นอนราบ", isCorrect: false }
+            //     ]
+            // },
+            // {
+            //     image: "picture/PostTest/.png",
+            //     question: "XXXX?",
+            //     options: [
+            //         { text: "X", isCorrect: true },
+            //         { text: "XX", isCorrect: false },
+            //         { text: "XXX", isCorrect: false },
+            //         { text: "XXXX", isCorrect: false }
+            //     ]
+            // },
             // add คำถามเพิ่ม
         ];
+        this.questions = this.getRandomQuestions(20); // สุ่มคำถาม
         this.currentQuestion = 0;
         this.score = 0;
         this.timer = null;
         this.timeLeft = 60;
     }
 
+    getRandomQuestions(count) {
+        let shuffled = [...this.allquestions].sort(() => 0.5 - Math.random()); // สุ่มลำดับคำถาม
+        return shuffled.slice(0, count).map(q => ({
+            ...q,
+            options: q.options.sort(() => 0.5 - Math.random()) // สุ่มตัวเลือก
+        }));
+    }
+    
     startTimer() {
+        this.stopTimer();
         this.timeLeft = 60;
         const timerElement = document.getElementById("timer");
+
+        if (!timerElement) {
+            console.error("Element with id 'timer' not found.");
+            return;
+        }
+
         timerElement.textContent = `เวลาที่เหลือ: ${this.timeLeft} วินาที`;
 
         this.timer = setInterval(() => {
             this.timeLeft--;
             timerElement.textContent = `เวลาที่เหลือ: ${this.timeLeft} วินาที`;
-            
+
             if (this.timeLeft <= 0) {
-                clearInterval(this.timer);
+                this.stopTimer();
                 this.nextQuestion();
             }
         }, 1000);
@@ -49,13 +125,26 @@ class PostTestManager {
         clearInterval(this.timer);
     }
 
+
+    // renderContainer(content) {
+    //     document.body.innerHTML = `
+    //         <div class="posttest-fullpage">
+    //             <div class="timer" id="timer">เวลาที่เหลือ: 60 วินาที</div>
+    //             ${content}
+    //         </div>
+    //     `;
+    // }
     renderContainer(content) {
-        document.body.innerHTML = `
-            <div class="posttest-fullpage">
-                <div class="timer" id="timer">เวลาที่เหลือ: 60 วินาที</div>
-                ${content}
-            </div>
-        `;
+        const container = document.getElementById("content-container");
+        
+        if (!container) {
+            const newContainer = document.createElement('div');
+            newContainer.id = "content-container";
+            newContainer.className = "posttest-fullpage";
+            document.body.appendChild(newContainer);
+        }
+
+        document.getElementById("content-container").innerHTML = content;
     }
 
     createOverlay(content) {
@@ -90,54 +179,46 @@ class PostTestManager {
                 <a class="start-button" onclick="postTestManager.startPostTest()">เริ่มทำแบบทดสอบ</a>
             </div>
         `);
-    }   
+    }  
 
     showQuestion() {
-        console.log("Rendering question..."); // ตรวจสอบว่า function รันจริงไหม
-    
+        if (this.currentQuestion >= this.questions.length) {
+            return this.showResults();
+        }
+
         const question = this.questions[this.currentQuestion];
+
         this.renderContainer(`
             <div class="posttest-content">
-                <div class="timer" id="timer">
-                    <div class="timer-icon-container">
-                        <img src="picture/PostTest/clock.png" class="timer-icon" alt="Clock">
-                    </div>
-                    <div class="timer-text">เวลาที่เหลือ: 60 วินาที</div>
-                </div>
                 <h2>คำถามที่ ${this.currentQuestion + 1}/${this.questions.length}</h2>
                 <div class="question">
                     ${question.image ? `<div class="question-image"><img src="${question.image}" alt="Question Image"></div>` : ''}
-                    <h3>${question.question}</h3>
+                    <h2>${question.question}</h2>
                     <div class="options">
-                        ${question.options.map(option => `
-                            <a class="option-button" onclick="postTestManager.validateAnswer(${option.isCorrect})">${option.text}</a>
-                        `).join('')}
+                        ${question.options.map(option => 
+                            `<a class="option-button" onclick="postTestManager.validateAnswer(${option.isCorrect})">${option.text}</a>`
+                        ).join('')}
                     </div>
                 </div>
             </div>
+
+            <div class="timer" id="timer">
+                // <div class="timer-icon-container">
+                //     <img src="picture/PostTest/clock.png" class="timer-icon" alt="Clock">
+                // </div>
+                <div class="timer-text">เวลาที่เหลือ: 60 วินาที</div>
+            </div>
         `);
-    
-        // ตรวจสอบว่าภาพถูกโหลดหรือไม่ ถ้าไม่โหลด ให้โหลดใหม่
-        setTimeout(() => {
-            const timerImage = document.querySelector(".timer-icon");
-            if (timerImage && !timerImage.complete) {
-                timerImage.src = "../picture/PostTest/clock.png";
-                console.log("Reloaded timer icon.");
-            }
-        }, 100);
-    
-        console.log("Rendered question with timer.");
+
         this.startTimer();
     }
     
-    
-
     validateAnswer(isCorrect) {
+        this.stopTimer(); // หยุดจับเวลาเมื่อเลือกคำตอบ
         if (isCorrect) this.score++;
+
         this.currentQuestion++;
-        this.currentQuestion < this.questions.length ? this.showQuestion() : this.showResults();
-        this.stopTimer();
-        this.nextQuestion();
+        this.showQuestion(); // ไปคำถามถัดไป
     }
 
     nextQuestion() {
@@ -162,7 +243,7 @@ class PostTestManager {
 
     finishPostTest() {
         localStorage.setItem('posttestCompleted', 'true');
-        localStorage.setItem('posttestScore', this.score + '/' + this.questions.length); // เก็บคะแนน Post-Test แบบเต็ม
+        localStorage.setItem('posttestScore', this.score + '/' + this.questions.length);
         window.location.href = 'startGame.html';
     }
 }
