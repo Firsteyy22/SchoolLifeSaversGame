@@ -12,6 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
         "level4-button": "/Room/html/room4.html"
     };
 
+    // 📌 กำหนด URL รูปภาพสำหรับแต่ละสถานะ
+    const levelImages = {
+        unlocked: {
+            "level1-button": "/picture/roompng/Emergency1.png",
+            "level2-button": "/picture/roompng/Emergency2.png",
+            "level3-button": "/picture/roompng/Emergency3.png",
+            "level4-button": "/picture/roompng/Emergency4.png"
+        },
+        locked: {
+            "level2-button": "/picture/roompng/Emergency2-locked.png",
+            "level3-button": "/picture/roompng/Emergency3-locked.png",
+            "level4-button": "/picture/roompng/Emergency4-locked.png"
+        }
+    };
+
     function updateCardPositions() {
         document.querySelectorAll(".card").forEach(card => {
             card.classList.remove("position1", "position2", "position3", "position4", "selected");
@@ -80,12 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateUnlockedLevels() {
         for (let i = 1; i <= totalLevels; i++) {
             let levelButton = document.getElementById(`level${i}-button`);
+            let levelImage = levelButton.querySelector("img"); // ค้นหา tag รูปภาพภายใน card
+
             if (levelButton) {
                 if (i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true") {
                     levelButton.classList.remove("locked");
                     levelButton.classList.add("unlocked");
+                    if (levelImage) {
+                        levelImage.src = levelImages.unlocked[`level${i}-button`]; // อัปเดตรูปภาพเป็นด่านปลดล็อก
+                    }
                 } else {
                     levelButton.classList.add("locked");
+                    if (levelImage) {
+                        levelImage.src = levelImages.locked[`level${i}-button`]; // อัปเดตรูปภาพเป็นด่านที่ล็อก
+                    }
                 }
             }
         }
