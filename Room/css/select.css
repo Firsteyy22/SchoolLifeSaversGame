@@ -26,6 +26,7 @@ h1 {
   height: 70vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .prev,
@@ -59,15 +60,15 @@ i:hover {
 .gallery {
   position: relative;
   height: 70%;
-  width: 170%; /* Adjusted for better responsiveness */
-  max-width: 1200px; /* Ensures it doesn't stretch too much on large screens */
+  width: 200%; /* ให้กว้างเต็ม container */
+  max-width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers content */
-  margin: 0 auto; /* Centers the gallery in the page */
-  left: -18%; /* Removes manual left shifting */
-  transform: translateX(0); /* Ensures it's properly positioned */
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  margin: 0 auto;
+  transform: translateX(0); /* ลบ left: -18% ที่อาจทำให้เบี้ยว */
 }
+
 
 .card {
   position: absolute;
@@ -80,40 +81,31 @@ img {
   width: 100%;
 }
 
-/* Position 1 is typically the focal point, so it's fully scaled and centered */
 .position1 {
-  left: 35%;
+  left: 50%;
+  transform: translateX(-50%) scale(1.1);
   z-index: 3;
-  transform: scale(1);
   opacity: 1;
 }
 
-/* Scale up on hover to provide a dynamic, interactive feel */
-.position1:hover {
-  transform: scale(1);
-}
-
-/* Position 2 is slightly to the right and less prominent */
 .position2 {
-  left: 65%;
+  left: 70%;
+  transform: translateX(-30%) scale(0.7);
   z-index: 2;
-  transform: scale(0.8);
   opacity: 0.6;
 }
 
-/* Position 3 is further diminished in focus and size */
 .position3 {
-  left: 55%;  /* Adjusting this might be necessary based on layout and visibility */
+  left: 30%;
+  transform: translateX(-20%) scale(0.7);
   z-index: 1;
-  transform: scale(0.6);
   opacity: 0.6;
 }
 
-/* Position 4 is to the far left, mimicking the style of Position 3 */
 .position4 {
-  left: -15%;
+  left: 10%;
+  transform: translateX(-50%) scale(0.7);
   z-index: 1;
-  transform: scale(0.6);
   opacity: 0.6;
 }
 
