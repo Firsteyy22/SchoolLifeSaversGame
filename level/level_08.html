@@ -18,9 +18,9 @@
             </div>
             <h1>เผลอดมสารเคมี ทำยังไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_01.mp4')">
                     <img src="../picture/element/" class="button-element">
-                    รีบออกมาพื้นที่ที่อากาศถ่ายเท
+                    รีบออกมาพื้นที่ <br>ที่อากาศถ่ายเท
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ควรรีบออกจากพื้นที่นั้นก่อนนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
@@ -28,11 +28,11 @@
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ เพราะทำให้เกิดประกายไฟ และมลพิษเพิ่มขึ้น', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    จุดประทัดไล่สารเคมี
+                    จุดประทัด <br>ไล่สารเคมี
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรหยิบอะไรไม่รู้เข้าจมูกนะ', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ใช้ของที่ใกล้ที่สุดปิดจมูกไว้
+                    ใช้ของที่ใกล้ที่สุด <br>ปิดจมูกไว้
                 </a>
             </div>
         </div>
@@ -44,11 +44,11 @@
             </div>
             <h1>ถ้าประเมินการหายใจและการเต้นหัวใจแล้วผิดปกติ ควรรีบไปพบแพทย์ใช่หรือไม่</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '', '../video/VDO_02.mp4')">
                     <img src="../picture/element/correct.png" class="button-element">
                     ใช่
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ควรรีบไปพบแพทย์', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/wrong.gif', 'ควรรีบไปพบแพทย์', '../picture/wrongANS/', '')">
                     <img src="../picture/element/wrong.png" class="button-element">
                     ไม่ใช่
                 </a>
@@ -72,12 +72,13 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
+        <img src="../picture/map2/lv8/lv8_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>
 
     <!-- Buttons -->
-    <a href="../startGame.html" class="button button-upleft">BACK</a>
+    <a href="../Room/html/room2.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
     <script src="../gameplay.js"></script>

@@ -20,7 +20,7 @@
             <div class="button-grid">
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    กดเหล็กในออกด้วยลูกกุญแจที่มีรู
+                    กดเหล็กในออก <br>ด้วยลูกกุญแจที่มีรู
                 </a>
                 <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_01.mp4')">
                     <img src="../picture/element/" class="button-element">
@@ -28,7 +28,7 @@
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
-                    ใช้บัตรแข็งขูดเหล็กในออก
+                    ใช้บัตรแข็ง <br>ขูดเหล็กในออก
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
                     <img src="../picture/element/" class="button-element">
@@ -75,12 +75,13 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
+        <img src="../picture/map3/lv10/lv10_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
-    </div>    
+    </div>
 
     <!-- Buttons -->
-    <a href="../startGame.html" class="button button-upleft">BACK</a>
+    <a href="../Room/html/room3.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
     <script src="../gameplay.js"></script>
