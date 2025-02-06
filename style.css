@@ -12,6 +12,7 @@
 
     --colorShadeF: #ffcf33;
 
+
     --colorTextHover: rgb(255, 255, 255); /* สีข้อความสว่าง */
 }
 
@@ -104,7 +105,7 @@ h4 {
     border: 0;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--colorShadeA); /* สี Font*/
     font-weight: 400;
     padding: 1em 2em;
@@ -170,7 +171,7 @@ h4 {
     border: 0;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 2em;
@@ -456,7 +457,7 @@ h4 {
     border: 0;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--colorShadeA);
     font-weight: 400;
     padding: 1em 3em; /* ลด padding ด้านข้างเพื่อเว้นที่สำหรับรูป */
@@ -470,7 +471,7 @@ h4 {
     text-align: center;
     word-wrap: normal;
     white-space: normal;
-    gap: 15px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+    gap: 10px; /* ระยะห่างระหว่างไอคอนและข้อความ */
 }
 
 .gameplay-page .button img.button-element {
@@ -576,7 +577,7 @@ h4 {
     justify-content: center;
     cursor: pointer;
     border: 2px solid var(--colorShadeB);
-    border-radius: 0.5em;
+    border-radius: 1em;
     background: var(--colorShadeE);
     color: var(--colorShadeA);
     font-size: 1.3rem;
@@ -590,8 +591,8 @@ h4 {
     position: fixed;
     bottom: 10px;
     right: 10px; /* เปลี่ยนจาก left เป็น right และกำหนดระยะห่างจากขอบขวา */
-    width: 160px;
-    height: 50px;
+    width: 180px;
+    height: 55px;
     background-color: #28a745;
     border: none;
     border-radius: 10px;
@@ -600,11 +601,17 @@ h4 {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+
+        /* จัดให้อยู่ตรงกลาง */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 }
 
 /* เพิ่มเอฟเฟกต์เมื่อ hover */
 .gameplay-page .button-submit-answer:hover {
-    background-color: #218838;
+    background-color: rgb(45, 124, 63);
 }
 
 .button-choices::before {
@@ -674,21 +681,24 @@ h4 {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    background-color: #96B0EA;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .sortable-item {
     padding: 10px;
-    background-color: #b9d6f3;
-    border: 1px solid #ddd;
+    background-color: #4F67BF;
+    color: white;
     border-radius: 5px;
     cursor: grab;
     text-align: center;
 }
 
 .sortable-item:hover{
-    background-color: #a5ccf3;
+    background-color: #ffcf33;
+    color: black;
+    font-weight: 800;
     transform: translate(0, 0.1em);
 }
 

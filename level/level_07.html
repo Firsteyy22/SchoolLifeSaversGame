@@ -44,17 +44,17 @@
             </div>
             <h1>สารเคมีเข้าตาแบบนี้ ต้องหาหมอเลยใช่ไหมนะ?</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_02.mp4')">
-                    หลังล้างตา ถ้าไม่ระคายเคือง เฝ้าดูอาการก็พอ
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_02.mp4')" style="font-size: 1.6rem;">
+                    หลังล้างตา ถ้าไม่ระคายเคือง <br>เฝ้าดูอาการก็พอ
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรใช้ยาเอง ถ้ามีอาการระคายเคือง ควรปรึกษาแพทย์หรือเภสัชในการใช้ยา', '../picture/wrongANS/', '')">
-                    หลังล้างตา หยอดยาด้วยตัวเองแล้วไม่ต้องพบแพทย์ 
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรใช้ยาเอง ถ้ามีอาการระคายเคือง ควรปรึกษาแพทย์หรือเภสัชในการใช้ยา', '../picture/wrongANS/', '')" style="font-size: 1.6rem;">
+                    หลังล้างตา <br>หยอดยาด้วยตัวเอง <br>แล้วไม่ต้องพบแพทย์ 
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'การเจือจางสารเป็นเรื่องสำคัญ ควรล้างตาเป็นอันดับแรกนะ', '../picture/wrongANS/', '')">
-                    ไม่ต้องล้างตา ควรพบแพทย์ให้เร็วที่สุด
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'การเจือจางสารเป็นเรื่องสำคัญ ควรล้างตาเป็นอันดับแรกนะ', '../picture/wrongANS/', '')" style="font-size: 1.6rem;">
+                    ไม่ต้องล้างตา <br>ควรพบแพทย์ให้เร็วที่สุด
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ถึงน้ำตาจะช่วยได้บางส่วนแต่ยังไงก็ต้องล้างตาด้วยน้ำสะอาดนะ', '../picture/wrongANS/', '')">
-                    ไม่ต้องล้างตา ร้องไห้แล้วน้ำตาขับออกมาเอง
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ถึงน้ำตาจะช่วยได้บางส่วนแต่ยังไงก็ต้องล้างตาด้วยน้ำสะอาดนะ', '../picture/wrongANS/', '')" style="font-size: 1.6rem;">
+                    ไม่ต้องล้างตา <br>ร้องไห้แล้วน้ำตาขับออกมาเอง
                 </a>
             </div>
         </div>
@@ -70,10 +70,10 @@
                     กรดเข้าตา รุนแรงน้อยกว่า ด่างเข้าตา
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นคำตอบที่ถูกต้อง แต่ยังมีอีกนะ', '../picture/wrongANS/', '')">
-                    สารเคมีเข้าตา อาจทำให้ตาบอดได้
+                    สารเคมีเข้าตา <br>อาจทำให้ตาบอดได้
                 </a>
                 <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นคำตอบที่ถูกต้อง แต่ยังมีอีกนะ', '../picture/wrongANS/', '')">
-                    สารเคมีเข้าตา ลืมตาในน้ำเกลือได้
+                    สารเคมีเข้าตา <br>ลืมตาในน้ำเกลือได้
                 </a>
                 <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_03.mp4')">
                     ถูกทุกข้อ
@@ -99,12 +99,13 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
+        <img src="../picture/map2/lv7/lv7_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>
 
     <!-- Buttons -->
-    <a href="../startGame.html" class="button button-upleft">BACK</a>
+    <a href="../Room/html/room2.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
     <script src="../gameplay.js"></script>
