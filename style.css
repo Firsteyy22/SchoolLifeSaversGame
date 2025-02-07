@@ -693,6 +693,7 @@ h4 {
     border-radius: 5px;
     cursor: grab;
     text-align: center;
+    font-size: 1.15rem;
 }
 
 .sortable-item:hover{

@@ -20,31 +20,41 @@
             <h1>เมื่อศีรษะเกิดการกระแทกและมีอาการบวม หรือ “หัวโน” ควรทำอย่างไร จงเรียงลำดับ</h1>
 
             <div id="sortable" class="sortable-container">
-                <div class="sortable-item" data-order="2" draggable="true">ประคบเย็น ลดอาการบวม B</div>
-                <div class="sortable-item" data-order="3" draggable="true">ประคบร้อน ลดอาการช้ำ C</div>
-                <div class="sortable-item" data-order="1" draggable="true">ทำความสะอาดแผลด้วยน้ำเกลือ A</div>
-                <div class="sortable-item" data-order="4" draggable="true">พบแพทย์ D</div>
+                <div class="sortable-item" data-order="2" draggable="true">ประคบเย็น ลดอาการบวม</div>
+                <div class="sortable-item" data-order="3" draggable="true">ประคบร้อน ลดอาการช้ำ</div>
+                <div class="sortable-item" data-order="1" draggable="true">ทำความสะอาดแผลด้วยน้ำเกลือ</div>
+                <div class="sortable-item" data-order="4" draggable="true">พบแพทย์</div>
             </div>
             <a id="submit-order1" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 
         </div>
 
         <!-- คำถาม 2 -->
-        <!-- (**เรียงลำดับคำตอบ**) -->
-        <div id="question2" class="question hidden" data-recap-video="../video/VDO_02.mp4">
-            <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+            <div id="question2" class="question hidden">
+                <div class="image-container">
+                    <img id="gif-container-q2" class="gif-container" src="../picture/map3/lv13/lv13_q2.png" data-default-src="../picture/map1/lv13/lv13_q2.png" alt="Question Image">
+                </div>
+                <h1>การประคบเย็นที่ถูกต้อง ควรทำอย่างไร?</h1>
+                <div class="button-grid">
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'แสบแผลมากกกก คิดได้ไงถึงทายาหม่องเนี่ย', '../picture/map3/lv13/lv13_ansX.gif', '')">
+                        <img src="../picture/element/.png" class="button-element">
+                        ผ้าชุบน้ำเย็นแล้ววาง
+                    </a>
+                    <a id="task4-level13" class="button" onclick="validateAnswer(this, true, '../picture/map3/lv13/lv13_ansX.gif', '', '', '../picture/map3/lv13/lv13_caX.mp4')" >
+                        <img src="../picture/element/.png" class="button-element">
+                        ถุงน้ำแข็ง ห่อด้วยผ้า แล้วประคบ
+                    </a>
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'น้ำส้มอร่อยสดชื่น แต่แสบแผลเหมือนเดิม', '../picture/map3/lv13/lv13_ansX.gif', '')">
+                        <img src="../picture/element/.png" class="button-element">
+                        วางถุงน้ำแข็งลงบนผิวเพื่อให้ความเย็นทั่วถึง
+                    </a>
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'เมื่อกี้ล้างน้ำเปล่าไปแล้วนี่หน่า', '../picture/map3/lv13/lv13_ansX.gif', '')">
+                        <img src="../picture/element/.png" class="button-element">
+                        ก้มหัวจุ่มน้ำ
+                    </a>
+                </div>
+                
             </div>
-            <h1>การประคบเย็นที่ถูกต้อง ควรทำอย่างไร</h1>
-
-            <div id="sortable" class="sortable-container">
-                <div class="sortable-item" data-order="1" draggable="true"> A</div>
-                <div class="sortable-item" data-order="2" draggable="true"> B</div>
-                <div class="sortable-item" data-order="3" draggable="true"> C</div>
-                <div class="sortable-item" data-order="4" draggable="true"> D</div>
-                <div class="sortable-item" data-order="5" draggable="true"> E</div>
-            </div>
-            <a id="submit-order2" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 
         </div>
     </div>
@@ -73,6 +83,7 @@
     <a href="../startGame.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
+     <script src="../gameplay.js"></script>
     <script src="../gameplay_03.js"></script>
     <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
