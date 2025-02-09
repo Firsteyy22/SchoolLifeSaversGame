@@ -51,6 +51,255 @@ class PostTestManager {
                     { text: "XXXX", isCorrect: false }
                 ]
             },
+            {
+                image: "picture/PostTest/.png",
+                question: "6?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "7?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "8?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "9?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "10?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "11?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "12?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "13?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "14?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "15?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "16?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "17?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },            {
+                image: "picture/PostTest/.png",
+                question: "18?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "19?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "20?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "21?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "22?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "23?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "24?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "25?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "26?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "27?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "28?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "29?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
+            {
+                image: "picture/PostTest/.png",
+                question: "30?",
+                options: [
+                    { text: "X", isCorrect: true },
+                    { text: "XX", isCorrect: false },
+                    { text: "XXX", isCorrect: false },
+                    { text: "XXXX", isCorrect: false }
+                ]
+            },
             // {
             //     image: "picture/PostTest/.png",
             //     question: "การช่วยเหลือผู้ป่วยหมดสติ ควรทำอย่างไร?",
@@ -71,17 +320,6 @@ class PostTestManager {
             //         { text: "ถ้าเจ็บหน้าอกให้บังคับให้นอนราบ", isCorrect: false }
             //     ]
             // },
-            // {
-            //     image: "picture/PostTest/.png",
-            //     question: "XXXX?",
-            //     options: [
-            //         { text: "X", isCorrect: true },
-            //         { text: "XX", isCorrect: false },
-            //         { text: "XXX", isCorrect: false },
-            //         { text: "XXXX", isCorrect: false }
-            //     ]
-            // },
-            // add คำถามเพิ่ม
         ];
         this.questions = this.getRandomQuestions(20); // สุ่มคำถาม
         this.currentQuestion = 0;
