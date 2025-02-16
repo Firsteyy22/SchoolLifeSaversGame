@@ -17,3 +17,23 @@
 .hidden {
     display: none;
 }
+
+@keyframes bounce {
+    0% {
+        opacity: 1;
+        transform: translateY(0px); /* Start from below */
+    }
+    50% {
+        transform: translateY(-30px); /* Settle back */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px); /* Fade out while moving down */
+    }
+}
+
+.bounce {
+    animation: bounce 3s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    display: inline-block;
+}
+

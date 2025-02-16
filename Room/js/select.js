@@ -55,27 +55,70 @@ document.addEventListener("DOMContentLoaded", () => {
     prev.addEventListener("click", () => moveCards("prev"));
     next.addEventListener("click", () => moveCards("next"));
 
+    function removeSwalAutoClasses() {
+        setTimeout(() => {
+            document.body.classList.remove("swal2-shown", "swal2-height-auto");
+            document.documentElement.classList.remove("swal2-shown", "swal2-height-auto");
+        }, 10); // ลดเวลาเป็น 10ms เพื่อลดการกระพริบ
+    }
+    
     confirmBtn.addEventListener("click", () => {
         let selectedCard = document.querySelector(".card.selected");
+    
         if (selectedCard) {
             let selectedId = selectedCard.id;
             let targetURL = levelUrls[selectedId];
-
+    
             if (selectedCard.classList.contains("locked")) {
                 Swal.fire({
                     title: "ห้องถูกล็อก!",
-                    text: "คุณต้องปลดล็อกด่านนี้ก่อน!",
+                    text: "คุณต้องปลดล็อกด่านก่อนหน้าก่อน",
                     icon: "warning",
-                    confirmButtonText: "เข้าใจแล้ว"
+                    confirmButtonText: "เข้าใจแล้ว",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    backdrop: false,
+                    heightAuto: false,
+                    didOpen: removeSwalAutoClasses,
+                    customClass: {
+                        popup: 'swal-bounce', // ใช้ class ที่กำหนดแอนิเมชัน
+                        container: 'no-auto-container'
+                    },
+                    showClass: {
+                        popup: 'animate__animated animate__bounceIn' // ✅ เอฟเฟกต์เด้งเข้า
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__bounceOut' // ✅ เอฟเฟกต์จางลงและเลื่อนลง
+                    }
                 });
             } else {
                 Swal.fire({
                     title: "เข้าไปในห้องนี้?",
-                    text: "คุณต้องการเข้าไปในด่านนี้ใช่หรือไม่?",
+                    text: "คุณต้องการเข้าไปในห้องนี้ใช่หรือไม่?",
                     icon: "question",
                     showCancelButton: true,
-                    confirmButtonText: "ใช่! ไปเลย",
-                    cancelButtonText: "ไม่"
+                    confirmButtonText: "ใช่",
+                    cancelButtonText: "ไม่",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    backdrop: false,
+                    heightAuto: false,
+                    didOpen: removeSwalAutoClasses,
+                    customClass: {
+                        confirmButton: 'swal2-confirm', // ✅ ใช้ CSS สำหรับปุ่ม "ใช่!"
+                        cancelButton: 'swal2-cancel',
+                        popup: 'swal-bounce',
+                        container: 'no-auto-container',
+                        title: 'swal-custom-title',
+                        htmlContainer: 'swal-custom-text', // ✅ กำหนดคลาสให้ข้อความ
+
+                    },
+                    showClass: {
+                        popup: 'animate__animated animate__bounceIn' // ✅ เด้งเข้ามา
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__bounceOut' // ✅ จางลงตอนปิด
+                    }
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = targetURL;
@@ -87,11 +130,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "ยังไม่ได้เลือกด่าน",
                 text: "กรุณาเลือกด่านก่อนกดปุ่มยืนยัน",
                 icon: "error",
-                confirmButtonText: "ตกลง"
+                confirmButtonText: "ตกลง",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                backdrop: false,
+                heightAuto: false,
+                didOpen: removeSwalAutoClasses,
+                customClass: {
+                    popup: 'swal-bounce',
+                    container: 'no-auto-container'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__bounceIn' // ✅ เด้งเข้ามา
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__bounceOut' // ✅ จางลงตอนปิด
+                }
             });
         }
     });
-
+    
     function updateUnlockedLevels() {
         for (let i = 1; i <= totalLevels; i++) {
             let levelButton = document.getElementById(`level${i}-button`);

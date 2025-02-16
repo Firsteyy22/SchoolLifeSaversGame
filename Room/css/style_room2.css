@@ -6,39 +6,39 @@ svg {
     position: relative;
 }
 
-#hover-image {
-    position: absolute;
-    display: none; /* Hide the image initially */
-    margin-left: -28%; /* Add spacing between the SVG and the image */
-    margin-top: -10%;
-    width: 10%; /* Default width */
-    z-index: 10;
-}
-
-#hover-image2 {
-    position: absolute;
-    display: none; /* Hide the image initially */
-    margin-left: 7%; /* Add spacing between the SVG and the image */
-    margin-top: -15%;
-    width: 10%; /* Default width */
-    z-index: 10;
-}
-
-#hover-image3 {
+#hover-image6 {
     position: absolute;
     display: none; /* Hide the image initially */
     margin-left: 10%; /* Add spacing between the SVG and the image */
-    margin-top: 15%;
+    margin-top: -18%;
     width: 8%; /* Default width */
     z-index: 10;
 }
 
-#hover-image4 {
+#hover-image7 {
     position: absolute;
     display: none; /* Hide the image initially */
-    margin-left: 49%; /* Add spacing between the SVG and the image */
-    margin-top: -1%;
-    width: 10%; /* Default width */
+    margin-left: 18%; /* Add spacing between the SVG and the image */
+    margin-top: -10%;
+    width: 8%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image8 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: 33%; /* Add spacing between the SVG and the image */
+    margin-top: -5%;
+    width: 8%; /* Default width */
+    z-index: 10;
+}
+
+#hover-image9 {
+    position: absolute;
+    display: none; /* Hide the image initially */
+    margin-left: 42%; /* Add spacing between the SVG and the image */
+    margin-top: -2%;
+    width: 8%; /* Default width */
     z-index: 10;
 }
 
@@ -68,7 +68,7 @@ svg {
 .blinkGreen {
   filter: drop-shadow(0 0 15px rgba(17, 247, 44, 1)) 
           drop-shadow(0 0 30px rgba(17, 247, 44, 0.8));
-  animation: glowGreen 1s ease-in-out infinite alternate !important;
+  animation: glowGreen 1s ease-in-out infinite alternate;
 }
 
 @keyframes glowGreen {

@@ -81,9 +81,8 @@ function isRoomUnlocked(roomNumber) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const totalLevels = 4;
-    const totalTasksPerLevel = [1, 4, 4, 5]; // Number of tasks per level
+    const totalTasksPerLevel = [5, 4, 4, 5]; // จำนวน Task ของแต่ละ Level
     const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0);
-    let totalCompletedTasks = 0;
 
     function unlockLevel(levelNumber) {
         const nextLevel = levelNumber + 1;
@@ -106,37 +105,55 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    totalTasksPerLevel.forEach((tasksCount, levelIndex) => {
-        let completedTasks = 0;
-        const levelNumber = levelIndex + 1;
+    function updateTaskStates() {
+        let totalCompletedTasks = 0;
 
-        for (let i = 1; i <= tasksCount; i++) {
-            const taskButton = document.getElementById(`task${i}-level${levelNumber}`);
-            if (taskButton) {
-                taskButton.addEventListener('click', function () {
-                    if (!this.classList.contains("completed-task")) {
-                        // รอให้ validateAnswer ทำงานเสร็จก่อน
-                        setTimeout(() => {
-                            this.classList.add("completed-task");
-                            completedTasks++;
-                            totalCompletedTasks++;
-                
-                            console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
-                            console.log(`📊 Total completed tasks: ${totalCompletedTasks}/${totalTasks}`);
-                
-                            if (completedTasks === tasksCount) {
-                                unlockLevel(levelNumber);
-                            }
-                
-                            if (totalCompletedTasks === totalTasks) {
-                                console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
-                            }
-                        }, 100);
+        totalTasksPerLevel.forEach((tasksCount, levelIndex) => {
+            const levelNumber = levelIndex + 1;
+            let completedTasks = parseInt(sessionStorage.getItem(`completedTasks_level${levelNumber}`)) || 0;
+            totalCompletedTasks += completedTasks;
+
+            for (let i = 1; i <= tasksCount; i++) {
+                const taskButton = document.getElementById(`task${i}-level${levelNumber}`);
+                const taskCompleted = sessionStorage.getItem(`task${i}-level${levelNumber}`) === "true";
+
+                if (taskButton) {
+                    if (taskCompleted) {
+                        taskButton.classList.add("completed-task");
                     }
-                });
+
+                    taskButton.addEventListener('click', function () {
+                        if (!this.classList.contains("completed-task")) {
+                            setTimeout(() => {
+                                this.classList.add("completed-task");
+                                completedTasks++;
+                                totalCompletedTasks++;
+
+                                // บันทึก Task ที่ทำเสร็จลงใน sessionStorage
+                                sessionStorage.setItem(`task${i}-level${levelNumber}`, "true");
+                                sessionStorage.setItem(`completedTasks_level${levelNumber}`, completedTasks.toString());
+
+                                console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
+                                console.log(`📊 Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+
+                                if (completedTasks === tasksCount) {
+                                    unlockLevel(levelNumber);
+                                }
+
+                                if (document.querySelectorAll(".completed-task").length === totalTasks) {
+                                    console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
+                                }
+                            }, 100);
+                        }
+                    });
+                }
             }
-        }
-    });
+        });
+
+        // แสดงจำนวน Task ทั้งหมดและที่ทำเสร็จไปแล้วตอนโหลดหน้าเว็บ
+        console.log(`🔄 Initial Load: Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+    }
 
     updateLevelStates();
-});
+    updateTaskStates();
+}); 

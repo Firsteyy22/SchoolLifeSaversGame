@@ -66,14 +66,14 @@ hoverGroup5.addEventListener('mouseout', () => {
     hoverImage5.style.display = 'none';
 });
 
-const clickableGroup = document.getElementById('clickable-group');
+// const clickableGroup = document.getElementById('clickable-group');
 
-clickableGroup.addEventListener('click', () => {
-    // Add the 'shake' class
-    clickableGroup.classList.add('shake');
+// clickableGroup.addEventListener('click', () => {
+//     // Add the 'shake' class
+//     clickableGroup.classList.add('shake');
 
-    // Remove the 'shake' class after the animation ends
-    setTimeout(() => {
-        clickableGroup.classList.remove('shake');
-    }, 500); // Match the animation duration (0.5s)
-});
+//     // Remove the 'shake' class after the animation ends
+//     setTimeout(() => {
+//         clickableGroup.classList.remove('shake');
+//     }, 500); // Match the animation duration (0.5s)
+// });

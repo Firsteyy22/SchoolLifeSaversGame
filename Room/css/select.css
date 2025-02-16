@@ -60,7 +60,7 @@ i:hover {
 .gallery {
   position: relative;
   height: 70%;
-  width: 200%; /* ให้กว้างเต็ม container */
+  width: 150%; /* ให้กว้างเต็ม container */
   max-width: 1200px;
   display: flex;
   align-items: center;
@@ -181,4 +181,123 @@ img {
   justify-content: center;
   align-items: center;
   width: 100%;       /* Ensure full width for responsiveness */
+}
+
+/* ป้องกันการปรับขนาดโดยอัตโนมัติ */
+.no-auto-height {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* ป้องกัน SweetAlert2 ทำให้หน้าจอเลื่อนเอง */
+.no-auto-container {
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* ลบความสูงอัตโนมัติของ Swal */
+.swal2-container {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* ป้องกันการดัน layout */
+.swal2-popup {
+  position: static !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* ✅ ตั้งค่าฟอนต์ของ SweetAlert2 */
+.swal2-popup {
+  font-family: 'Kodchasan', sans-serif !important;
+  width: 500px !important; /* ✅ ปรับขนาด Popup ให้ใหญ่ขึ้น */
+  max-width: 90% !important;
+}
+
+/* ✅ ตั้งค่าฟอนต์ของ Title */
+.swal2-title {
+  font-family: 'Kodchasan', sans-serif !important;
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+/* ✅ ตั้งค่าฟอนต์ของข้อความ */
+.swal2-html-container {
+  font-family: 'Kodchasan', sans-serif !important;
+  font-size: 1.8rem !important;
+  color: #555 !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  white-space: normal !important;
+}
+
+/* ✅ ปรับขนาดและฟอนต์ของปุ่ม */
+.swal2-confirm, .swal2-cancel {
+  font-family: 'Kodchasan', sans-serif !important;
+  font-size: 1.8rem !important;
+  padding: 12px 20px !important;
+  border-radius: 8px !important;
+}
+
+/* ✅ ปุ่ม "ใช่!" สีฟ้า */
+.swal2-confirm {
+  background-color: #5c79c8 !important;
+  color: white !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* ✅ ปุ่ม "ใช่!" Hover */
+.swal2-confirm:hover {
+  background-color: #4860a8 !important;
+  transform: scale(1.05) !important;
+}
+
+/* ✅ ปุ่ม "ไม่" สีเทา */
+.swal2-cancel {
+  background-color: #ccc !important;
+  color: black !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* ✅ ปุ่ม "ไม่" Hover */
+.swal2-cancel:hover {
+  background-color: #bbb !important;
+  transform: scale(1.05) !important;
+}
+
+/* ✅ เพิ่มขนาดไอคอน Warning */
+.swal2-warning {
+  width: 100px !important; /* ✅ เพิ่มขนาดความกว้าง */
+  height: 100px !important; /* ✅ เพิ่มขนาดความสูง */
+  background-color: #ff4d4d !important; /* ✅ เปลี่ยนสีพื้นหลังเป็นแดง */
+  border: 5px solid #b30000 !important; /* ✅ เส้นขอบสีแดงเข้ม */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ✅ เพิ่มขนาดของไอคอน Question (?) */
+.swal2-question {
+    width: 100px !important; /* ✅ เพิ่มขนาดไอคอนให้เท่า Warning */
+    height: 100px !important;
+    background-color: #3498db !important; /* ✅ เปลี่ยนสีพื้นหลังเป็นฟ้า */
+    border: 5px solid #217dbb !important; /* ✅ เส้นขอบสีน้ำเงินเข้ม */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ✅ เพิ่มขนาดของเครื่องหมาย ! */
+.swal2-icon-content {
+  font-size: 5rem !important; /* ✅ ทำให้ใหญ่ขึ้น */
+  font-weight: bold !important; /* ✅ ทำให้หนา */
+  color: white !important; /* ✅ เปลี่ยนสีเป็นขาว */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
