@@ -14,7 +14,7 @@
         <!-- คำถาม 1 -->
         <div id="question1" class="question">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map2/lv1/lv1_q1.png" data-default-src="../picture/map2/lv1/lv1_q1.png" alt="Question Image">
             </div>
             <h1>สารเคมี หมายถึง เฉพาะของเหลวในห้องแลปใช่หรือไม่</h1>
             <div class="button-grid">
@@ -22,7 +22,7 @@
                     <img src="../picture/element/correct.png" class="button-element">
                     ใช่
                 </a>                
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '../picture/correctANS/correct.png', '../video/VDO_01.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '', '../picture/map2/lv1/lv1_ca1.mp4')">
                     <img src="../picture/element/wrong.png" class="button-element">
                     ไม่ใช่
                 </a>
@@ -33,7 +33,7 @@
         <!-- เลือกคำตอบหลายช้อย -->
         <div id="question2" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/map2/lv1/lv1_q2.png" data-default-src="../picture/map2/lv1/lv1_q2.png" alt="Question Image">
             </div>
             <h1>แย่แล้ว โดนสารเคมีบนผิวหนัง ทำอย่างไรดี</h1>
 
@@ -52,15 +52,15 @@
         <!-- คำถาม 3 -->
         <div id="question3" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q3" class="gif-container" src="../picture/map2/lv1/lv1_q3.png" data-default-src="../picture/map2/lv1/lv1_q3.png" alt="Question Image">
             </div>
             <h1>จำเป็นต้องรู้หรือไม่ว่าสารที่โดนนั้นคือสารเคมีอะไร</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_03.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '', '../picture/map2/lv1/lv1_ca3.mp4')">
                     <img src="../picture/element/correct.png" class="button-element">
                     จำเป็น
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'รู้ดีกว่าไม่รู้นะ', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/wrong.gif', 'รู้ดีกว่าไม่รู้นะ', '../picture/wrongANS/wong.png', '')">
                     <img src="../picture/element/wrong.png" class="button-element">
                     ไม่จำเป็น
                 </a>
@@ -85,7 +85,7 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
-        <img src="../picture/map2/lv6/lv6_end.png" style="max-width: 400px;">
+        <img src="../picture/map2/lv1/lv1_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>
@@ -132,7 +132,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const questions = [
-                { id: 'question2', correctAnswers: [2, 4], recapVideoSrc: '../video/VDO_02.mp4', multiAnswer: true },
+                { id: 'question2', correctAnswers: [2, 4], recapVideoSrc: '../picture/map2/lv1/lv1_ca2.mp4', multiAnswer: true },
             ];
     
             initQuestions(questions);

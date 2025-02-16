@@ -13,9 +13,9 @@
     <div id="question-container" class="content">
         <!-- คำถาม 1 -->
         <!-- (**เรียงลำดับคำตอบ**) -->
-        <div id="question1" class="question" data-recap-video="../video/VDO_01.mp4">
+        <div id="question1" class="question" data-recap-video="../picture/map3/lv4/lv4_ca1.mp4">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map3/lv4/lv4_q1.png" data-default-src="../picture/map3/lv4/lv4_q1.png" alt="Question Image">
             </div>
             <h1>เมื่อศีรษะเกิดการกระแทกและมีอาการบวม หรือ “หัวโน” ควรทำอย่างไร จงเรียงลำดับ</h1>
 
@@ -25,35 +25,34 @@
                 <div class="sortable-item" data-order="1" draggable="true">ทำความสะอาดแผลด้วยน้ำเกลือ</div>
                 <div class="sortable-item" data-order="4" draggable="true">พบแพทย์</div>
             </div>
-            <a id="submit-order1" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
+            <a id="submit-order" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 
         </div>
 
         <!-- คำถาม 2 -->
             <div id="question2" class="question hidden">
                 <div class="image-container">
-                    <img id="gif-container-q2" class="gif-container" src="../picture/map3/lv13/lv13_q2.png" data-default-src="../picture/map1/lv13/lv13_q2.png" alt="Question Image">
+                    <img id="gif-container-q2" class="gif-container" src="../picture/map3/lv4/lv4_q2.png" data-default-src="../picture/map3/lv4/lv4_q2.png" alt="Question Image">
                 </div>
                 <h1>การประคบเย็นที่ถูกต้อง ควรทำอย่างไร?</h1>
                 <div class="button-grid">
-                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'แสบแผลมากกกก คิดได้ไงถึงทายาหม่องเนี่ย', '../picture/map3/lv13/lv13_ansX.gif', '')">
-                        <img src="../picture/element/.png" class="button-element">
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv4/lv4_ans4.gif', 'ชื้น และความเย็นไม่พอ', '../picture/map3/lv4/lv4_ans4.gif', '')">
+                        <img src="../picture/element/coldnapkin.png" class="button-element">
                         ผ้าชุบน้ำเย็นแล้ววาง
                     </a>
-                    <a id="task4-level13" class="button" onclick="validateAnswer(this, true, '../picture/map3/lv13/lv13_ansX.gif', '', '', '../picture/map3/lv13/lv13_caX.mp4')" >
-                        <img src="../picture/element/.png" class="button-element">
+                    <a class="button" onclick="validateAnswer(this, true, '../picture/map3/lv4/lv4_ans3.gif', '', '', '../picture/map3/lv4/lv4_ca2.mp4')" >
+                        <img src="../picture/element/ice.png" class="button-element">
                         ถุงน้ำแข็ง ห่อด้วยผ้า แล้วประคบ
                     </a>
-                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'น้ำส้มอร่อยสดชื่น แต่แสบแผลเหมือนเดิม', '../picture/map3/lv13/lv13_ansX.gif', '')">
-                        <img src="../picture/element/.png" class="button-element">
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv4/lv4_ans5.gif', 'ไม่ควร เพราะเย็นเกินไป', '../picture/map3/lv4/lv4_ans5.gif', '')">
+                        <img src="../picture/element/bag.png" class="button-element">
                         วางถุงน้ำแข็งลงบนผิวเพื่อให้ความเย็นทั่วถึง
                     </a>
-                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv13/lv13_ansX.gif', 'เมื่อกี้ล้างน้ำเปล่าไปแล้วนี่หน่า', '../picture/map3/lv13/lv13_ansX.gif', '')">
-                        <img src="../picture/element/.png" class="button-element">
+                    <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv4/lv4_ans6.gif', 'อาจทำให้เวียนศีรษะและถ้าแผลเปิดอาจเกิดการติดเชื้อ', '../picture/map3/lv4/lv4_ans6.gif', '')">
+                        <img src="../picture/element/jacuzzi.png" class="button-element">
                         ก้มหัวจุ่มน้ำ
                     </a>
                 </div>
-                
             </div>
 
         </div>
@@ -70,20 +69,21 @@
         <img id="wrong-image" class="wrong-image" src="" style="max-width: 400px;">
         <h1 style="color: red;">คุณตอบผิด!</h1>
         <h2 id="wrong-text">==ข้อความ==</h2>
-        <a class="button" onclick="reloadGame()">ลองใหม่อีกครั้ง</a>
+        <a class="button" onclick="resetQ()">ลองใหม่อีกครั้ง</a>
     </div>
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
+        <img src="../picture/map3/lv4/lv4_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>    
 
     <!-- Buttons -->
-    <a href="../startGame.html" class="button button-upleft">BACK</a>
+    <a href="../Room/html/room3.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
-     <script src="../gameplay.js"></script>
+    <!-- <script src="../gameplay.js"></script> -->
     <script src="../gameplay_03.js"></script>
     <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
@@ -112,7 +112,258 @@
             }
         });
     </script>
-    
+
+    <script>
+    // ตัวแปรเพื่อจัดการคำถามปัจจุบัน
+    let currentQ = 2; // ตั้งค่าให้เป็นคำถามที่ 2
+
+// ฟังก์ชันตรวจสอบคำตอบ
+function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "", recapVideoSrc = "") {
+    deactivateAllButtons(); // ปิดใช้งานปุ่มในคำถามปัจจุบัน
+
+    if (isCorrect) {
+        button.classList.add("correct");
+        displayAnswerGIF(gifSrc);
+
+        setTimeout(() => {
+            if (afterGifPic) displayImage(afterGifPic); 
+            setTimeout(() => {
+                hideAnswerGIF();
+
+                // เล่นวิดีโอรีแคป ถ้ามี
+                if (recapVideoSrc) {
+                    playRecapVideo(recapVideoSrc, nextQ);
+                } else {
+                    nextQ();
+                }
+            }, 0);
+        }, 4000); 
+    } else {
+        button.classList.add("incorrect");
+        displayAnswerGIF(gifSrc);
+
+        setTimeout(() => {
+            if (afterGifPic) displayImage(afterGifPic); 
+            setTimeout(() => {
+                hideAnswerGIF();
+                showWrongAnswerPage(wrongText, afterGifPic, resetQ); // ส่งค่า wrongText อย่างถูกต้อง
+            }, 0);
+        }, 3500);
+    }
+}
+
+    // ฟังก์ชันรีเซ็ตคำถาม
+    function resetQ() {
+        const wrongAnswerContainer = document.getElementById('wrong-answer');
+        wrongAnswerContainer.classList.add('hidden'); // ซ่อนหน้าตอบผิด
+
+        const currentQElement = document.getElementById(`question${currentQ}`);
+        if (currentQElement) {
+            currentQElement.classList.remove('hidden');
+
+            const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+            if (gifContainer) {
+                const defaultSrc = gifContainer.getAttribute("data-default-src");
+                if (defaultSrc) {
+                    gifContainer.src = defaultSrc;
+                }
+                gifContainer.style.display = "block";
+            }
+
+            activateAllButtons();
+        }
+    }
+
+    // ฟังก์ชันซ่อน GIF
+    function hideAnswerGIF() {
+        const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+        if (gifContainer) {
+            gifContainer.style.display = "none"; // ซ่อนภาพ
+        }
+    }
+
+    // ฟังก์ชันแสดง GIF คำตอบ
+    function displayAnswerGIF(gifSrc) {
+        const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+        gifContainer.style.display = "block";
+        gifContainer.style.width = "auto"; // ปรับขนาดอัตโนมัติ
+        gifContainer.style.height = "100%"; // จำกัดความสูงไม่เกิน container
+        gifContainer.src = gifSrc;
+    }
+
+    // ฟังก์ชันแสดงภาพ
+    function displayImage(imageSrc) {
+        const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+        gifContainer.style.display = "block";
+        gifContainer.style.width = "auto"; // ปรับขนาดอัตโนมัติ
+        gifContainer.style.height = "100%"; // จำกัดความสูงไม่เกิน container
+        gifContainer.src = imageSrc;
+    }
+
+    // ปิดการใช้งานปุ่มเฉพาะในคำถามปัจจุบัน
+    function deactivateAllButtons() {
+        const currentQElement = document.getElementById(`question${currentQ}`);
+        if (currentQElement) {
+            currentQElement.querySelectorAll(".button").forEach(btn => {
+                btn.disabled = true; // ปิดใช้งานปุ่ม
+                btn.style.pointerEvents = "none"; // ปิดการคลิก
+                btn.style.cursor = "not-allowed"; // เปลี่ยน cursor แสดงสถานะ disabled
+            });
+        }
+    }
+
+    // เปิดใช้งานปุ่มเฉพาะในคำถามปัจจุบัน
+    function activateAllButtons() {
+        const currentQElement = document.getElementById(`question${currentQ}`);
+        if (currentQElement) {
+            currentQElement.querySelectorAll(".button").forEach(btn => {
+                btn.disabled = false; // เปิดใช้งานปุ่ม
+                btn.style.pointerEvents = "auto"; // เปิดการคลิก
+                btn.style.cursor = "pointer"; // เปลี่ยน cursor กลับเป็นปกติ
+            });
+        }
+    }
+
+    // ฟังก์ชันเปลี่ยนคำถามถัดไป
+    function nextQ() {
+        const currentQElement = document.getElementById(`question${currentQ}`);
+        if (currentQElement) {
+            currentQElement.classList.add("hidden");
+
+            // ซ่อน GIF ของคำถามก่อนหน้า
+            const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+            if (gifContainer) {
+                gifContainer.style.display = "none";
+            }
+        }
+
+        const totalQs = document.querySelectorAll('.question').length;
+
+        if (currentQ === totalQs) {
+            // ถึงคำถามสุดท้ายแล้ว
+            showSingleAnswerCompletionScreen(); // แสดง Completion Screen
+        } else {
+            currentQ++;
+            const nextQElement = document.getElementById(`question${currentQ}`);
+            if (nextQElement) {
+                nextQElement.classList.remove("hidden");
+
+                // ตั้งค่าให้รูปเริ่มต้นแสดงทันทีเมื่อโหลดคำถามใหม่
+                const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+                if (gifContainer) {
+                    const defaultSrc = gifContainer.getAttribute("data-default-src");
+                    if (defaultSrc) {
+                        gifContainer.src = defaultSrc; // ตั้ง src เป็นรูปเริ่มต้น
+                    }
+                    gifContainer.style.display = "block"; // แสดงภาพทันที
+                }
+
+                activateAllButtons(); // เปิดใช้งานปุ่มใหม่
+            }
+        }
+    }
+
+    // ฟังก์ชันแสดงหน้าผิด
+    function showWrongAnswerPage(wrongText, imageUrl, callback) {
+    const wrongAnswerContainer = document.getElementById('wrong-answer');
+    const wrongImage = document.getElementById('wrong-image');
+    const wrongTextElement = document.getElementById('wrong-text');
+
+    wrongAnswerContainer.classList.remove('hidden');
+    wrongImage.src = imageUrl;
+    wrongTextElement.textContent = wrongText; // อัปเดตข้อความ
+
+    document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+
+    const reloadButton = wrongAnswerContainer.querySelector('.button');
+    reloadButton.onclick = () => {
+        wrongAnswerContainer.classList.add('hidden');
+        callback();
+    };
+}
+
+    // ฟังก์ชันเริ่มเกมใหม่
+    function reloadGame() {
+        // ซ่อนหน้าคำตอบผิด
+        document.getElementById("wrong-answer").classList.add("hidden");
+
+        // แสดงคำถามปัจจุบันอีกครั้ง
+        const currentQElement = document.getElementById(`question${currentQ}`);
+        if (currentQElement) {
+            currentQElement.classList.remove("hidden");
+
+            // ตรวจสอบและตั้งค่าภาพกลับเป็นค่าเริ่มต้น
+            const gifContainer = document.getElementById(`gif-container-q${currentQ}`);
+            if (gifContainer) {
+                const defaultSrc = gifContainer.getAttribute("data-default-src");
+                if (defaultSrc) {
+                    gifContainer.src = defaultSrc; // ตั้งค่า src เป็นรูปเริ่มต้น
+                }
+                gifContainer.style.display = "block"; // แสดงภาพอีกครั้ง
+            }
+
+            activateAllButtons(); // เปิดใช้งานปุ่มใหม่
+        }
+    }
+
+    // ฟังก์ชันเล่นวิดีโอรีแคป
+    function playRecapVideo(videoSrc, callback) {
+        const videoContainer = document.getElementById("fullscreen-video-container");
+        const fullscreenVideo = document.getElementById("fullscreen-video");
+        const nextBtn = document.getElementById("next-button");
+
+        let hasShownNextBtn = false; // ตัวแปรสำหรับตรวจสอบว่าปุ่มถูกแสดงแล้วหรือยัง
+
+        // ซ่อนปุ่ม "ไปยังส่วนถัดไป" ตอนเริ่มต้น
+        nextBtn.classList.add("hidden");
+
+        // แสดง Fullscreen Video Overlay
+        videoContainer.classList.remove("hidden");
+        fullscreenVideo.src = videoSrc; // ตั้งค่าแหล่งวิดีโอ
+        fullscreenVideo.currentTime = 0; // รีเซ็ตเวลาเริ่มต้นของวิดีโอ
+        fullscreenVideo.loop = true; // ตั้งค่าให้เล่นซ้ำ
+        fullscreenVideo.load(); // โหลดวิดีโอใหม่
+        fullscreenVideo.autoplay = true;
+
+        fullscreenVideo.onended = () => {
+            if (!hasShownNextBtn) {
+                nextBtn.classList.remove("hidden"); // แสดงปุ่ม "ไปยังส่วนถัดไป"
+                hasShownNextBtn = true; // อัพเดตสถานะว่าปุ่มถูกแสดงแล้ว
+            }
+        };
+
+        // ตรวจสอบการเล่นวิดีโอในแต่ละรอบ
+        fullscreenVideo.addEventListener('timeupdate', function () {
+            // ถ้าวิดีโอเล่นถึงเวลาสุดท้ายในครั้งแรก
+            if (fullscreenVideo.currentTime >= fullscreenVideo.duration - 0.5 && !hasShownNextBtn) {
+                fullscreenVideo.pause(); // หยุดวิดีโอชั่วคราว
+                nextBtn.classList.remove("hidden"); // แสดงปุ่ม "ไปยังส่วนถัดไป"
+                hasShownNextBtn = true; // อัพเดตสถานะว่าปุ่มถูกแสดงแล้ว
+                fullscreenVideo.play(); // เล่นต่อเพื่อให้ loop ได้ตามปกติ
+            }
+        });
+
+        nextBtn.onclick = () => {
+            videoContainer.classList.add("hidden");
+            fullscreenVideo.pause();
+            fullscreenVideo.currentTime = 0; // รีเซ็ตวิดีโอเมื่อปิด
+            fullscreenVideo.src = ""; // ล้างค่า src หลังเล่นเสร็จ
+            nextBtn.classList.add("hidden");
+            if (callback) callback();
+        };
+    }
+
+    function showSingleAnswerCompletionScreen() {
+        document.getElementById("question-container").classList.add("hidden");
+        document.getElementById("completion-screen").classList.remove("hidden");
+    }
+
+    function confirmCompletion(level) {
+        completeLevel(level);
+    }
+    </script>
+
+
     <script>
         currentLevel = 13;  // ระบุว่านี่คือ level 13
     </script>

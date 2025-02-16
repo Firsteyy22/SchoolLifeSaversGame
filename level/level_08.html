@@ -14,24 +14,24 @@
         <!-- คำถาม 1 -->
         <div id="question1" class="question">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map2/lv3/lv3_q1.png" data-default-src="../picture/map2/lv3/lv3_q1.png" alt="Question Image">
             </div>
             <h1>เผลอดมสารเคมี ทำยังไงดี</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ควรรีบออกจากพื้นที่นั้นก่อนนะ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map2/lv3/lv3_ans2.gif', 'ควรรีบออกจากพื้นที่นั้นก่อนนะ', '../picture/map2/lv3/lv3_ans2.gif', '')">
+                    <img src="../picture/element/mask.png" class="button-element">
                     อยู่ที่เดิม แต่ใส่หน้ากากอนามัย
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรทำ เพราะทำให้เกิดประกายไฟ และมลพิษเพิ่มขึ้น', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map2/lv3/lv3_ans3.gif', 'ทำให้เกิดประกายไฟ และมลพิษเพิ่มขึ้น', '../picture/map2/lv3/lv3_ans3.gif', '')">
+                    <img src="../picture/element/bombfire.png" class="button-element">
                     จุดประทัด <br>ไล่สารเคมี
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ไม่ควรหยิบอะไรไม่รู้เข้าจมูกนะ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map2/lv3/lv3_ans4.gif', 'ไม่ควรหยิบอะไรไม่รู้เข้าจมูกนะ', '../picture/map2/lv3/lv3_ans4.gif', '')">
+                    <img src="../picture/element/water.png" class="button-element">
                     ใช้ของที่ใกล้ที่สุด <br>ปิดจมูกไว้
                 </a>
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_01.mp4')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/map2/lv3/lv3_ans1.gif', '', '', '../picture/map2/lv3/lv3_ca1.mp4')">
+                    <img src="../picture/element/run.png" class="button-element">
                     รีบออกมาพื้นที่ <br>ที่อากาศถ่ายเท
                 </a>
             </div>
@@ -40,17 +40,17 @@
         <!-- คำถาม 2 -->
         <div id="question2" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/map2/lv3/lv3_q2.png" data-default-src="../picture/map2/lv3/lv3_q2.png" alt="Question Image">
             </div>
             <h1>ถ้าประเมินการหายใจและการเต้นหัวใจแล้วผิดปกติ ควรรีบไปพบแพทย์ใช่หรือไม่</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/correct.gif', '', '', '../video/VDO_02.mp4')">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/map2/lv3/lv3_ans5.gif', '', '', '../picture/map2/lv3/lv3_ca2.mp4')">
                     <img src="../picture/element/correct.png" class="button-element">
                     ใช่
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/wrong.gif', 'ควรรีบไปพบแพทย์', '../picture/wrongANS/', '')">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map2/lv3/lv3_ans6.gif', 'ควรรีบไปพบแพทย์', '../picture/map2/lv3/lv3_ans6.gif', '')">
                     <img src="../picture/element/wrong.png" class="button-element">
-                    ไม่ใช่
+                    ไม่
                 </a>
             </div>
         </div>
@@ -72,7 +72,7 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
-        <img src="../picture/map2/lv8/lv8_end.png" style="max-width: 400px;">
+        <img src="../picture/map2/lv3/lv3_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>

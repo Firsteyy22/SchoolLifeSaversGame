@@ -14,25 +14,21 @@
         <!-- คำถาม 1 -->
         <div id="question1" class="question">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map3/lv2/lv2_q1.png" data-default-src="../picture/map3/lv2/lv2_q1.png" alt="Question Image">
             </div>
             <h1>ภาพไหนคือ “ตะขาบ”</h1>
             <!-- เลือกรูปภาพ -->
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_01.mp4')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv2/lv2_ans1.png', 'กิ้งกือ มีขาด้านล่าง เดินช้า เขี่ยแล้วขดตัว', '../picture/map3/lv2/lv2_ans1.png', '')">
                     A
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'กิ้งกือ มีขาด้านล่าง เดินช้า เขี่ยแล้วขดตัว', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv2/lv2_ans2.png', 'ตะเข็บ ไม่มีพิษ', '../picture/map3/lv2/lv2_ans2.png', '')">
                     B
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'ตะเข็บ ไม่มีพิษ', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/map3/lv2/lv2_ans3.png', '', '', '../picture/map3/lv2/lv2_ca1.mp4')">
                     C
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'หนอนบุ้ง มีพิษ ระวังการสัมผัส', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv2/lv2_ans4.png', 'หนอนบุ้ง มีพิษ ระวังการสัมผัส', '../picture/map3/lv2/lv2_ans4.png', '')">
                     D
                 </a>
             </div>
@@ -42,7 +38,7 @@
         <!-- เลือกคำตอบที่ถูก หลายคำตอบ  -->
         <div id="question2" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/correctANS/" data-default-src="../picture/correctANS/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/map3/lv2/lv2_q2.png" data-default-src="../picture/map3/lv2/lv2_q2.png" alt="Question Image">
             </div>
             <h1>เมื่อโดนตะขาบกัดควรทำอย่างไร</h1>
             <div class="button-grid-choices">
@@ -60,14 +56,14 @@
         <!-- เลือกคำตอบที่ถูก หลายคำตอบ  -->
         <div id="question3" class="question hidden">
             <div class="image-container">
-                <img id="gif-container-q3" class="gif-container" src="../picture/" data-default-src="../picture/" alt="Question Image">
+                <img id="gif-container-q3" class="gif-container" src="../picture/map3/lv2/lv2_q3.png" data-default-src="../picture/map3/lv2/lv2_q3.png" alt="Question Image">
             </div>
             <h1>ข้อใดถูกต้องเกี่ยวกับสายด่วน 1669</h1>
             <div class="button-grid-choices">
                 <a class="button-choices" data-answer="0"> สายด่วนเรียกรถพยาบาล </a>
-                <a class="button-choices" data-answer="1"> สายด่วนสถาบันแพทย์ฉุกเฉินแห่งชาติ </a>
-                <a class="button-choices" data-answer="2"> สายด่วนร้องเรียนบริการทางการแพทย์ </a>
-                <a class="button-choices" data-answer="3"> สายด่วนเภสัชกรเพื่อการแนะนำการใช้ยา </a>
+                <a class="button-choices" data-answer="1"> สายด่วนสถาบันแพทย์ฉุกเฉิน <br>แห่งชาติ </a>
+                <a class="button-choices" data-answer="2"> สายด่วนร้องเรียนบริการ <br>ทางการแพทย์ </a>
+                <a class="button-choices" data-answer="3"> สายด่วนเภสัชกรเพื่อการแนะนำ <br>การใช้ยา </a>
                 <a class="button-choices" data-answer="4"> สายด่วนท่องเที่ยว </a>
                 <a class="button-choices" data-answer="5"> สายด่วนที่เปิดบริการ 24 ชั่วโมง </a>
             </div>
@@ -92,12 +88,13 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
+        <img src="../picture/map3/lv2/lv2_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>
 
     <!-- Buttons -->
-    <a href="../startGame.html" class="button button-upleft">BACK</a>
+    <a href="../Room/html/room3.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
     <script src="../gameplay.js"></script>
@@ -138,13 +135,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const questions = [
-                { id: 'question2', correctAnswers: [0, 1, 4, 5], recapVideoSrc: '../video/VDO_02.mp4', multiAnswer: true },
-                { id: 'question3', correctAnswers: [0, 1, 5], recapVideoSrc: '../video/VDO_03.mp4', multiAnswer: true },
+                { id: 'question2', correctAnswers: [0, 1, 4, 5], recapVideoSrc: '../picture/map3/lv2/lv2_ca2.mp4', multiAnswer: true },
+                { id: 'question3', correctAnswers: [0, 1, 5], recapVideoSrc: '../picture/map3/lv2/lv2_ca3.mp4', multiAnswer: true },
             ];
     
             initQuestions(questions);
             showQuestion('question1'); // เริ่มต้นแสดงคำถามแรก
         });
+
     </script>    
     
     

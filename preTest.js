@@ -3,225 +3,104 @@ class PretestManager {
         this.questions = [
             {
                 image: "picture/PreTest/q1.png",
-                question: "การปฐมพยาบาล คืออะไร ?",
+                question: "การปฐมพยาบาล คืออะไร?",
                 options: [
-                    {
-                        text: "การทำกายภาพบำบัดเพื่อฟื้นฟูร่างกาย",
-                        isCorrect: false
-                    },
-                    {
-                        text: "การช่วยเหลือเบื้องต้นเมื่อเกิดอุบัติเหตุหรือเจ็บป่วยกะทันหัน",
-                        isCorrect: true
-                    },
-                    {
-                        text: "การใช้สมุนไพรรักษาอาการเจ็บป่วย",
-                        isCorrect: false
-                    },
-                    {
-                        text: "การดูแลสุขภาพประจำวันเพื่อป้องกันโรค",
-                        isCorrect: false
-                    }
+                    { text: "การป้องกันการเกิดอันตราย", isCorrect: false},
+                    { text: "การรักษาโดยแพทย์", isCorrect: false},
+                    { text: "การช่วยเหลือผู้เจ็บป่วยเบื้องต้น", isCorrect: true},
+                    { text: "การรักษาต่อเนื่องหลังพบแพทย์", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q2.png",
-                question: "ถ้าเกิดอาการฟกช้ำ จะต้องทำอะไร ?",
+                question: "ถ้าเกิดอาการฟกช้ำ จะต้องทำอย่างไร?",
                 options: [
-                    {
-                        text: "ควรประคบเย็นก่อน",
-                        isCorrect: true
-                    },
-                    {
-                        text: "ควรประคบร้อนก่อน",
-                        isCorrect: false
-                    },
-                    {
-                        text: "ไม่ควรทำอะไร ปล่อยทิ้งไว้",
-                        isCorrect: false
-                    },
-                    {
-                        text: "ควรประคบร้อนสลับเย็นไปมา",
-                        isCorrect: false
-                    }
+                    { text: "ควรประคบเย็นก่อน", isCorrect: true},
+                    { text: "ควรประคบร้อนก่อน", isCorrect: false},
+                    { text: "ไม่ควรทำอะไร ปล่อยทิ้งไว้", isCorrect: false},
+                    { text: "ควรประคบร้อนสลับเย็นไปมา", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q3.png",
-                question: "เมื่อเกิดแผลถลอก ควรทำอย่างไรเป็นขั้นตอนแรก ?",
+                question: "สิ่งใดทำความสะอาดแผลได้ดีที่สุด?",
                 options: [
-                    {
-                        text: "ทาเบตาดีนที่แผล",
-                        isCorrect: false
-                    },
-                    {
-                        text: "ทายาหม่องที่แผล",
-                        isCorrect: false
-                    },
-                    {
-                        text: "ล้างแผลด้วยน้ำเปล่า",
-                        isCorrect: true
-                    },
-                    {
-                        text: "ปล่อยทิ้งไว้ให้แห้ง",
-                        isCorrect: false
-                    }
+                    { text: "แอลกอฮอล์", isCorrect: false},
+                    { text: "เบตาดีน", isCorrect: false},
+                    { text: "น้ำสะอาด", isCorrect: true},
+                    { text: "น้ำส้มสายชู", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q4.png",
-                question: "เผลอดมสารเคมี ทำยังไงดี ?",
+                question: "แผลไฟไหม้ น้ำร้อนลวกมีกี่ระดับ?",
                 options: [
-                    {
-                        text: "อยู่ที่เดิม แต่ใส่หน้ากากอนามัย",
-                        isCorrect: false
-                    },
-                    {
-                        text: "จุดประทัดไล่สารเคมี",
-                        isCorrect: false
-                    },
-                    {
-                        text: "นอน",
-                        isCorrect: false
-                    },
-                    {
-                        text: "รีบออกมาพื้นที่ที่อากาศถ่ายเท",
-                        isCorrect: true
-                    }
+                    { text: "2 ระดับ", isCorrect: false},
+                    { text: "3 ระดับ", isCorrect: true},
+                    { text: "4 ระดับ", isCorrect: false},
+                    { text: "5 ระดับ", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q5.png",
-                question: "เรียกรถพยาบาล ต้องติดต่อสายด่วนอะไร ?",
+                question: "เรียกรถพยาบาล ต้องติดต่อสายด่วนอะไร?",
                 options: [
-                    {
-                        text: "1150",
-                        isCorrect: false
-                    },
-                    {
-                        text: "1669",
-                        isCorrect: true
-                    },
-                    {
-                        text: "1234",
-                        isCorrect: false
-                    },
-                    {
-                        text: "1193",
-                        isCorrect: false
-                    }
+                    { text: "1150", isCorrect: false},
+                    { text: "1669", isCorrect: true},
+                    { text: "1234", isCorrect: false},
+                    { text: "1193", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q6.png",
-                question: "XXXX ?",
+                question: "การห้ามเลือดควรทำอย่างไร?",
                 options: [
-                    {
-                        text: "X",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXX",
-                        isCorrect: true
-                    },
-                    {
-                        text: "XXXX",
-                        isCorrect: false
-                    }
+                    { text: "ใช้ผ้าสะอาดกดบริเวณแผล", isCorrect: true},
+                    { text: "ใช้มือกดแผลโดยตรง", isCorrect: false},
+                    { text: "ใช้เชือกรัดเหนือหรือใต้แผล", isCorrect: false},
+                    { text: "ล้างน้ำสะอาดจนกว่าเลือดจะหยุดไหล", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q7.png",
-                question: "XXXX ?",
+                question: "ข้อใดคือสิ่งที่ควรทำก่อนพบแพทย์เมื่อถูกงูกัด?",
                 options: [
-                    {
-                        text: "X",
-                        isCorrect: true
-                    },
-                    {
-                        text: "XX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXXX",
-                        isCorrect: false
-                    }
+                    { text: "ใช้เชือกรัดเหนือบริเวณที่ถูกกัด", isCorrect: false},
+                    { text: "ใช้ปากดูดพิษออก", isCorrect: false},
+                    { text: "ขยับส่วนที่ถูกกัดให้น้อยที่สุด", isCorrect: true},
+                    { text: "กดแผลเพื่อไล่พิษออก", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q8.png",
-                question: "XXXX ?",
+                question: "เมื่อเลือดกำเดาไหลและบีบปลายจมูก ควรหายใจทางใด?",
                 options: [
-                    {
-                        text: "X",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XX",
-                        isCorrect: true
-                    },
-                    {
-                        text: "XXX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXXX",
-                        isCorrect: false
-                    }
+                    { text: "ไม่ควรหายใจ", isCorrect: false},
+                    { text: "ทางจมูกและปาก", isCorrect: false},
+                    { text: "ทางจมูก", isCorrect: false},
+                    { text: "ทางปาก", isCorrect: true}
                 ]
             },
             {
                 image: "picture/PreTest/q9.png",
-                question: "XXXX ?",
+                question: "ข้อใดคือสิ่งที่ไม่ควรทำหากกระดูกหัก?",
                 options: [
-                    {
-                        text: "X",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXXX",
-                        isCorrect: true
-                    }
+                    { text: "ขยับให้กระดูกเข้าที่", isCorrect: true},
+                    { text: "ลดการเคลื่อนไหวให้ได้มากที่สุด", isCorrect: false},
+                    { text: "ยึดส่วนที่กระดูกหักไว้กับไม้หรือหนังสือที่มีความหนา", isCorrect: false},
+                    { text: "รอความช่วยเหลือจากแพทย์หรือผู้เชี่ยวชาญ", isCorrect: false}
                 ]
             },
             {
                 image: "picture/PreTest/q10.png",
-                question: "XXXX ?",
+                question: "หากจะทำการปฐมพยาบาลต้องคำนึงถึงสิ่งใด?",
                 options: [
-                    {
-                        text: "X",
-                        isCorrect: true
-                    },
-                    {
-                        text: "XX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXX",
-                        isCorrect: false
-                    },
-                    {
-                        text: "XXXX",
-                        isCorrect: false
-                    }
+                    { text: "อาการของผู้เจ็บป่วย", isCorrect: false},
+                    { text: "ความรู้ ความสามารถในการปฐมพยาบาล", isCorrect: false},
+                    { text: "ความปลอดภัยของผู้เจ็บป่วยและผู้ปฐมพยาบาล", isCorrect: false},
+                    { text: "ถูกทุกข้อ", isCorrect: true}
                 ]
-            },
-            // เพิ่มคำถามอื่นๆ ตามต้องการ
+            }
         ];
         this.currentQuestion = 0;
         this.score = 0;

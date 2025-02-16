@@ -14,24 +14,24 @@
         <!-- คำถาม 1 -->
         <div id="question1" class="question">
             <div class="image-container">
-                <img id="gif-container-q1" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q1" class="gif-container" src="../picture/map3/lv1/lv1_q1.png" data-default-src="../picture/map3/lv1/lv1_q1.png" alt="Question Image">
             </div>
             <h1>ถ้าถูกผึ้ง ต่อ หรือแตน ต่อยและพบเหล็กใน ข้อใดเป็นคำตอบที่ผิด</h1>
             <div class="button-grid">
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv1/lv1_ans2.gif', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/map3/lv1/lv1_ans2.gif', '')">
+                    <img src="../picture/element/key.png" class="button-element">
                     กดเหล็กในออก <br>ด้วยลูกกุญแจที่มีรู
                 </a>
-                <a class="button" onclick="validateAnswer(this, true, '../picture/correctANS/', '', '../picture/correctANS/', '../video/VDO_01.mp4')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, true, '../picture/map3/lv1/lv1_ans1.gif', '', '', '../picture/map3/lv1/lv1_ca1.mp4')">
+                    <img src="../picture/element/hand.png" class="button-element">
                     รีบดึงเหล็กในด้วยมือออกทันที
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv1/lv1_ans3.gif', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/map3/lv1/lv1_ans3.gif', '')">
+                    <img src="../picture/element/card.png" class="button-element">
                     ใช้บัตรแข็ง <br>ขูดเหล็กในออก
                 </a>
-                <a class="button" onclick="validateAnswer(this, false, '../picture/wrongANS/', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/wrongANS/', '')">
-                    <img src="../picture/element/" class="button-element">
+                <a class="button" onclick="validateAnswer(this, false, '../picture/map3/lv1/lv1_ans4.gif', 'เป็นวิธีที่ถูกต้องอยู่แล้ว', '../picture/map3/lv1/lv1_ans4.gif', '')">
+                    <img src="../picture/element/ammonia.png" class="button-element">
                     ทาแอมโมเนียลงแผลทันที
                 </a>
             </div>
@@ -39,9 +39,9 @@
 
         <!-- คำถาม 2 -->
         <!-- (**เรียงลำดับคำตอบ**) -->
-        <div id="question2" class="question hidden" data-recap-video="../video/VDO_02.mp4">
+        <div id="question2" class="question hidden" data-recap-video="../picture/map3/lv1/lv1_ca2.mp4">
             <div class="image-container">
-                <img id="gif-container-q2" class="gif-container" src="../picture/questionIMG/" data-default-src="../picture/questionIMG/" alt="Question Image">
+                <img id="gif-container-q2" class="gif-container" src="../picture/map3/lv1/lv1_q2.png" data-default-src="../picture/map3/lv1/lv1_q2.png" alt="Question Image">
             </div>
             <h1>เรียงลำดับวิธีปฐมพยาบาลเมื่อโดนผึ้ง ต่อ แตน ต่อย ให้ถูกต้อง</h1>
 
@@ -75,7 +75,7 @@
 
     <!-- Finish page -->
     <div id="completion-screen" class="content hidden">
-        <img src="../picture/map3/lv10/lv10_end.png" style="max-width: 400px;">
+        <img src="../picture/map3/lv1/lv1_end.png" style="max-width: 400px;">
         <h1>ยินดีด้วย! คุณผ่านด่านนี้แล้ว</h1>
         <a class="button" onclick="confirmCompletion(currentLevel)">ยืนยันสำเร็จ</a>
     </div>
@@ -113,6 +113,7 @@
             }
         });
     </script>
+
 
     <script>
         currentLevel = 10;  // ระบุว่านี่คือ level 10

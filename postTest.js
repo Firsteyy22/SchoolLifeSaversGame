@@ -2,324 +2,255 @@ class PostTestManager {
     constructor() {
         this.allquestions = [
             {
-                image: "picture/PostTest/.png",
-                question: "1?",
+                image: "picture/PostTest/q1.png",
+                question: "การปฐมพยาบาล คืออะไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "การป้องกันการเกิดอันตราย", isCorrect: false },
+                    { text: "การรักษาโดยแพทย์", isCorrect: false },
+                    { text: "การช่วยเหลือผู้เจ็บป่วยเบื้องต้น", isCorrect: true },
+                    { text: "การรักษาต่อเนื่องหลังพบแพทย์", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "2?",
+                image: "picture/PostTest/q2.png",
+                question: "ถ้าเกิดอาการฟกช้ำ?",
                 options: [
-                    { text: "X", isCorrect: false },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: true },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ควรประคบเย็นก่อน", isCorrect: true },
+                    { text: "ควรประคบร้อนก่อน", isCorrect: false },
+                    { text: "ไม่ควรทำอะไร ปล่อยทิ้งไว้", isCorrect: false },
+                    { text: "ควรประคบร้อนสลับเย็นไปมา", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "3?",
+                image: "picture/PreTest/q3.png",
+                question: "เรียกรถพยาบาล ต้องติดต่อสายด่วนอะไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "1150", isCorrect: false},
+                    { text: "1669", isCorrect: true},
+                    { text: "1234", isCorrect: false},
+                    { text: "1193", isCorrect: false}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "4?",
+                image: "picture/PostTest/q4.png",
+                question: "ควรเช็ดแอลกอฮอล์ลงบนแผลตรง ๆ หรือไม่?",
                 options: [
-                    { text: "X", isCorrect: false },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: true }
+                    { text: "ควร เพราะแอลกอฮอล์ทำความสะอาดแผลได้ดีที่สุด", isCorrect: false },
+                    { text: "ควร เพราะแอลกอฮอล์ทำให้แผลหายเร็วขึ้น", isCorrect: false },
+                    { text: "ไม่ควร เพราะจะทำให้แสบแผลมาก", isCorrect: true },
+                    { text: "ไม่ควร เพราะแอลกอฮอล์ทำให้แผลอักแสบมากขึ้น", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "5?",
+                image: "picture/PreTest/q5.png",
+                question: "การห้ามเลือดควรทำอย่างไร?",
                 options: [
-                    { text: "X", isCorrect: false },
-                    { text: "XX", isCorrect: true },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ใช้ผ้าสะอาดกดบริเวณแผล", isCorrect: true},
+                    { text: "ใช้มือกดแผลโดยตรง", isCorrect: false},
+                    { text: "ใช้เชือกรัดเหนือหรือใต้แผล", isCorrect: false},
+                    { text: "ล้างน้ำสะอาดจนกว่าเลือดจะหยุดไหล", isCorrect: false}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "6?",
+                image: "picture/PreTest/q6.png",
+                question: "ข้อใดคือสิ่งที่ไม่ควรทำหากกระดูกหัก?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ขยับให้กระดูกเข้าที่", isCorrect: true},
+                    { text: "ลดการเคลื่อนไหวให้ได้มากที่สุด", isCorrect: false},
+                    { text: "ยึดส่วนที่กระดูกหักไว้กับไม้หรือหนังสือที่มีความหนา", isCorrect: false},
+                    { text: "รอความช่วยเหลือจากแพทย์หรือผู้เชี่ยวชาญ", isCorrect: false}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "7?",
+                image: "picture/PreTest/q7.png",
+                question: "แผลไฟไหม้ น้ำร้อนลวกมีกี่ระดับ?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "2 ระดับ", isCorrect: false},
+                    { text: "3 ระดับ", isCorrect: true},
+                    { text: "4 ระดับ", isCorrect: false},
+                    { text: "5 ระดับ", isCorrect: false}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "8?",
+                image: "picture/PostTest/q8.png",
+                question: "ระดับของแผลไฟไหม้ น้ำร้อนลวก ใช้อะไรในการจำแนกระดับ?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ความร้อนของน้ำ/ไฟ", isCorrect: false },
+                    { text: "ความกว้างของแผล", isCorrect: false },
+                    { text: "ชั้นผิวหนังที่ถูกทำลาย", isCorrect: true },
+                    { text: "สีของแผล", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "9?",
+                image: "picture/PostTest/q9.png",
+                question: "ข้อใดถูกต้องเกี่ยวกับสารเคมี?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "สารเคมีต้องมาจากห้องแลปเท่านั้น", isCorrect: false },
+                    { text: "สารเคมีอยู่ในชีวิตประจำวัน เช่น น้ำยาล้างห้องน้ำ", isCorrect: true },
+                    { text: "โอกาสในการสัมผัสสารเคมีนั้นเกิดขึ้นได้น้อย", isCorrect: false },
+                    { text: "สารเคมีเป็นของเหลวเท่านั้น", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "10?",
+                image: "picture/PostTest/q10.png",
+                question: "ข้อใดคือสิ่งแรกที่ควรทำเมื่อถูกสารเคมีเข้าตา?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ขยี้ตาด้วยมือ", isCorrect: false },
+                    { text: "หลับตา และไม่ลืมตาจนกว่าจะพบแพทย์", isCorrect: false },
+                    { text: "พบแพทย์ทันที", isCorrect: false },
+                    { text: "ล้างด้วยน้ำสะอาด", isCorrect: true }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "11?",
+                image: "picture/PostTest/q11.png",
+                question: "เมื่อสูดดมสารเคมีควรทำอย่างไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ออกมาในที่อากาศถ่ายเทให้เร็วที่สุด", isCorrect: true },
+                    { text: "กลั้นหายใจ", isCorrect: false },
+                    { text: "เปิดพัดลมไล่สารเคมี", isCorrect: false },
+                    { text: "หาสิ่งของใกล้ตัวอุดจมูก", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "12?",
+                image: "picture/PostTest/q12.png",
+                question: "ไม่ควรทำอย่างไรหากกินยาผิดชนิด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "สังเกตอาการของตัวเอง", isCorrect: false },
+                    { text: "งดน้ำ", isCorrect: false },
+                    { text: "งดอาหาร", isCorrect: false },
+                    { text: "กินยาอื่นเพื่อยับยั้งยาที่กินผิด", isCorrect: true }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "13?",
+                image: "picture/PostTest/q13.png",
+                question: "ข้อใดคือสิ่งที่ควรทำก่อนพบแพทย์เมื่อถูกงูกัด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ขยับส่วนที่ถูกกัดให้น้อยที่สุด", isCorrect: true },
+                    { text: "ใช้เชือกรัดเหนือบริเวณที่ถูกกัด", isCorrect: false },
+                    { text: "ใช้ปากดูดพิษออก", isCorrect: false },
+                    { text: "กดแผลเพื่อไล่พิษออก", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "14?",
+                image: "picture/PostTest/q14.png",
+                question: "เมื่อถูกผึ้งต่อย หลังนำเหล็กในออกควรบีบรอบแผลหรือไม่ เพราะเหตุใด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ควร เพราะทำให้หายเจ็บแผล", isCorrect: false },
+                    { text: "ไม่ควร เพราะจะทำให้แผลบวม", isCorrect: false },
+                    { text: "ควร เพราะเป็นการไล่พิษออก", isCorrect: true },
+                    { text: "ไม่ควร เพราะจะทำให้พิษแล่นไปสู่ส่วนอื่น", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "15?",
+                image: "picture/PostTest/q15.png",
+                question: "ข้อใดถูกต้องเกี่ยวกับการประคบ?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ประคบเย็น ลดอาการบวม", isCorrect: true },
+                    { text: "ประคบร้อน ลดอาการบวม", isCorrect: false },
+                    { text: "ประคบเย็น ลดอาการช้ำ", isCorrect: false },
+                    { text: "ประคบเย็นและประคบร้อนมีผลเหมือนกัน", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "16?",
+                image: "picture/PostTest/q16.png",
+                question: "เมื่อเลือดกำเดาไหลและบีบปลายจมูก ควรหายใจทางใด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ไม่ควรหายใจ", isCorrect: false},
+                    { text: "ทางจมูกและปาก", isCorrect: false},
+                    { text: "ทางจมูก", isCorrect: false},
+                    { text: "ทางปาก", isCorrect: true}
+                ]
+            },            
+            {
+                image: "picture/PostTest/q17.png",
+                question: "สามารถนวดบริเวณที่เกิดอาการเคล็ดหรือแพลงได้หรือไม่ เพราะอะไร?",
+                options: [
+                    { text: "ได้ เพราะการนวดทำให้หายปวด", isCorrect: false },
+                    { text: "ไม่ได้ เพราะจะทำให้บวมมากขึ้น", isCorrect: true },
+                    { text: "ได้ เพราะทำให้หายจากอาการเคล็ด/แพลงได้", isCorrect: false },
+                    { text: "ไม่ได้ เพราะการนวดอาจทำให้กระดูกหัก", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "17?",
+                image: "picture/PostTest/q18.png",
+                question: "หากมีฝุ่นผงติดอยู่ที่ตา สามารถใช้อะไรเขี่ยออกได้?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },            {
-                image: "picture/PostTest/.png",
-                question: "18?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "นิ้วมือ", isCorrect: false },
+                    { text: "ไม้จิ้มฟัน", isCorrect: false },
+                    { text: "ก้านสำลี", isCorrect: true },
+                    { text: "ปลายเล็บ", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "19?",
+                image: "picture/PostTest/q19.png",
+                question: "ตะคริว เกิดจากอะไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "กล้ามเนื้อยืด", isCorrect: false },
+                    { text: "อยู่ในท่าเดิมเป็นเวลานาน", isCorrect: false },
+                    { text: "ไม่ได้ขยับกล้ามเนื้อ", isCorrect: false },
+                    { text: "กล้ามเนื้อหดเกร็ง", isCorrect: true }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "20?",
+                image: "picture/PostTest/q20.png",
+                question: "ไม่ควรทำอย่างไรเมื่อเจอคนเป็นลม?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ยืนมุงใกล้ ๆ เผื่อช่วยเหลือได้", isCorrect: true },
+                    { text: "ขอความช่วยเหลือจากผู้อื่น", isCorrect: false },
+                    { text: "สังเกตการหายใจและชีพจร", isCorrect: false },
+                    { text: "คลายเสื้อผ้าเพื่อให้หายใจสะดวก", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "21?",
+                image: "picture/PostTest/q21.png",
+                question: "การให้ความช่วยเหลือคนเป็นลม หลังจากให้นอนราบแล้วต้องหนุนส่วนใดให้สูงขึ้น?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "หัว", isCorrect: false },
+                    { text: "ขา", isCorrect: true },
+                    { text: "ท้อง", isCorrect: false },
+                    { text: "อก", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "22?",
+                image: "picture/PostTest/q22.png",
+                question: "สิ่งใดทำความสะอาดแผลได้ดีที่สุด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "แอลกอฮอล์", isCorrect: false},
+                    { text: "เบตาดีน", isCorrect: false},
+                    { text: "น้ำสะอาด", isCorrect: true},
+                    { text: "น้ำส้มสายชู", isCorrect: false}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "23?",
+                image: "picture/PostTest/q23.png",
+                question: "หากจะทำการปฐมพยาบาลต้องคำนึงถึงสิ่งใด?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "อาการของผู้เจ็บป่วย", isCorrect: false},
+                    { text: "ความรู้ ความสามารถในการปฐมพยาบาล", isCorrect: false},
+                    { text: "ความปลอดภัยของผู้เจ็บป่วยและผู้ปฐมพยาบาล", isCorrect: false},
+                    { text: "ถูกทุกข้อ", isCorrect: true}
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "24?",
+                image: "picture/PostTest/q24.png",
+                question: "ปฐมพยาบาลเพื่ออะไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "เพื่อป้องกันการพิการ หรือบาดเจ็บรุนแรง", isCorrect: true },
+                    { text: "เพื่อรักษาให้หายจากเจ็บป่วย", isCorrect: false },
+                    { text: "เพื่อป้องกันการเกิดอันตราย", isCorrect: false },
+                    { text: "เพื่อความสบายใจ", isCorrect: false }
                 ]
             },
             {
-                image: "picture/PostTest/.png",
-                question: "25?",
+                image: "picture/PostTest/q25.png",
+                question: "หากเจอผู้เจ็บป่วยแต่ไม่มีความรู้ในการปฐมพยาบาล ไม่ควรทำอะไร?",
                 options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
+                    { text: "ไม่ยืนมุง", isCorrect: false },
+                    { text: "โทรสายด่วนเพื่อแจ้งเหตุ", isCorrect: false },
+                    { text: "ขอความช่วยเหลือจากผู้อื่น", isCorrect: false },
+                    { text: "ให้ความช่วยเหลือเท่าที่ทำได้", isCorrect: true }
                 ]
-            },
-            {
-                image: "picture/PostTest/.png",
-                question: "26?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },
-            {
-                image: "picture/PostTest/.png",
-                question: "27?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },
-            {
-                image: "picture/PostTest/.png",
-                question: "28?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },
-            {
-                image: "picture/PostTest/.png",
-                question: "29?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },
-            {
-                image: "picture/PostTest/.png",
-                question: "30?",
-                options: [
-                    { text: "X", isCorrect: true },
-                    { text: "XX", isCorrect: false },
-                    { text: "XXX", isCorrect: false },
-                    { text: "XXXX", isCorrect: false }
-                ]
-            },
-            // {
-            //     image: "picture/PostTest/.png",
-            //     question: "การช่วยเหลือผู้ป่วยหมดสติ ควรทำอย่างไร?",
-            //     options: [
-            //         { text: "ให้ผู้ป่วยนอนหงายแล้วตบที่หน้า", isCorrect: false },
-            //         { text: "เรียกรถพยาบาลและตรวจการหายใจ", isCorrect: true },
-            //         { text: "ให้ดื่มน้ำเพื่อช่วยฟื้นตัว", isCorrect: false },
-            //         { text: "ใช้พัดลมเป่าที่หน้าเพื่อให้ตื่น", isCorrect: false }
-            //     ]
-            // },
-            // {
-            //     image: "picture/PostTest/.png",
-            //     question: "ข้อใดเป็นหลักการปฐมพยาบาลที่ถูกต้อง?",
-            //     options: [
-            //         { text: "ห้ามเคลื่อนย้ายผู้บาดเจ็บที่คอหรือกระดูกสันหลัง", isCorrect: true },
-            //         { text: "ถ้ามีเลือดออกให้ใช้มือเปล่ากดแผล", isCorrect: false },
-            //         { text: "ใช้แอลกอฮอล์ล้างแผลลึก", isCorrect: false },
-            //         { text: "ถ้าเจ็บหน้าอกให้บังคับให้นอนราบ", isCorrect: false }
-            //     ]
-            // },
+            }
         ];
         this.questions = this.getRandomQuestions(20); // สุ่มคำถาม
         this.currentQuestion = 0;
