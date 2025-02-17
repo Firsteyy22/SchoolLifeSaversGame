@@ -121,6 +121,20 @@
 function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "", recapVideoSrc = "") {
     deactivateAllButtons(); // ปิดใช้งานปุ่มในคำถามปัจจุบัน
 
+         ////// MAP 3 - Level 10-13
+         if (button.id === 'task1-level3') {
+        elementIds.push('bee');
+    }
+    if (button.id === 'task2-level3') {
+        elementIds.push('takab');
+    }
+    if (button.id === 'task3-level3') {
+        elementIds.push('snake');
+    }
+    if (button.id === 'task4-level3') {
+        elementIds.push('headno');
+    }
+
     if (isCorrect) {
         button.classList.add("correct");
         displayAnswerGIF(gifSrc);
