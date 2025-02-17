@@ -13,7 +13,7 @@ class PostTestManager {
             },
             {
                 image: "picture/PostTest/q2.png",
-                question: "ถ้าเกิดอาการฟกช้ำ?",
+                question: "ถ้าเกิดอาการฟกช้ำ จะต้องทำอย่างไร?",
                 options: [
                     { text: "ควรประคบเย็นก่อน", isCorrect: true },
                     { text: "ควรประคบร้อนก่อน", isCorrect: false },
@@ -22,7 +22,7 @@ class PostTestManager {
                 ]
             },
             {
-                image: "picture/PreTest/q3.png",
+                image: "picture/PostTest/q3.png",
                 question: "เรียกรถพยาบาล ต้องติดต่อสายด่วนอะไร?",
                 options: [
                     { text: "1150", isCorrect: false},
@@ -42,7 +42,7 @@ class PostTestManager {
                 ]
             },
             {
-                image: "picture/PreTest/q5.png",
+                image: "picture/PostTest/q5.png",
                 question: "การห้ามเลือดควรทำอย่างไร?",
                 options: [
                     { text: "ใช้ผ้าสะอาดกดบริเวณแผล", isCorrect: true},
@@ -52,7 +52,7 @@ class PostTestManager {
                 ]
             },
             {
-                image: "picture/PreTest/q6.png",
+                image: "picture/PostTest/q6.png",
                 question: "ข้อใดคือสิ่งที่ไม่ควรทำหากกระดูกหัก?",
                 options: [
                     { text: "ขยับให้กระดูกเข้าที่", isCorrect: true},
@@ -62,7 +62,7 @@ class PostTestManager {
                 ]
             },
             {
-                image: "picture/PreTest/q7.png",
+                image: "picture/PostTest/q7.png",
                 question: "แผลไฟไหม้ น้ำร้อนลวกมีกี่ระดับ?",
                 options: [
                     { text: "2 ระดับ", isCorrect: false},
