@@ -8044,6 +8044,22 @@
                 localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
             }
         });
+
+		// โหลดค่าที่บันทึกไว้เมื่อหน้าโหลด
+		document.addEventListener('DOMContentLoaded', function() {
+			if (sessionStorage.getItem('changeToGreen') === 'true') {
+				let idsToChange = JSON.parse(sessionStorage.getItem('idsToChange')) || [];
+
+				idsToChange.forEach(id => {
+					let element = document.getElementById(id);
+					if (element) {
+						element.classList.remove('blinkRed');
+						element.classList.add('blinkGreen');
+						console.log(`Color for ${id} retained as green after refresh.`);
+					}
+				});
+			}
+		});
     </script>
     
         <!-- audio -->

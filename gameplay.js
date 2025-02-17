@@ -8,6 +8,97 @@ let currentQ = 1; // ตัวแปรคำถามปัจจุบัน
 function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "", recapVideoSrc = "") {
     deactivateAllButtons(); // ปิดใช้งานปุ่มในคำถามปัจจุบัน
 
+    // ตรวจสอบ ID ของปุ่ม และกำหนด ID ของ element ที่ต้องเปลี่ยนสี
+    let elementIds = [];
+    
+    ////// MAP 1
+    if (button.id === 'task1-level1') {
+        elementIds.push('scarleg');
+    }
+    if (button.id === 'task2-level1') {
+        elementIds.push('blood');
+    }
+    if (button.id === 'task3-level1') {
+        elementIds.push('scararm');
+    }
+    if (button.id === 'task4-level1') {
+        elementIds.push('brokenarm');
+    }
+    if (button.id === 'task5-level1') {
+        elementIds.push('fire');
+    }
+
+    ////// MAP 2
+    if (button.id === 'task1-level2') {
+        elementIds.push('handchem');
+    }
+    if (button.id === 'task2-level2') {
+        elementIds.push('eyechem');
+    }
+    if (button.id === 'task3-level2') {
+        elementIds.push('smellchem');
+    }
+    if (button.id === 'task4-level2') {
+        elementIds.push('eatchem');
+    }
+
+     ////// MAP 3
+     if (button.id === 'task1-level3') {
+        elementIds.push('bee');
+    }
+    if (button.id === 'task2-level3') {
+        elementIds.push('takab');
+    }
+    if (button.id === 'task3-level3') {
+        elementIds.push('snake');
+    }
+    if (button.id === 'task4-level3') {
+        elementIds.push('headno');
+    }
+
+      ////// MAP 4
+      if (button.id === 'task1-level4') {
+        elementIds.push('bloodnose');
+    }
+    if (button.id === 'task2-level4') {
+        elementIds.push('legplang');
+    }
+    if (button.id === 'task3-level4') {
+        elementIds.push('eyedust');
+    }
+    if (button.id === 'task4-level4') {
+        elementIds.push('taQ');
+    }
+    if (button.id === 'task4-level5') {
+        elementIds.push('knock');
+    }
+
+
+    // ถ้ามี element ที่ต้องเปลี่ยนสี
+    if (elementIds.length > 0) {
+        // อ่านค่าเก่า (ถ้ามี)
+        let storedIds = JSON.parse(sessionStorage.getItem('idsToChange')) || [];
+        
+        // รวมค่าที่มีอยู่เดิมเข้ากับค่าที่เพิ่งได้มา โดยป้องกันค่าซ้ำ
+        let updatedIds = [...new Set([...storedIds, ...elementIds])];
+
+        // บันทึกค่าใหม่ลง sessionStorage
+        sessionStorage.setItem('idsToChange', JSON.stringify(updatedIds));
+        sessionStorage.setItem('changeToGreen', 'true');
+
+        console.log(`Saved IDs to change: ${JSON.stringify(updatedIds)}`);
+
+        // เปลี่ยนสีทันที
+        updatedIds.forEach(id => {
+            let element = document.getElementById(id);
+            if (element) {
+                element.classList.remove('blinkRed');
+                element.classList.add('blinkGreen');
+                console.log(`Changed ${id} to green!`);
+            }
+        });
+    }
+
     if (isCorrect) {
         button.classList.add("correct");
         displayAnswerGIF(gifSrc);

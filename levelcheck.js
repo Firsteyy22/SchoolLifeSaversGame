@@ -128,23 +128,33 @@ document.addEventListener("DOMContentLoaded", function () {
                                 this.classList.add("completed-task");
                                 completedTasks++;
                                 totalCompletedTasks++;
-
-                                // บันทึก Task ที่ทำเสร็จลงใน sessionStorage
+                        
                                 sessionStorage.setItem(`task${i}-level${levelNumber}`, "true");
                                 sessionStorage.setItem(`completedTasks_level${levelNumber}`, completedTasks.toString());
-
+                        
                                 console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
                                 console.log(`📊 Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
-
+                        
                                 if (completedTasks === tasksCount) {
                                     unlockLevel(levelNumber);
                                 }
-
+                        
+                                // เมื่อ task2-level1 ถูกทำเสร็จ, เปลี่ยนสี
+                                if (taskButton.id === 'task2-level1') {
+                                    var element = document.getElementById('blood');
+                                    if (element) {
+                                        element.classList.remove('blinkRed');
+                                        element.classList.add('blinkGreen');
+                                        console.log('Changed to green!');
+                                    }
+                                }
+                        
                                 if (document.querySelectorAll(".completed-task").length === totalTasks) {
                                     console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
                                 }
                             }, 100);
                         }
+                        
                     });
                 }
             }
@@ -157,3 +167,4 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLevelStates();
     updateTaskStates();
 }); 
+
