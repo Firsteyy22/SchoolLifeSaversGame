@@ -83,9 +83,9 @@
     <a href="../Room/html/room3.html" class="button button-upleft">BACK</a>
 
     <!-- JS -->
+    <script src="../levelcheck.js"></script>
     <!-- <script src="../gameplay.js"></script> -->
     <script src="../gameplay_03.js"></script>
-    <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
     <script src="../audioController.js" defer></script>
     <script>
@@ -113,7 +113,7 @@
         });
     </script>
 
-    <script>
+<script>
     // ตัวแปรเพื่อจัดการคำถามปัจจุบัน
     let currentQ = 2; // ตั้งค่าให้เป็นคำถามที่ 2
 
@@ -121,8 +121,11 @@
 function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic = "", recapVideoSrc = "") {
     deactivateAllButtons(); // ปิดใช้งานปุ่มในคำถามปัจจุบัน
 
-         ////// MAP 3 - Level 10-13
-         if (button.id === 'task1-level3') {
+        // ตรวจสอบ ID ของปุ่ม และกำหนด ID ของ element ที่ต้องเปลี่ยนสี
+        let elementIds = [];
+
+     ////// MAP 3 - Level 10-13
+     if (button.id === 'task1-level3') {
         elementIds.push('bee');
     }
     if (button.id === 'task2-level3') {
@@ -134,6 +137,31 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
     if (button.id === 'task4-level3') {
         elementIds.push('headno');
     }
+
+// ถ้ามี element ที่ต้องเปลี่ยนสี
+if (elementIds.length > 0) {
+    // อ่านค่าเก่า (ถ้ามี)
+    let storedIds = JSON.parse(sessionStorage.getItem('idsToChange')) || [];
+    
+    // รวมค่าที่มีอยู่เดิมเข้ากับค่าที่เพิ่งได้มา โดยป้องกันค่าซ้ำ
+    let updatedIds = [...new Set([...storedIds, ...elementIds])];
+
+    // บันทึกค่าใหม่ลง sessionStorage
+    sessionStorage.setItem('idsToChange', JSON.stringify(updatedIds));
+    sessionStorage.setItem('changeToGreen', 'true');
+
+    console.log(`Saved IDs to change: ${JSON.stringify(updatedIds)}`);
+
+    // เปลี่ยนสีทันที
+    updatedIds.forEach(id => {
+        let element = document.getElementById(id);
+        if (element) {
+            element.classList.remove('blinkRed');
+            element.classList.add('blinkGreen');
+            console.log(`Changed ${id} to green!`);
+        }
+    });
+}
 
     if (isCorrect) {
         button.classList.add("correct");
