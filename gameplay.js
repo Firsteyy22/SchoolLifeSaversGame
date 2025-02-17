@@ -10,8 +10,8 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
 
     // ตรวจสอบ ID ของปุ่ม และกำหนด ID ของ element ที่ต้องเปลี่ยนสี
     let elementIds = [];
-    
-    ////// MAP 1
+
+    ////// MAP 1 - Level 1-5
     if (button.id === 'task1-level1') {
         elementIds.push('scarleg');
     }
@@ -28,7 +28,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
         elementIds.push('fire');
     }
 
-    ////// MAP 2
+    ////// MAP 2 - Level 6-9
     if (button.id === 'task1-level2') {
         elementIds.push('handchem');
     }
@@ -42,7 +42,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
         elementIds.push('eatchem');
     }
 
-     ////// MAP 3
+     ////// MAP 3 - Level 10-13
      if (button.id === 'task1-level3') {
         elementIds.push('bee');
     }
@@ -56,9 +56,9 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
         elementIds.push('headno');
     }
 
-      ////// MAP 4
+      ////// MAP 4 - Level 14-18
       if (button.id === 'task1-level4') {
-        elementIds.push('bloodnose');
+        elementIds.push('Kid');
     }
     if (button.id === 'task2-level4') {
         elementIds.push('legplang');
@@ -69,7 +69,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
     if (button.id === 'task4-level4') {
         elementIds.push('taQ');
     }
-    if (button.id === 'task4-level5') {
+    if (button.id === 'task5-level4') {
         elementIds.push('knock');
     }
 
