@@ -217,7 +217,7 @@ if (elementIds.length > 0) {
             if (afterGifPic) displayImage(afterGifPic); 
             setTimeout(() => {
                 hideAnswerGIF();
-                showWrongAnswerPage(wrongText, afterGifPic, resetQ); // ส่งค่า wrongText อย่างถูกต้อง
+                showWrongAnswerPage(wrongText, afterGifPic, wrongText, resetQ);
             }, 0);
         }, 3500);
     }
