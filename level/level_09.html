@@ -432,7 +432,7 @@ if (elementIds.length > 0) {
     const reloadButton = wrongAnswerContainer.querySelector('.button');
     reloadButton.onclick = () => {
         wrongAnswerContainer.classList.add('hidden');
-        callback();
+        if (callback) callback();
     };
 }
 
