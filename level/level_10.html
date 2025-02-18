@@ -191,7 +191,7 @@ if (elementIds.length > 0) {
             if (afterGifPic) displayImage(afterGifPic); 
             setTimeout(() => {
                 hideAnswerGIF();
-                showWrongAnswerPage(wrongText, afterGifPic, resetQ); // ส่งค่า wrongText อย่างถูกต้อง
+                showWrongAnswerPage(wrongText, afterGifPic, wrongText, resetQ);
             }, 0);
         }, 3500);
     }
@@ -309,22 +309,29 @@ if (elementIds.length > 0) {
     }
 
     // ฟังก์ชันแสดงหน้าผิด
-    function showWrongAnswerPage(wrongText, imageUrl, callback) {
+    function showWrongAnswerPage(_message, imageUrl, text, callback) {
     const wrongAnswerContainer = document.getElementById('wrong-answer');
     const wrongImage = document.getElementById('wrong-image');
-    const wrongTextElement = document.getElementById('wrong-text');
+    const wrongText = document.getElementById('wrong-text');
 
     wrongAnswerContainer.classList.remove('hidden');
     wrongImage.src = imageUrl;
-    wrongTextElement.textContent = wrongText; // อัปเดตข้อความ
+    wrongText.textContent = text;
 
     document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
 
     const reloadButton = wrongAnswerContainer.querySelector('.button');
-    reloadButton.onclick = () => {
+
+    // ลบ event listener เดิมก่อนเพิ่มใหม่
+    reloadButton.replaceWith(reloadButton.cloneNode(true));
+    const newReloadButton = wrongAnswerContainer.querySelector('.button');
+
+    newReloadButton.addEventListener('click', () => {
         wrongAnswerContainer.classList.add('hidden');
-        callback();
-    };
+        if (typeof callback === 'function') {
+            callback();
+        }
+    });
 }
 
     // ฟังก์ชันเริ่มเกมใหม่
