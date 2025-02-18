@@ -431,9 +431,10 @@ if (elementIds.length > 0) {
 
     const reloadButton = wrongAnswerContainer.querySelector('.button');
     reloadButton.onclick = () => {
-        console.log(typeof callback); // Check the type of callback
+        console.log('Type of callback:', typeof callback); // แสดงประเภทของ callback
+        console.log('Callback value:', callback); // แสดงค่าของ callback
         wrongAnswerContainer.classList.add('hidden');
-        if (typeof callback === 'function') callback(); 
+        if (typeof callback === 'function') callback();
     };
 }
 
