@@ -191,20 +191,36 @@
 }
 
 /* Tutorial container for images */
-.tutorial-container {
-    width: 1400px;
-    height: 650px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
+
+.tutorial-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* ทำให้รูปเต็มพื้นที่ container */
+}
+
+/* ปรับ object-fit บนอุปกรณ์เล็กลง */
+@media (max-width: 600px) {
+    .tutorial-container img {
+        object-fit: contain;
+    }
 }
 
 .tutorial-container img {
     width: 100%;
-    height: 100%;
-	/* object-fit: contain; */
+    height: auto;
     display: block;
+    object-fit: cover; /* ทำให้รูปเต็มพื้นที่ container */
 }
+
+/* ปรับ object-fit บนอุปกรณ์เล็กลง */
+@media (max-width: 600px) {
+    .tutorial-container img {
+        object-fit: contain;
+    }
+}
+
+
 
 /* Media query สำหรับหน้าจอขนาดเล็ก */
 @media screen and (max-width: 1500px) {

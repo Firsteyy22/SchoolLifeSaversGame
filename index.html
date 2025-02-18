@@ -6,6 +6,7 @@
     <title>School Life Savers</title>
     <link rel="icon" href="picture/LOGO.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Room/css/style_room1.css">
 
     <style>
      body{ 
@@ -13,6 +14,23 @@
         z-index: 0;
         }
 		
+        @keyframes blink {
+            0%, 100% { opacity: 1; } /* เริ่มต้นและจบแบบมองเห็น */
+            50% { opacity: 0; } /* กลางทางจะหายไป */
+        }
+
+        .click-anywhere-text h2 {
+            animation: blink 1.8s infinite; /* ทำให้กระพริบทุก 1 วินาที */
+        }
+
+        .click-anywhere-text {
+            text-align: center;
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+ 
     </style>
 
 </head>
@@ -50,7 +68,7 @@
                 }
     
                 // นำทางไปยัง menu.html
-                window.location.href = "menu.html";
+                window.location.href = "loading.html";
             });
         });
     </script>
