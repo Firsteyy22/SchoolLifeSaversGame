@@ -418,7 +418,7 @@ if (elementIds.length > 0) {
     }
 
     // ฟังก์ชันแสดงหน้าผิด
-    function showWrongAnswerPage(wrongText, imageUrl, callback) {
+    function showWrongAnswerPage(wrongText, imageUrl, callback = () => {}) {
     const wrongAnswerContainer = document.getElementById('wrong-answer');
     const wrongImage = document.getElementById('wrong-image');
     const wrongTextElement = document.getElementById('wrong-text');
@@ -431,8 +431,9 @@ if (elementIds.length > 0) {
 
     const reloadButton = wrongAnswerContainer.querySelector('.button');
     reloadButton.onclick = () => {
+        console.log(typeof callback); // Check the type of callback
         wrongAnswerContainer.classList.add('hidden');
-        if (callback) callback();
+        if (typeof callback === 'function') callback(); 
     };
 }
 
