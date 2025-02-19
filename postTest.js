@@ -73,7 +73,7 @@ class PostTestManager {
             },
             {
                 image: "picture/PostTest/q8.png",
-                question: "ระดับของแผลไฟไหม้ น้ำร้อนลวก ใช้อะไรในการจำแนกระดับ?",
+                question: "ระดับของแผลไฟไหม้ น้ำร้อนลวก <br>ควรใช้อะไรในการจำแนกระดับ?",
                 options: [
                     { text: "ความร้อนของน้ำ/ไฟ", isCorrect: false },
                     { text: "ความกว้างของแผล", isCorrect: false },
@@ -133,7 +133,7 @@ class PostTestManager {
             },
             {
                 image: "picture/PostTest/q14.png",
-                question: "เมื่อถูกผึ้งต่อย หลังนำเหล็กในออกควรบีบรอบแผลหรือไม่ เพราะเหตุใด?",
+                question: "เมื่อถูกผึ้งต่อย หลังนำเหล็กในออก <br>ควรบีบรอบแผลหรือไม่ เพราะเหตุใด?",
                 options: [
                     { text: "ควร เพราะทำให้หายเจ็บแผล", isCorrect: false },
                     { text: "ไม่ควร เพราะจะทำให้แผลบวม", isCorrect: false },
@@ -153,7 +153,7 @@ class PostTestManager {
             },
             {
                 image: "picture/PostTest/q16.png",
-                question: "เมื่อเลือดกำเดาไหลและบีบปลายจมูก ควรหายใจทางใด?",
+                question: "เมื่อเลือดกำเดาไหลและได้บีบปลายจมูก <br>ควรหายใจทางใด?",
                 options: [
                     { text: "ไม่ควรหายใจ", isCorrect: false},
                     { text: "ทางจมูกและปาก", isCorrect: false},
@@ -163,7 +163,7 @@ class PostTestManager {
             },            
             {
                 image: "picture/PostTest/q17.png",
-                question: "สามารถนวดบริเวณที่เกิดอาการเคล็ดหรือแพลงได้หรือไม่ เพราะอะไร?",
+                question: "สามารถนวดบริเวณที่เกิดอาการเคล็ดหรือแพลง <br>ได้หรือไม่ เพราะอะไร?",
                 options: [
                     { text: "ได้ เพราะการนวดทำให้หายปวด", isCorrect: false },
                     { text: "ไม่ได้ เพราะจะทำให้บวมมากขึ้น", isCorrect: true },
@@ -243,7 +243,7 @@ class PostTestManager {
             },
             {
                 image: "picture/PostTest/q25.png",
-                question: "หากเจอผู้เจ็บป่วยแต่ไม่มีความรู้ในการปฐมพยาบาล ไม่ควรทำอะไร?",
+                question: "หากเจอผู้เจ็บป่วยแต่ไม่มีความรู้ในการปฐมพยาบาล <br>ไม่ควรทำอะไร?",
                 options: [
                     { text: "ไม่ยืนมุง", isCorrect: false },
                     { text: "โทรสายด่วนเพื่อแจ้งเหตุ", isCorrect: false },

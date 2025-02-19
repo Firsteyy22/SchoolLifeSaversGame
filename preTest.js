@@ -73,7 +73,7 @@ class PretestManager {
             },
             {
                 image: "picture/PreTest/q8.png",
-                question: "เมื่อเลือดกำเดาไหลและบีบปลายจมูก ควรหายใจทางใด?",
+                question: "เมื่อเลือดกำเดาไหลและได้บีบปลายจมูก <br>ควรหายใจทางใด?",
                 options: [
                     { text: "ไม่ควรหายใจ", isCorrect: false},
                     { text: "ทางจมูกและปาก", isCorrect: false},
