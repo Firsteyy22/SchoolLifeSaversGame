@@ -111,7 +111,7 @@ class PretestManager {
         overlay.className = 'pretest-overlay';
         overlay.innerHTML = `
             <div class="dialog-content">
-                <h2>แบบทดสอบก่อนเรียน (Pre-Test)</h2>
+                <h2>แบบทดสอบก่อนเรียน (PRE-TEST)</h2>
                 <h3>กรุณาทำแบบทดสอบเพื่อประเมินความรู้เบื้องต้น</h3>
                 <a class="start-button" onclick="pretestManager.startPretest()">เริ่มทำแบบทดสอบ</a>
             </div>

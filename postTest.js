@@ -337,12 +337,12 @@ class PostTestManager {
     
         // ถ้ามี Post-Test ให้แสดง Post-Test, ถ้าไม่มีให้แสดง Pre-Test
         const scoreMessage = previousPostTestScore 
-            ? `คะแนน Post-Test ก่อนหน้านี้ของคุณ: ${previousPostTestScore} คะแนน`
-            : `คะแนน Pre-Test ของคุณ: ${previousPreTestScore} คะแนน`;
+            ? `คะแนน POST-TEST ก่อนหน้านี้ของคุณ: ${previousPostTestScore} คะแนน`
+            : `คะแนน PRE-TEST ของคุณ: ${previousPreTestScore} คะแนน`;
     
         this.createOverlay(`
             <div class="dialog-content">
-                <h2>แบบทดสอบหลังเรียน (Post-Test)</h2>
+                <h2>แบบทดสอบหลังเรียน (POST-TEST)</h2>
                 <h3>มาลองดูกันว่า เธอจะเจ๋งแค่ไหน !!</h3>
                 <h3 style="color: rgb(0, 72, 254);">${scoreMessage}</h3>
                 <a class="start-button" onclick="postTestManager.startPostTest()">เริ่มทำแบบทดสอบ</a>
