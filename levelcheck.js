@@ -59,7 +59,7 @@ function completeLevel(level) {
         }
 
         // แสดงข้อความและนำทางไปยังห้อง
-        alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
+        // alert(`ยินดีด้วย! คุณผ่าน Level ${level} แล้ว`);
         window.location.href = `/Room/html/${targetRoom}.html`;
 
     } catch (error) {
