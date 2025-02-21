@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const prev = document.querySelector(".prev i");
     const next = document.querySelector(".next i");
     const confirmBtn = document.querySelector("#confirm");
+    const levelHeadText = document.querySelector(".level-head-text");
 
     let cardOrder = ["level1-button", "level2-button", "level3-button", "level4-button"];
     const totalLevels = 4;
+
+   // 🗺️ URL สำหรับแต่ละด่าน
     const levelUrls = {
         "level1-button": "/Room/html/room1.html",
         "level2-button": "/Room/html/room2.html",
@@ -12,7 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "level4-button": "/Room/html/room4.html"
     };
 
-    // 📌 กำหนด URL รูปภาพสำหรับแต่ละสถานะ
+    // 🏷️ ชื่อด่านแบบใช้ชื่อ const เดียวกันกับ levelUrls
+    const levelNames = {
+        "level1-button": "ด่านที่ 1: ห้องฉุกเฉิน 1",
+        "level2-button": "ด่านที่ 2: ห้องฉุกเฉิน 2",
+        "level3-button": "ด่านที่ 3: ห้องฉุกเฉิน 3",
+        "level4-button": "ด่านที่ 4: ห้องฉุกเฉิน 4"
+    };
+
+    // 🖼️ URL รูปภาพสำหรับแต่ละสถานะ (locked, unlocked, pass)
     const levelImages = {
         unlocked: {
             "level1-button": "/picture/roompng/Emergency1.png",
@@ -24,23 +35,36 @@ document.addEventListener("DOMContentLoaded", () => {
             "level2-button": "/picture/roompng/Emergency2-locked.png",
             "level3-button": "/picture/roompng/Emergency3-locked.png",
             "level4-button": "/picture/roompng/Emergency4-locked.png"
+        },
+        pass: {
+            "level1-button": "/picture/roompng/pass/Emergency1_pass.png",
+            "level2-button": "/picture/roompng/pass/Emergency2_pass.png",
+            "level3-button": "/picture/roompng/pass/Emergency3_pass.png",
+            "level4-button": "/picture/roompng/pass/Emergency4_pass.png"
         }
     };
+    // 🔄 อัปเดตชื่อด่านตามการ์ดตำแหน่งแรก
+    function updateLevelName() {
+        const selectedId = cardOrder[0]; // การ์ดแรกคือการ์ดที่เลือก
+        levelHeadText.textContent = levelNames[selectedId] ?? "ไม่ทราบชื่อด่าน";
+    }
 
+
+    // 🔄 อัปเดตตำแหน่งการ์ดและชื่อด่าน
     function updateCardPositions() {
         document.querySelectorAll(".card").forEach(card => {
             card.classList.remove("position1", "position2", "position3", "position4", "selected");
         });
 
         cardOrder.forEach((id, index) => {
-            let card = document.getElementById(id);
+            const card = document.getElementById(id);
             if (card) {
                 card.classList.add(`position${index + 1}`);
-                if (index === 0) {
-                    card.classList.add("selected");
-                }
+                if (index === 0) card.classList.add("selected"); // ตำแหน่งแรกคือการ์ดที่ถูกเลือก
             }
         });
+
+        updateLevelName(); // ✅ อัปเดตชื่อด่านหลังจากจัดตำแหน่ง
     }
 
     function moveCards(direction) {
@@ -152,25 +176,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function updateUnlockedLevels() {
         for (let i = 1; i <= totalLevels; i++) {
-            let levelButton = document.getElementById(`level${i}-button`);
-            let levelImage = levelButton.querySelector("img"); // ค้นหา tag รูปภาพภายใน card
+            const levelButton = document.getElementById(`level${i}-button`);
+            const levelImage = levelButton?.querySelector("img");
+    
+            if (levelButton && levelImage) {
+                if (sessionStorage.getItem(`level${i}_passed`) === "true") {
+                    levelButton.classList.remove("locked", "unlocked");
+                    levelButton.classList.add("passed");
+                    levelImage.src = levelImages.pass[`level${i}-button`];
+                    console.log(`🏆 Level ${i}: PASSED`);
 
-            if (levelButton) {
-                if (i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true") {
+                } else if (i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true") {
                     levelButton.classList.remove("locked");
                     levelButton.classList.add("unlocked");
-                    if (levelImage) {
-                        levelImage.src = levelImages.unlocked[`level${i}-button`]; // อัปเดตรูปภาพเป็นด่านปลดล็อก
-                    }
+                    levelImage.src = levelImages.unlocked[`level${i}-button`];
+                    console.log(`✅ Level ${i}: UNLOCKED`);
+                    
                 } else {
                     levelButton.classList.add("locked");
-                    if (levelImage) {
-                        levelImage.src = levelImages.locked[`level${i}-button`]; // อัปเดตรูปภาพเป็นด่านที่ล็อก
-                    }
+                    levelImage.src = levelImages.locked[`level${i}-button`];
+                    console.log(`🔒 Level ${i}: LOCKED`);
                 }
             }
         }
     }
+    
 
     updateUnlockedLevels();
     updateCardPositions();

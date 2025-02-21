@@ -18,14 +18,15 @@
 
 
       <h1>เลือกด่าน</h1>
+      <div class="level-head-text"> ด่าน 1 </div>
 
-  
       <div class="container">
         <div class="prev">
           <i class="fas fa-chevron-circle-left"></i>
         </div>
     
         <div class="gallery level">
+
             <div class="card position1" id="level1-button">
                 <img src="/picture/roompng/Emergency1.png" alt="image1">
             </div>
@@ -41,7 +42,9 @@
             <div class="card position4" id="level4-button">
                 <img src="/picture/roompng/Emergency4.png" alt="image4">
             </div>
+        
         </div>
+        
         
     
         <div class="next">
@@ -98,6 +101,13 @@
              localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
          }
      });
+
+     document.addEventListener("DOMContentLoaded", () => {
+        window.updateUnlockedLevels(); // 🏆 เรียกใช้เมื่อโหลดหน้า
+    });
+
+
+
  </script>
  
      <!-- audio -->
