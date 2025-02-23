@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         locked: {
             "level2-button": "/picture/roompng/Emergency2-locked.png",
-            "level3-button": "/picture/roompng/Emergency3-locked.png",
-            "level4-button": "/picture/roompng/Emergency4-locked.png"
+            "level3-button": "/picture/roompng/Emergency4-locked.png",
+            "level4-button": "/picture/roompng/Emergency3-locked.png"
         },
         pass: {
             "level1-button": "/picture/roompng/pass/Emergency1_pass.png",
