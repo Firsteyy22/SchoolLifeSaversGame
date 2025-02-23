@@ -152,6 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
                                 if (document.querySelectorAll(".completed-task").length === totalTasks) {
                                     console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
                                 }
+
+                                if (completedTasks === tasksCount) {
+                                    sessionStorage.setItem(`level${levelNumber}_passed`, "true"); // ✅ บันทึกว่าผ่านด่านนี้แล้ว
+                                    unlockLevel(levelNumber); // ปลดล็อกด่านถัดไป
+                                }
+                                
                             }, 100);
                         }
                         
@@ -167,4 +173,3 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLevelStates();
     updateTaskStates();
 }); 
-

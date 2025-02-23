@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 🏷️ ชื่อด่านแบบใช้ชื่อ const เดียวกันกับ levelUrls
     const levelNames = {
-        "level1-button": "ด่านที่ 1: ห้องฉุกเฉิน 1",
-        "level2-button": "ด่านที่ 2: ห้องฉุกเฉิน 2",
-        "level3-button": "ด่านที่ 3: ห้องฉุกเฉิน 3",
-        "level4-button": "ด่านที่ 4: ห้องฉุกเฉิน 4"
+        "level1-button": "ด่านที่ 1",
+        "level2-button": "ด่านที่ 2",
+        "level3-button": "ด่านที่ 3",
+        "level4-button": "ด่านที่ 4"
     };
 
     // 🖼️ URL รูปภาพสำหรับแต่ละสถานะ (locked, unlocked, pass)
@@ -181,25 +181,27 @@ document.addEventListener("DOMContentLoaded", () => {
     
             if (levelButton && levelImage) {
                 if (sessionStorage.getItem(`level${i}_passed`) === "true") {
+                    // ✅ ด่านที่ผ่านแล้ว
                     levelButton.classList.remove("locked", "unlocked");
                     levelButton.classList.add("passed");
-                    levelImage.src = levelImages.pass[`level${i}-button`];
+                    levelImage.src = levelImages.pass[`level${i}-button`]; // เปลี่ยนเป็นรูป pass
                     console.log(`🏆 Level ${i}: PASSED`);
-
+    
                 } else if (i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true") {
+                    // 🔓 ด่านที่ปลดล็อกแต่ยังไม่ผ่าน
                     levelButton.classList.remove("locked");
                     levelButton.classList.add("unlocked");
                     levelImage.src = levelImages.unlocked[`level${i}-button`];
-                    console.log(`✅ Level ${i}: UNLOCKED`);
-                    
+    
                 } else {
+                    // 🔒 ด่านที่ถูกล็อก
                     levelButton.classList.add("locked");
                     levelImage.src = levelImages.locked[`level${i}-button`];
-                    console.log(`🔒 Level ${i}: LOCKED`);
                 }
             }
         }
     }
+    
     
 
     updateUnlockedLevels();
