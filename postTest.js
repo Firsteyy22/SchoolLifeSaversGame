@@ -9,7 +9,12 @@ class PostTestManager {
                     { text: "การรักษาโดยแพทย์", isCorrect: false },
                     { text: "การช่วยเหลือผู้เจ็บป่วยเบื้องต้น", isCorrect: true },
                     { text: "การรักษาต่อเนื่องหลังพบแพทย์", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 0,
+                    title: "ความรู้เบื้องต้นเกี่ยวกับการปฐมพยาบาล",
+                    level: 0
+                }
             },
             {
                 image: "picture/PostTest/q2.png",
@@ -19,7 +24,12 @@ class PostTestManager {
                     { text: "ควรประคบร้อนก่อน", isCorrect: false },
                     { text: "ไม่ควรทำอะไร ปล่อยทิ้งไว้", isCorrect: false },
                     { text: "ควรประคบร้อนสลับเย็นไปมา", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "ฟกช้ำ",
+                    level: 3
+                }
             },
             {
                 image: "picture/PostTest/q3.png",
@@ -29,7 +39,12 @@ class PostTestManager {
                     { text: "1669", isCorrect: true},
                     { text: "1234", isCorrect: false},
                     { text: "1193", isCorrect: false}
-                ]
+                ],
+                chapter: {
+                    number: 3,
+                    title: "ตะขาบกัด",
+                    level: 11
+                }
             },
             {
                 image: "picture/PostTest/q4.png",
@@ -39,7 +54,12 @@ class PostTestManager {
                     { text: "ควร เพราะแอลกอฮอล์ทำให้แผลหายเร็วขึ้น", isCorrect: false },
                     { text: "ไม่ควร เพราะจะทำให้แสบแผลมาก", isCorrect: true },
                     { text: "ไม่ควร เพราะแอลกอฮอล์ทำให้แผลอักแสบมากขึ้น", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "แผลถลอก",
+                    level: 1
+                }
             },
             {
                 image: "picture/PostTest/q5.png",
@@ -49,7 +69,12 @@ class PostTestManager {
                     { text: "ใช้มือกดแผลโดยตรง", isCorrect: false},
                     { text: "ใช้เชือกรัดเหนือหรือใต้แผล", isCorrect: false},
                     { text: "ล้างน้ำสะอาดจนกว่าเลือดจะหยุดไหล", isCorrect: false}
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "มีดบาด",
+                    level: 2
+                }
             },
             {
                 image: "picture/PostTest/q6.png",
@@ -59,7 +84,12 @@ class PostTestManager {
                     { text: "ลดการเคลื่อนไหวให้ได้มากที่สุด", isCorrect: false},
                     { text: "ยึดส่วนที่กระดูกหักไว้กับไม้หรือหนังสือที่มีความหนา", isCorrect: false},
                     { text: "รอความช่วยเหลือจากแพทย์หรือผู้เชี่ยวชาญ", isCorrect: false}
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "กระดูกหัก",
+                    level: 4
+                }
             },
             {
                 image: "picture/PostTest/q7.png",
@@ -69,7 +99,12 @@ class PostTestManager {
                     { text: "3 ระดับ", isCorrect: true},
                     { text: "4 ระดับ", isCorrect: false},
                     { text: "5 ระดับ", isCorrect: false}
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "ไฟไหม้ น้ำร้อนลวก",
+                    level: 5
+                }
             },
             {
                 image: "picture/PostTest/q8.png",
@@ -79,7 +114,12 @@ class PostTestManager {
                     { text: "ความกว้างของแผล", isCorrect: false },
                     { text: "ชั้นผิวหนังที่ถูกทำลาย", isCorrect: true },
                     { text: "สีของแผล", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "ไฟไหม้ น้ำร้อนลวก",
+                    level: 5
+                }
             },
             {
                 image: "picture/PostTest/q9.png",
@@ -89,7 +129,12 @@ class PostTestManager {
                     { text: "สารเคมีอยู่ในชีวิตประจำวัน เช่น น้ำยาล้างห้องน้ำ", isCorrect: true },
                     { text: "โอกาสในการสัมผัสสารเคมีนั้นเกิดขึ้นได้น้อย", isCorrect: false },
                     { text: "สารเคมีเป็นของเหลวเท่านั้น", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 2,
+                    title: "สัมผัสสารเคมี",
+                    level: 6
+                }
             },
             {
                 image: "picture/PostTest/q10.png",
@@ -99,7 +144,12 @@ class PostTestManager {
                     { text: "หลับตา และไม่ลืมตาจนกว่าจะพบแพทย์", isCorrect: false },
                     { text: "พบแพทย์ทันที", isCorrect: false },
                     { text: "ล้างด้วยน้ำสะอาด", isCorrect: true }
-                ]
+                ],
+                chapter: {
+                    number: 2,
+                    title: "สารเคมีเข้าตา",
+                    level: 7
+                }
             },
             {
                 image: "picture/PostTest/q11.png",
@@ -109,7 +159,12 @@ class PostTestManager {
                     { text: "กลั้นหายใจ", isCorrect: false },
                     { text: "เปิดพัดลมไล่สารเคมี", isCorrect: false },
                     { text: "หาสิ่งของใกล้ตัวอุดจมูก", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 2,
+                    title: "สูดดมสารเคมี",
+                    level: 8
+                }
             },
             {
                 image: "picture/PostTest/q12.png",
@@ -119,7 +174,12 @@ class PostTestManager {
                     { text: "งดน้ำ", isCorrect: false },
                     { text: "งดอาหาร", isCorrect: false },
                     { text: "กินยาอื่นเพื่อยับยั้งยาที่กินผิด", isCorrect: true }
-                ]
+                ],
+                chapter: {
+                    number: 2,
+                    title: "กินยาผิด/กินสารเคมี",
+                    level: 9
+                }
             },
             {
                 image: "picture/PostTest/q13.png",
@@ -129,7 +189,12 @@ class PostTestManager {
                     { text: "ใช้เชือกรัดเหนือบริเวณที่ถูกกัด", isCorrect: false },
                     { text: "ใช้ปากดูดพิษออก", isCorrect: false },
                     { text: "กดแผลเพื่อไล่พิษออก", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 3,
+                    title: "งูกัด",
+                    level: 12
+                }
             },
             {
                 image: "picture/PostTest/q14.png",
@@ -139,7 +204,12 @@ class PostTestManager {
                     { text: "ไม่ควร เพราะจะทำให้แผลบวม", isCorrect: false },
                     { text: "ควร เพราะเป็นการไล่พิษออก", isCorrect: true },
                     { text: "ไม่ควร เพราะจะทำให้พิษแล่นไปสู่ส่วนอื่น", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 3,
+                    title: "ผึ้งต่อย",
+                    level: 10
+                }
             },
             {
                 image: "picture/PostTest/q15.png",
@@ -149,7 +219,12 @@ class PostTestManager {
                     { text: "ประคบร้อน ลดอาการบวม", isCorrect: false },
                     { text: "ประคบเย็น ลดอาการช้ำ", isCorrect: false },
                     { text: "ประคบเย็นและประคบร้อนมีผลเหมือนกัน", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 1,
+                    title: "ฟกช้ำ",
+                    level: 3
+                }
             },
             {
                 image: "picture/PostTest/q16.png",
@@ -159,7 +234,12 @@ class PostTestManager {
                     { text: "ทางจมูกและปาก", isCorrect: false},
                     { text: "ทางจมูก", isCorrect: false},
                     { text: "ทางปาก", isCorrect: true}
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "เลือดกำเดาไหล",
+                    level: 14
+                }
             },            
             {
                 image: "picture/PostTest/q17.png",
@@ -169,7 +249,12 @@ class PostTestManager {
                     { text: "ไม่ได้ เพราะจะทำให้บวมมากขึ้น", isCorrect: true },
                     { text: "ได้ เพราะทำให้หายจากอาการเคล็ด/แพลงได้", isCorrect: false },
                     { text: "ไม่ได้ เพราะการนวดอาจทำให้กระดูกหัก", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "เคล็ด/แพลง",
+                    level: 15
+                }
             },
             {
                 image: "picture/PostTest/q18.png",
@@ -179,7 +264,12 @@ class PostTestManager {
                     { text: "ไม้จิ้มฟัน", isCorrect: false },
                     { text: "ก้านสำลี", isCorrect: true },
                     { text: "ปลายเล็บ", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "ฝุ่นเข้าตา",
+                    level: 16
+                }
             },
             {
                 image: "picture/PostTest/q19.png",
@@ -189,7 +279,12 @@ class PostTestManager {
                     { text: "อยู่ในท่าเดิมเป็นเวลานาน", isCorrect: false },
                     { text: "ไม่ได้ขยับกล้ามเนื้อ", isCorrect: false },
                     { text: "กล้ามเนื้อหดเกร็ง", isCorrect: true }
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "ตะคริว",
+                    level: 17
+                }
             },
             {
                 image: "picture/PostTest/q20.png",
@@ -199,7 +294,12 @@ class PostTestManager {
                     { text: "ขอความช่วยเหลือจากผู้อื่น", isCorrect: false },
                     { text: "สังเกตการหายใจและชีพจร", isCorrect: false },
                     { text: "คลายเสื้อผ้าเพื่อให้หายใจสะดวก", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "เป็นลม",
+                    level: 18
+                }
             },
             {
                 image: "picture/PostTest/q21.png",
@@ -209,7 +309,12 @@ class PostTestManager {
                     { text: "ขา", isCorrect: true },
                     { text: "ท้อง", isCorrect: false },
                     { text: "อก", isCorrect: false }
-                ]
+                ],
+                chapter: {
+                    number: 4,
+                    title: "เป็นลม",
+                    level: 18
+                }
             },
             {
                 image: "picture/PostTest/q22.png",
@@ -229,7 +334,12 @@ class PostTestManager {
                     { text: "ความรู้ ความสามารถในการปฐมพยาบาล", isCorrect: false},
                     { text: "ความปลอดภัยของผู้เจ็บป่วยและผู้ปฐมพยาบาล", isCorrect: false},
                     { text: "ถูกทุกข้อ", isCorrect: true}
-                ]
+                ],
+                chapter: {
+                    number: 0,
+                    title: "ความรู้เบื้องต้นเกี่ยวกับการปฐมพยาบาล",
+                    level: 0
+                }
             },
             {
                 image: "picture/PostTest/q24.png",
@@ -240,6 +350,12 @@ class PostTestManager {
                     { text: "เพื่อป้องกันการเกิดอันตราย", isCorrect: false },
                     { text: "เพื่อความสบายใจ", isCorrect: false }
                 ]
+                ,
+                chapter: {
+                    number: 0,
+                    title: "ความรู้เบื้องต้นเกี่ยวกับการปฐมพยาบาล",
+                    level: 0
+                }
             },
             {
                 image: "picture/PostTest/q25.png",
@@ -250,6 +366,12 @@ class PostTestManager {
                     { text: "ขอความช่วยเหลือจากผู้อื่น", isCorrect: false },
                     { text: "ให้ความช่วยเหลือเท่าที่ทำได้", isCorrect: true }
                 ]
+                ,
+                chapter: {
+                    number: 0,
+                    title: "ความรู้เบื้องต้นเกี่ยวกับการปฐมพยาบาล",
+                    level: 0
+                }
             }
         ];
         this.questions = this.getRandomQuestions(20); // สุ่มคำถาม
@@ -401,14 +523,137 @@ class PostTestManager {
     }
 
     showResults() {
+        let message = '';
+        let color = '';
+        let incorrectQuestions = [];
+    
+        this.questions.forEach((q) => {
+            const answeredIncorrectly = q.options.some(opt => opt.selected && !opt.isCorrect); // เลือกคำตอบผิด
+            const missedCorrectAnswer = q.options.some(opt => opt.isCorrect && !opt.selected); // ไม่ได้เลือกคำตอบที่ถูก
+    
+            if ((answeredIncorrectly || missedCorrectAnswer) && q.chapter) {
+                incorrectQuestions.push(q);
+            }
+        });
+    
+        if (this.score >= 10) {
+            message = 'ยอดเยี่ยมมาก! คุณเป็นผู้เชี่ยวชาญตัวจริง';
+            color = '#4CAF50';
+        } else {
+            message = 'ไม่เป็นไร มาลองทำใหม่อีกครั้งนะ';
+            color = '#F44336';
+        }
+    
+        let reviewSection = '';
+        if (incorrectQuestions.length > 0) {
+            reviewSection = `
+                <div class="review-box">
+                    <h3>เรื่องที่ต้องทบทวน</h3>
+                    <div class="review-list">
+                        ${incorrectQuestions.map((q, index) => `
+                            <div class="review-item">
+                                <strong>คำถามที่ ${index + 1}:</strong> ${q.question} <br>
+                                <em>บทที่ ${q.chapter.number}: ${q.chapter.title} (Level ${q.chapter.level})</em>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    
+        // Keep the CSS styles
+        const styles = `
+            <style>
+                .results-container {
+                    display: flex;
+                    gap: 20px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+                
+                .main-content {
+                    flex: 1;
+                    min-width: 300px;
+                    padding: 20px;
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+                
+                .review-box {
+                    width: 300px;
+                    background: white;
+                    border-radius: 10px;
+                    padding: 20px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                
+                .review-box h3 {
+                    margin-top: 0;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid #f0f0f0;
+                    color: #333;
+                }
+                
+                .review-list {
+                    max-height: 400px;
+                    overflow-y: auto;
+                    padding-right: 10px;
+                }
+                
+                .review-list::-webkit-scrollbar {
+                    width: 6px;
+                }
+                
+                .review-list::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: 3px;
+                }
+                
+                .review-list::-webkit-scrollbar-thumb {
+                    background: #e74c3c;
+                    border-radius: 3px;
+                }
+                
+                .review-item {
+                    padding: 12px;
+                    margin: 8px 0;
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    line-height: 1.4;
+                }
+                
+                .level-text {
+                    color: #666;
+                    font-size: 13px;
+                }
+            </style>
+        `;
+    
         this.renderContainer(`
-            <div class="posttest-content">
-                <h2>ผลการทดสอบหลังเรียน</h2>
-                <h3>คะแนนของคุณ: ${this.score}/${this.questions.length} คะแนน</h3>
-                <a class="start-button" onclick="postTestManager.finishPostTest()">เสร็จสิ้น</a>
+            ${styles}
+            <div class="results-container">
+                <div class="main-content">
+                    <h2>ผลการทดสอบหลังเรียน</h2>
+                    <h3>คะแนนของคุณ: ${this.score}/${this.questions.length} คะแนน</h3>
+                    <h3 style="color: ${color};">${message}</h3>
+                    <a class="start-button" onclick="postTestManager.finishPostTest()">
+                        เสร็จสิ้น
+                    </a>
+                </div>
+                ${reviewSection}
             </div>
         `);
     }
+    
+    
 
     finishPostTest() {
         localStorage.setItem('posttestCompleted', 'true');

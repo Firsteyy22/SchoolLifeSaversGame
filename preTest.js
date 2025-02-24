@@ -172,10 +172,23 @@ class PretestManager {
     showResults() {
         const container = document.createElement('div');
         container.className = 'pretest-fullpage';
+        
+        let message = '';
+        let color = '';
+        
+        if (this.score >= 5) {
+            message = 'เก่งมากสำหรับการทดสอบครั้งแรก';
+            color = '#4CAF50';
+        } else {
+            message = 'ไม่ต้องเสียใจไปถ้าได้คะแนนน้อย มาเริ่มเรียนรู้ไปกับเรากันเถอะ';
+            color = '#F44336';
+        }
+        
         container.innerHTML = `
             <div class="pretest-content">
                 <h2>ผลการทดสอบ</h2>
                 <h3>คะแนนของคุณ: ${this.score}/${this.questions.length} คะแนน</h3>
+                <h3 style="color: ${color};">${message}</h3>
                 <a class="start-button" onclick="pretestManager.finishPretest()">
                     เสร็จสิ้น
                 </a>

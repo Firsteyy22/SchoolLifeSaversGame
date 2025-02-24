@@ -56,7 +56,8 @@ function setupTutorialNavigation() {
         "picture/tutorialIMG/8.png",
         "picture/tutorialIMG/9.png",
         "picture/tutorialIMG/10.png",
-        "picture/tutorialIMG/11.png"
+        "picture/tutorialIMG/11.png",
+        "picture/tutorialIMG/12.png",
     ];
     let currentIndex = 0;
     const tutorialImage = document.getElementById("tutorialImage");
