@@ -18,14 +18,15 @@
 
 
       <h1>เลือกด่าน</h1>
+      <div class="level-head-text"> ด่าน 1 </div>
 
-  
       <div class="container">
         <div class="prev">
           <i class="fas fa-chevron-circle-left"></i>
         </div>
     
         <div class="gallery level">
+
             <div class="card position1" id="level1-button">
                 <img src="/picture/roompng/Emergency1.png" alt="image1">
             </div>
@@ -41,7 +42,9 @@
             <div class="card position4" id="level4-button">
                 <img src="/picture/roompng/Emergency4.png" alt="image4">
             </div>
+        
         </div>
+        
         
     
         <div class="next">
@@ -54,19 +57,6 @@
     </div>
 
   <a href="/startGame.html" class="button button-upleft" style="z-index: 99;">BACK</a>
-
-
-        
-    <!-- <เลือกด่าน map> -->
-    <!-- <div id="level">
-         <a href="/Room/html/room1.html" id="level1" class="button unlocked">Level 1</a>
-         <a href="/Room/html/room2.html" id="level2" class="button locked" >Level 2</a> 
-         <a href="/Room/html/room3.html" id="level3" class="button locked" >Level 3</a>
-         <a href="/Room/html/room4.html" id="level4" class="button locked" >Level 4</a>
-    </div>  -->
-
-  
-
 
  <!-- JS -->
  <script src="/levelcheck.js"></script>
@@ -98,6 +88,8 @@
              localStorage.setItem("bgMusicCurrentTime", window.audioManager.bgMusic.currentTime);
          }
      });
+
+     
  </script>
  
      <!-- audio -->
