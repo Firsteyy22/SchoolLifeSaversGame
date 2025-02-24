@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     }, gifContainer);
                 }
-            }, 2000);
+            }, 3000);
         });
 
         // ฟังก์ชันที่ช่วยในการคำนวณตำแหน่งเพื่อดึงการลากมา

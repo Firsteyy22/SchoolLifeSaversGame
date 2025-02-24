@@ -115,7 +115,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
                     nextQ();
                 }
             }, 0);
-        }, 4000); 
+        }, 3000); 
     } else {
         button.classList.add("incorrect");
         displayAnswerGIF(gifSrc);
@@ -126,7 +126,7 @@ function validateAnswer(button, isCorrect, gifSrc, wrongText = "", afterGifPic =
                 hideAnswerGIF();
                 showWrongAnswerPage(wrongText, afterGifPic, wrongText, resetQ);
             }, 0);
-        }, 3500);
+        }, 3000);
     }
 }
 
