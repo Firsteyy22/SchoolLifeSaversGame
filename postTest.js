@@ -379,6 +379,8 @@ class PostTestManager {
         this.score = 0;
         this.timer = null;
         this.timeLeft = 60;
+
+        this.incorrectQuestions = [];
     }
 
     getRandomQuestions(count) {
@@ -506,13 +508,24 @@ class PostTestManager {
     
     validateAnswer(isCorrect) {
         this.stopTimer(); // หยุดจับเวลาเมื่อเลือกคำตอบ
+        
+        // ถ้าตอบผิด ให้เก็บข้อมูลคำถามปัจจุบันไว้
+        if (!isCorrect && this.questions[this.currentQuestion].chapter) {
+            this.incorrectQuestions.push(this.questions[this.currentQuestion]);
+        }
+        
         if (isCorrect) this.score++;
-
+    
         this.currentQuestion++;
         this.showQuestion(); // ไปคำถามถัดไป
     }
 
     nextQuestion() {
+        // ถ้าหมดเวลา ถือว่าตอบผิด
+        if (this.timeLeft <= 0 && this.questions[this.currentQuestion].chapter) {
+            this.incorrectQuestions.push(this.questions[this.currentQuestion]);
+        }
+        
         this.currentQuestion++;
         this.showQuestion();
     }
@@ -525,17 +538,7 @@ class PostTestManager {
     showResults() {
         let message = '';
         let color = '';
-        let incorrectQuestions = [];
-    
-        this.questions.forEach((q) => {
-            const answeredIncorrectly = q.options.some(opt => opt.selected && !opt.isCorrect); // เลือกคำตอบผิด
-            const missedCorrectAnswer = q.options.some(opt => opt.isCorrect && !opt.selected); // ไม่ได้เลือกคำตอบที่ถูก
-    
-            if ((answeredIncorrectly || missedCorrectAnswer) && q.chapter) {
-                incorrectQuestions.push(q);
-            }
-        });
-    
+        
         if (this.score >= 10) {
             message = 'ยอดเยี่ยมมาก! คุณเป็นผู้เชี่ยวชาญตัวจริง';
             color = '#4CAF50';
@@ -543,14 +546,14 @@ class PostTestManager {
             message = 'ไม่เป็นไร มาลองทำใหม่อีกครั้งนะ';
             color = '#F44336';
         }
-    
+        
         let reviewSection = '';
-        if (incorrectQuestions.length > 0) {
+        if (this.incorrectQuestions.length > 0) {
             reviewSection = `
                 <div class="review-box">
                     <h3>เรื่องที่ต้องทบทวน</h3>
                     <div class="review-list">
-                        ${incorrectQuestions.map((q, index) => `
+                        ${this.incorrectQuestions.map((q, index) => `
                             <div class="review-item">
                                 <strong>คำถามที่ ${index + 1}:</strong> ${q.question} <br>
                                 <em>บทที่ ${q.chapter.number}: ${q.chapter.title} (Level ${q.chapter.level})</em>
@@ -560,7 +563,9 @@ class PostTestManager {
                 </div>
             `;
         }
-    
+        
+        // ส่วนที่เหลือของโค้ดเดิม...
+        
         // Keep the CSS styles
         const styles = `
             <style>
