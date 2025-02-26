@@ -86,8 +86,8 @@ document.querySelectorAll('.guide2').forEach(button => {
     button.addEventListener('click', function() {
         Swal.fire({
             title: "วิธีการเล่น",
-            text: "xxxxxxxxxxx",
-            imageUrl: '/picture/BG.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
+            text: "เลือกคำตอบที่ถูกต้องมากกว่า 1 คำตอบ",
+            imageUrl: '/picture/tutorialIMG/gameplay2.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
             imageWidth: 400, // กำหนดความกว้างของรูปภาพ
             imageHeight: 200, // กำหนดความสูงของรูปภาพ
             imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
@@ -116,8 +116,8 @@ document.querySelectorAll('.guide3').forEach(button => {
     button.addEventListener('click', function() {
         Swal.fire({
             title: "วิธีการเล่น",
-            text: "yyyyyyyy",
-            imageUrl: '/picture/BG.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
+            text: "เรียงคำตอบ ให้เป็นลำดับขั้นตอน",
+            imageUrl: '/picture/tutorialIMG/gameplay3.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
             imageWidth: 400, // กำหนดความกว้างของรูปภาพ
             imageHeight: 200, // กำหนดความสูงของรูปภาพ
             imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
