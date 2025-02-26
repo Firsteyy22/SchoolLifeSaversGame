@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         
                                 console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
                                 console.log(`📊 Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
-                        
+
                                 if (completedTasks === tasksCount) {
                                     unlockLevel(levelNumber);
                                 }

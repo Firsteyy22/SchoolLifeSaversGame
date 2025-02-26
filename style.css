@@ -1,6 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
 /* Button colors */
 /* เพิ่มชื่ออีก ถ้าต้องการเปลี่ยนสี*/
 :root {
@@ -489,6 +492,15 @@ h4 {
     left: 20px;
 }
 
+.gameplay-page .button-right {
+    position: absolute;
+    padding: 0.5em 0em;
+    width: 52px;
+    height: 50px;
+    top: 20px;
+    right: 20px; /* ย้ายไปฝั่งขวา */
+}
+
 .gameplay-page .button::before {
     position: absolute;
     content: "";
@@ -819,3 +831,4 @@ h4 {
     opacity: 1; 
     cursor: pointer;
 }
+

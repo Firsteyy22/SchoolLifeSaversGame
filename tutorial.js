@@ -78,3 +78,65 @@ function setupTutorialNavigation() {
         }
     });
 }
+
+//POP UP ในหน้าเล่น
+
+// แบบที่ 2
+document.querySelectorAll('.guide2').forEach(button => {
+    button.addEventListener('click', function() {
+        Swal.fire({
+            title: "วิธีการเล่น",
+            text: "xxxxxxxxxxx",
+            imageUrl: '/picture/BG.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
+            imageWidth: 400, // กำหนดความกว้างของรูปภาพ
+            imageHeight: 200, // กำหนดความสูงของรูปภาพ
+            imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
+            icon: "info",
+            confirmButtonText: "OK",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            backdrop: true,
+            heightAuto: false,
+            customClass: {
+                popup: 'swal-bounce',
+                container: 'no-auto-container'
+            },
+            showClass: {
+                popup: 'animate__animated animate__bounceIn'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__bounceOut'
+            }
+        });
+    });
+});
+
+// แบบที่ 3
+document.querySelectorAll('.guide3').forEach(button => {
+    button.addEventListener('click', function() {
+        Swal.fire({
+            title: "วิธีการเล่น",
+            text: "yyyyyyyy",
+            imageUrl: '/picture/BG.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
+            imageWidth: 400, // กำหนดความกว้างของรูปภาพ
+            imageHeight: 200, // กำหนดความสูงของรูปภาพ
+            imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
+            icon: "info",
+            confirmButtonText: "OK",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            backdrop: true,
+            heightAuto: false,
+            customClass: {
+                popup: 'swal-bounce',
+                container: 'no-auto-container'
+            },
+            showClass: {
+                popup: 'animate__animated animate__bounceIn'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__bounceOut'
+            }
+        });
+    });
+});

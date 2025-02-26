@@ -47,6 +47,9 @@
             </div>
             <a id="submit-answer-q2" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
 
+             <!-- ปุ่ม Hint -->
+            <button class="guide2 button button-right">?</button>
+
         </div>
         
         <!-- คำถาม 3 -->
@@ -99,6 +102,9 @@
     <script src="../levelcheck.js"></script>
     <script src="../setting.js" defer></script>
     <script src="../audioController.js" defer></script>
+    <script src="/tutorial.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             if (window.audioManager) {

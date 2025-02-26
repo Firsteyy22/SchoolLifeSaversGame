@@ -28,6 +28,9 @@
         <a class="button-choices" data-answer="5"> กินยาช่วยย่อย </a>
     </div>
     <a id="submit-answer-q1" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
+
+    <!-- ปุ่ม Hint -->
+    <button class="guide2 button button-right">?</button>
 </div>
 
 <!-- คำถาม 2 -->
@@ -62,6 +65,9 @@
         <a class="button-choices" data-answer="5"> แจ้งคนรอบตัว ว่าเผลอกลืนยาอะไรไป </a>
     </div>
     <a id="submit-answer-q3" class="button-submit-answer hidden">ยืนยันคำตอบ</a>
+
+    <!-- ปุ่ม Hint -->
+    <button class="guide2 button button-right">?</button>
 </div>
 
 <!-- คำถาม 4 -->
@@ -114,6 +120,8 @@
     <script src="../gameplay_02.js"></script>
     <script src="../setting.js" defer></script>
     <script src="../audioController.js" defer></script>
+    <script src="/tutorial.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             if (window.audioManager) {

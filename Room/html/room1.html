@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/Room/css/style_room1.css">
 	<link rel="stylesheet" href="/Room/css/allroom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	
 </head>
 
 <body class="map-page map-container svg-container">
@@ -368,6 +371,7 @@
 	.st328{fill:#EFBF73;stroke:#231F20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st329{fill:#3A342B;stroke:#231F20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
+
 <g id="wheelchair_00000115511725659303818080000000391036213253813661_" class="st0">
 	<g id="wheelchair" class="st1">
 		<path class="st2" d="M1718.45,1495c32.33,18.67,64.67,37.33,97,56c35.67-20.67,71.33-41.33,107-62c-33-18.67-66-37.33-99-56
@@ -9815,6 +9819,11 @@
     <!-- Buttons -->
 	<a href="/menu.html" class="button button-left">MENU</a>
 	<a href="/Room/html/select.html" class="button button-upleft">BACK</a>
+	<button class="guide1 button button-right">?</button>
+	<div id="log" class="button-upright">
+		<h1>0/5</h1>
+	</div>
+
 
 
     <!-- JS -->
@@ -9823,6 +9832,10 @@
     <script src="/setting.js" defer></script>
     <script src="/audioController.js" defer></script>
 	<script src="/gameplay.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="/tutorial.js" defer></script>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             if (window.audioManager) {
