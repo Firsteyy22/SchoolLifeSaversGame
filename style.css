@@ -832,3 +832,23 @@ h4 {
     cursor: pointer;
 }
 
+.swal2-confirm {
+    font-family: 'Kodchasan', sans-serif !important;
+    font-size: 18px !important;
+}
+
+/* Increase popup size */
+.large-popup {
+    width: 85vw !important;  /* Use 85% of viewport width */
+    max-width: 1300px !important; /* Increase max-width */
+    padding: 20px !important; /* Add padding for spacing */
+}
+
+/* Make the image scale properly */
+#tutorial-image {
+    display: block;
+    width: 100% !important;
+    max-width: 800px !important; /* Allow bigger image */
+    height: auto !important;
+    margin: 15px auto;
+}

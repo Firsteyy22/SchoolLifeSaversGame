@@ -82,61 +82,92 @@ function setupTutorialNavigation() {
 //POP UP ในหน้าเล่น
 
 // แบบที่ 2
-document.querySelectorAll('.guide2').forEach(button => {
-    button.addEventListener('click', function() {
-        Swal.fire({
-            title: "วิธีการเล่น",
-            text: "เลือกคำตอบที่ถูกต้องมากกว่า 1 คำตอบ",
-            imageUrl: '/picture/tutorialIMG/gameplay2.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
-            imageWidth: 400, // กำหนดความกว้างของรูปภาพ
-            imageHeight: 200, // กำหนดความสูงของรูปภาพ
-            imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
-            icon: "info",
-            confirmButtonText: "OK",
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            backdrop: true,
-            heightAuto: false,
-            customClass: {
-                popup: 'swal-bounce',
-                container: 'no-auto-container'
-            },
-            showClass: {
-                popup: 'animate__animated animate__bounceIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__bounceOut'
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const guideButton = document.querySelector(".guide2"); // Check if the button exists
+
+    if (guideButton) {
+        // Function to show the popup
+        function showGuidePopup() {
+            Swal.fire({
+                title: "วิธีการเล่น",
+                html: `<h3>เลือกคำตอบที่ถูกต้องมากกว่า 1 คำตอบ</h3> 
+                       <img id="tutorial-image" src="" 
+                            style="display:none; width:100%; max-width: 500px; height:auto; margin-top: 15px;">`,
+                confirmButtonText: "เข้าใจแล้ว",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                backdrop: true,
+                heightAuto: false,
+                customClass: {
+                    popup: 'large-popup',  // Set custom popup class
+                    container: 'no-auto-container'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__bounceIn'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__bounceOut'
+                },
+                didOpen: () => {
+                    setTimeout(() => {
+                        const img = document.getElementById('tutorial-image');
+                        img.src = '/picture/tutorialIMG/gameplay2.png';
+                        img.style.display = 'block';
+                    }, 0); // Display image immediately
+                }
+            });
+        }
+
+        // Show popup automatically when the page loads (only if the button exists)
+        showGuidePopup();
+
+        // Allow the user to click the button to open the popup again
+        guideButton.addEventListener("click", showGuidePopup);
+    }
 });
 
-// แบบที่ 3
-document.querySelectorAll('.guide3').forEach(button => {
-    button.addEventListener('click', function() {
-        Swal.fire({
-            title: "วิธีการเล่น",
-            text: "เรียงคำตอบ ให้เป็นลำดับขั้นตอน",
-            imageUrl: '/picture/tutorialIMG/gameplay3.png', // ใส่ URL ของรูปภาพที่ต้องการแสดง
-            imageWidth: 400, // กำหนดความกว้างของรูปภาพ
-            imageHeight: 200, // กำหนดความสูงของรูปภาพ
-            imageAlt: 'Custom image', // ข้อความ alt สำหรับรูปภาพ
-            icon: "info",
-            confirmButtonText: "OK",
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            backdrop: true,
-            heightAuto: false,
-            customClass: {
-                popup: 'swal-bounce',
-                container: 'no-auto-container'
-            },
-            showClass: {
-                popup: 'animate__animated animate__bounceIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__bounceOut'
-            }
-        });
-    });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const guideButton = document.querySelector(".guide3"); // Check if the button exists
+
+    if (guideButton) {
+        // Function to show the popup
+        function showGuidePopup() {
+            Swal.fire({
+                title: "วิธีการเล่น",
+                html: `<h2 style="font-size: 24px; margin-bottom: 10px;">เรียงคำตอบ ให้เป็นลำดับขั้นตอน</h2> 
+                       <img id="tutorial-image" src="" 
+                            style="display:none; width:100%; max-width: 500px; height:auto; margin-top: 15px;">`,
+                confirmButtonText: "เข้าใจแล้ว",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                backdrop: true,
+                heightAuto: false,
+                customClass: {
+                    popup: 'large-popup',  // Custom class to make the popup bigger
+                    container: 'no-auto-container'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__bounceIn'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__bounceOut'
+                },
+                didOpen: () => {
+                    setTimeout(() => {
+                        const img = document.getElementById('tutorial-image');
+                        img.src = '/picture/tutorialIMG/gameplay3.png';
+                        img.style.display = 'block';
+                    }, 0); // Display image immediately
+                }
+            });
+        }
+
+        // Show popup automatically when the page loads (only if the button exists)
+        showGuidePopup();
+
+        // Allow user to click the button to open the popup again
+        guideButton.addEventListener("click", showGuidePopup);
+    }
 });
+
