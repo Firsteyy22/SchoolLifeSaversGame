@@ -208,9 +208,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTaskStatusUI(levelNumber, completedTasks, tasksCount) {
         const taskStatusDiv = document.getElementById(`task-status-level${levelNumber}`);
         if (taskStatusDiv) {
-            taskStatusDiv.innerHTML = `✅ Level ${levelNumber}: Task ${completedTasks}/${tasksCount} completed`;
+            taskStatusDiv.innerHTML = `${completedTasks}/${tasksCount}`;
+            taskStatusDiv.style.fontSize = "30px"; // เพิ่มขนาดตัวหนังสือ
         }
     }
+    
 
     function updateTotalTaskStatusUI(completed, total) {
         const totalTaskStatusDiv = document.getElementById("total-task-status");
