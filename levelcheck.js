@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateLevelStates() {
+        let newlyUnlocked = false;
+
         for (let i = 1; i <= totalLevels; i++) {
             const levelButton = document.getElementById(`level${i}-button`);
             const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
@@ -102,6 +104,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 levelButton.classList.toggle("unlocked", levelUnlocked);
                 console.log(levelUnlocked ? `✅ Level ${i}: UNLOCKED` : `🔒 Level ${i}: LOCKED`);
             }
+        }
+
+        if (newlyUnlocked) {
+            Swal.fire({
+                title: "🔓 ด่านใหม่ปลดล็อกแล้ว!",
+                text: "คุณสามารถเข้าสู่ด่านใหม่ได้แล้ว",
+                icon: "info",
+                confirmButtonText: "ตกลง",
+                showCloseButton: true,
+                closeButtonAriaLabel: "ปิด",
+                backdrop: 'rgba(0, 0, 0, 0.5)',
+                heightAuto: false,
+                customClass: {
+                    popup: 'swal-bounce',
+                    container: 'no-auto-container',
+                    closeButton: 'custom-close-button'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown' // 🎯 แอนิเมชันเด้งลงมา
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp' // 🎯 แอนิเมชันจางขึ้น
+                }
+            });
         }
     }
 
@@ -152,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 if (document.querySelectorAll(".completed-task").length === totalTasks) {
                                     console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
                                 }
-
+                                
                                 if (completedTasks === tasksCount) {
                                     sessionStorage.setItem(`level${levelNumber}_passed`, "true"); // ✅ บันทึกว่าผ่านด่านนี้แล้ว
                                     unlockLevel(levelNumber); // ปลดล็อกด่านถัดไป
@@ -168,6 +194,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // แสดงจำนวน Task ทั้งหมดและที่ทำเสร็จไปแล้วตอนโหลดหน้าเว็บ
         console.log(`🔄 Initial Load: Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+
+if (totalCompletedTasks === totalTasks) {
+    Swal.fire({
+        title: "🎉 ยินดีด้วย",
+        text: "คุณได้ปลดล็อกทุกด่านแล้ว!",
+        icon: "success",
+        confirmButtonText: "ทำแบบทดสอบหลังเรียน",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        showCloseButton: true, // ✅ แสดงปุ่ม ❌
+        closeButtonAriaLabel: "ปิด",
+        backdrop: 'rgba(0, 0, 0, 0.5)',
+        heightAuto: false,
+        customClass: {
+            popup: 'swal-bounce',
+            container: 'no-auto-container',
+            closeButton: 'custom-close-button' // ✅ ใช้ CSS ปรับขนาดปุ่ม ❌
+        },
+        showClass: {
+            popup: 'animate__animated animate__bounceIn'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__bounceOut'
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/postTest.html";
+        }
+    });
+
+     }
     }
 
     updateLevelStates();

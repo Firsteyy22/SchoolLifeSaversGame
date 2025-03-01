@@ -202,8 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    
-
     updateUnlockedLevels();
     updateCardPositions();
 });
