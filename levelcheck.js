@@ -81,8 +81,8 @@ function isRoomUnlocked(roomNumber) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const totalLevels = 4;
-    const totalTasksPerLevel = [5, 4, 4, 5]; // จำนวน Task ของแต่ละ Level
-    const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0);
+    const totalTasksPerLevel = [5, 4, 4, 5]; // 🔥 จำนวน Task ของแต่ละ Level
+    const totalTasks = totalTasksPerLevel.reduce((sum, num) => sum + num, 0); // ✅ คำนวณ Task ทั้งหมด
 
     function unlockLevel(levelNumber) {
         const nextLevel = levelNumber + 1;
@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateLevelStates() {
-        let newlyUnlocked = false;
-
         for (let i = 1; i <= totalLevels; i++) {
             const levelButton = document.getElementById(`level${i}-button`);
             const levelUnlocked = i === 1 || sessionStorage.getItem(`level${i}_unlocked`) === "true";
@@ -104,30 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 levelButton.classList.toggle("unlocked", levelUnlocked);
                 console.log(levelUnlocked ? `✅ Level ${i}: UNLOCKED` : `🔒 Level ${i}: LOCKED`);
             }
-        }
-
-        if (newlyUnlocked) {
-            Swal.fire({
-                title: "🔓 ด่านใหม่ปลดล็อกแล้ว!",
-                text: "คุณสามารถเข้าสู่ด่านใหม่ได้แล้ว",
-                icon: "info",
-                confirmButtonText: "ตกลง",
-                showCloseButton: true,
-                closeButtonAriaLabel: "ปิด",
-                backdrop: 'rgba(0, 0, 0, 0.5)',
-                heightAuto: false,
-                customClass: {
-                    popup: 'swal-bounce',
-                    container: 'no-auto-container',
-                    closeButton: 'custom-close-button'
-                },
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown' // 🎯 แอนิเมชันเด้งลงมา
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp' // 🎯 แอนิเมชันจางขึ้น
-                }
-            });
         }
     }
 
@@ -148,85 +122,117 @@ document.addEventListener("DOMContentLoaded", function () {
                         taskButton.classList.add("completed-task");
                     }
 
-                    taskButton.addEventListener('click', function () {
-                        if (!this.classList.contains("completed-task")) {
-                            setTimeout(() => {
-                                this.classList.add("completed-task");
-                                completedTasks++;
-                                totalCompletedTasks++;
-                        
-                                sessionStorage.setItem(`task${i}-level${levelNumber}`, "true");
-                                sessionStorage.setItem(`completedTasks_level${levelNumber}`, completedTasks.toString());
-                        
-                                console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
-                                console.log(`📊 Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+                    if (!taskButton.dataset.listenerAdded) {
+                        taskButton.dataset.listenerAdded = "true"; // ✅ ป้องกันการเพิ่ม Event ซ้ำ
 
-                                if (completedTasks === tasksCount) {
-                                    unlockLevel(levelNumber);
-                                }
-                        
-                                // เมื่อ task2-level1 ถูกทำเสร็จ, เปลี่ยนสี
-                                if (taskButton.id === 'task2-level1') {
-                                    var element = document.getElementById('blood');
-                                    if (element) {
-                                        element.classList.remove('blinkRed');
-                                        element.classList.add('blinkGreen');
-                                        console.log('Changed to green!');
+                        taskButton.addEventListener('click', function () {
+                            if (!this.classList.contains("completed-task")) {
+                                setTimeout(() => {
+                                    this.classList.add("completed-task");
+                                    completedTasks++;
+                                    totalCompletedTasks++;
+
+                                    sessionStorage.setItem(`task${i}-level${levelNumber}`, "true");
+                                    sessionStorage.setItem(`completedTasks_level${levelNumber}`, completedTasks.toString());
+                                    sessionStorage.setItem("totalCompletedTasks", totalCompletedTasks.toString());
+
+                                    console.log(`✅ Task ${completedTasks}/${tasksCount} completed in Level ${levelNumber}`);
+                                    console.log(`📊 Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+
+                                    updateTaskStatusUI(levelNumber, completedTasks, tasksCount);
+                                    updateTotalTaskStatusUI(totalCompletedTasks, totalTasks);
+
+                                    if (completedTasks === tasksCount) {
+                                        sessionStorage.setItem(`level${levelNumber}_passed`, "true");
+                                        unlockLevel(levelNumber); // ✅ ปลดล็อก Level ถัดไป
                                     }
-                                }
-                        
-                                if (document.querySelectorAll(".completed-task").length === totalTasks) {
-                                    console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
-                                }
-                                
-                                if (completedTasks === tasksCount) {
-                                    sessionStorage.setItem(`level${levelNumber}_passed`, "true"); // ✅ บันทึกว่าผ่านด่านนี้แล้ว
-                                    unlockLevel(levelNumber); // ปลดล็อกด่านถัดไป
-                                }
-                                
-                            }, 100);
-                        }
-                        
-                    });
+
+                                    // ✅ เปลี่ยนสีเมื่อ Task2 ใน Level1 ทำเสร็จ
+                                    if (taskButton.id === 'task2-level1') {
+                                        var element = document.getElementById('blood');
+                                        if (element) {
+                                            element.classList.remove('blinkRed');
+                                            element.classList.add('blinkGreen');
+                                            console.log('Changed to green!');
+                                        }
+                                    }
+
+                                    // ✅ ตรวจสอบว่า Task ทั้งหมดทำครบหรือยัง
+                                    if (totalCompletedTasks === totalTasks) {
+                                        console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
+
+                                        // ✅ แสดง Swal.fire() เมื่อทำ Task ทั้งหมดสำเร็จ
+                                        Swal.fire({
+                                            title: "🎉 ยินดีด้วย",
+                                            text: "คุณได้เรียนการปฐมพยาบาลขั้นพื้นฐานแล้ว!",
+                                            icon: "success",
+                                            confirmButtonText: "ทำแบบทดสอบหลังเรียน",
+                                            allowOutsideClick: false,
+                                            allowEscapeKey: false,
+                                            showCloseButton: true,
+                                            closeButtonAriaLabel: "ปิด",
+                                            backdrop: 'rgba(0, 0, 0, 0.5)',
+                                            heightAuto: false,
+                                            customClass: {
+                                                popup: 'swal-bounce',
+                                                container: 'no-auto-container',
+                                                closeButton: 'custom-close-button' // ✅ ใช้ CSS ปรับขนาดปุ่ม ❌
+                                            },
+                                            showClass: {
+                                                popup: 'animate__animated animate__bounceIn'
+                                            },
+                                            hideClass: {
+                                                popup: 'animate__animated animate__bounceOut'
+                                            }
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                window.location.href = "/postTest.html";
+                                            }
+                                        });
+                                    }
+                                }, 10000);
+                            }
+                        });
+
+                        console.log(`🎯 Click event added to: task${i}-level${levelNumber}`);
+                    }
                 }
             }
         });
 
-        // แสดงจำนวน Task ทั้งหมดและที่ทำเสร็จไปแล้วตอนโหลดหน้าเว็บ
+        // ✅ แสดง Task ที่ทำสำเร็จทั้งหมดเมื่อโหลดหน้า
         console.log(`🔄 Initial Load: Total Completed Tasks: ${totalCompletedTasks}/${totalTasks}`);
+        updateTotalTaskStatusUI(totalCompletedTasks, totalTasks);
+    }
 
-if (totalCompletedTasks === totalTasks) {
-    Swal.fire({
-        title: "🎉 ยินดีด้วย",
-        text: "คุณได้ปลดล็อกทุกด่านแล้ว!",
-        icon: "success",
-        confirmButtonText: "ทำแบบทดสอบหลังเรียน",
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        showCloseButton: true, // ✅ แสดงปุ่ม ❌
-        closeButtonAriaLabel: "ปิด",
-        backdrop: 'rgba(0, 0, 0, 0.5)',
-        heightAuto: false,
-        customClass: {
-            popup: 'swal-bounce',
-            container: 'no-auto-container',
-            closeButton: 'custom-close-button' // ✅ ใช้ CSS ปรับขนาดปุ่ม ❌
-        },
-        showClass: {
-            popup: 'animate__animated animate__bounceIn'
-        },
-        hideClass: {
-            popup: 'animate__animated animate__bounceOut'
+    function updateTaskStatusUI(levelNumber, completedTasks, tasksCount) {
+        const taskStatusDiv = document.getElementById(`task-status-level${levelNumber}`);
+        if (taskStatusDiv) {
+            taskStatusDiv.innerHTML = `✅ Level ${levelNumber}: Task ${completedTasks}/${tasksCount} completed`;
         }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = "/postTest.html";
-        }
-    });
+    }
 
-     }
+    function updateTotalTaskStatusUI(completed, total) {
+        const totalTaskStatusDiv = document.getElementById("total-task-status");
+        if (totalTaskStatusDiv) {
+            totalTaskStatusDiv.innerHTML = `📊 Total Completed Tasks: ${completed}/${total}`;
+        }
+    }
+
+    function loadTaskStatusFromStorage() {
+        let totalCompletedTasks = 0;
+
+        totalTasksPerLevel.forEach((tasksCount, levelIndex) => {
+            const levelNumber = levelIndex + 1;
+            let completedTasks = parseInt(sessionStorage.getItem(`completedTasks_level${levelNumber}`)) || 0;
+            totalCompletedTasks += completedTasks;
+            updateTaskStatusUI(levelNumber, completedTasks, tasksCount);
+        });
+
+        updateTotalTaskStatusUI(totalCompletedTasks, totalTasks);
     }
 
     updateLevelStates();
     updateTaskStates();
-}); 
+    loadTaskStatusFromStorage();
+});
