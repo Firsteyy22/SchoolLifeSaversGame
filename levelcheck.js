@@ -157,40 +157,43 @@ document.addEventListener("DOMContentLoaded", function () {
                                         }
                                     }
 
-                                    // ✅ ตรวจสอบว่า Task ทั้งหมดทำครบหรือยัง
-                                    if (totalCompletedTasks === totalTasks) {
-                                        console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
+                                   // ✅ ตรวจสอบว่า Task ทั้งหมดทำครบหรือยัง
+                            if (totalCompletedTasks === totalTasks) {
+                                console.log("🏆 ALL LEVELS AND TASKS COMPLETED!");
 
-                                        // ✅ แสดง Swal.fire() เมื่อทำ Task ทั้งหมดสำเร็จ
-                                        Swal.fire({
-                                            title: "🎉 ยินดีด้วย",
-                                            text: "คุณได้เรียนการปฐมพยาบาลขั้นพื้นฐานแล้ว!",
-                                            icon: "success",
-                                            confirmButtonText: "ทำแบบทดสอบหลังเรียน",
-                                            allowOutsideClick: false,
-                                            allowEscapeKey: false,
-                                            showCloseButton: true,
-                                            closeButtonAriaLabel: "ปิด",
-                                            backdrop: 'rgba(0, 0, 0, 0.5)',
-                                            heightAuto: false,
-                                            customClass: {
-                                                popup: 'swal-bounce',
-                                                container: 'no-auto-container',
-                                                closeButton: 'custom-close-button' // ✅ ใช้ CSS ปรับขนาดปุ่ม ❌
-                                            },
-                                            showClass: {
-                                                popup: 'animate__animated animate__bounceIn'
-                                            },
-                                            hideClass: {
-                                                popup: 'animate__animated animate__bounceOut'
-                                            }
-                                        }).then((result) => {
-                                            if (result.isConfirmed) {
-                                                window.location.href = "/postTest.html";
-                                            }
-                                        });
+                                // ✅ หน่วงเวลา 10 วินาที ก่อนแสดง Swal.fire()
+                                setTimeout(() => {
+                                    Swal.fire({
+                                        title: "🎉 ยินดีด้วย",
+                                        text: "คุณได้เรียนการปฐมพยาบาลขั้นพื้นฐานแล้ว!",
+                                        icon: "success",
+                                        confirmButtonText: "ทำแบบทดสอบหลังเรียน",
+                                        allowOutsideClick: false,
+                                        allowEscapeKey: false,
+                                        showCloseButton: true,
+                                        closeButtonAriaLabel: "ปิด",
+                                        backdrop: 'rgba(0, 0, 0, 0.5)',
+                                        heightAuto: false,
+                                        customClass: {
+                                            popup: 'swal-bounce',
+                                            container: 'no-auto-container',
+                                            closeButton: 'custom-close-button' // ✅ ใช้ CSS ปรับขนาดปุ่ม ❌
+                                        },
+                                        showClass: {
+                                            popup: 'animate__animated animate__bounceIn'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__bounceOut'
+                                        }
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            window.location.href = "/postTest.html";
+                                        }
+                                    });
+                                }, 15000); // 10000 มิลลิวินาที = 10 วินาที
+
                                     }
-                                }, 10000);
+                                });
                             }
                         });
 
