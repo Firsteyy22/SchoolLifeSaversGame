@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // โหลดค่าการตั้งค่าเริ่มต้น
     if (window.audioManager) {
         const settings = window.audioManager.settings;
-        bgMusicVolume.value = settings.bgMusicVolume; // ใช้ค่าที่บันทึกไว้
+        bgMusicVolume.value = settings.bgMusicVolume ?? 0; // ใช้ค่าที่บันทึกไว้
         sfxVolume.value = settings.sfxVolume; // ใช้ค่าที่บันทึกไว้
     }
 
