@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                             window.location.href = "/postTest.html";
                                         }
                                     });
-                                }, 15000); // 10000 มิลลิวินาที = 10 วินาที
+                                }, 13000); 
 
                                     }
                                 });
